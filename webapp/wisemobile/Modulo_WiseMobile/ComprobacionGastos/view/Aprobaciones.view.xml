@@ -1,0 +1,325 @@
+<mvc:View height="100%"
+	controllerName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.ComprobacionGastos.controller.Aprobaciones"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m">
+	<Page id="idPage" showHeader="false" enableScrolling="true">
+		<subHeader>
+			<Toolbar design="Solid" class="toolbarColorCydsa">
+				<Label id="idAprobacionesTitle" text="{i18n>Aprobaciones.Ant.title}" design="Bold" class="toolbarTextColor"/>
+			</Toolbar>
+		</subHeader>
+		<content>
+			<Table
+				id="idTableAprobacionesAnt"
+				mode="MultiSelect"
+				inset="false"
+				items="{
+						path: 'mTables>/XXX'
+				}"
+				growing="true"
+				growingThreshold="100"
+				growingScrollToLoad="false"
+				itemPress="onItemPressAprobaciones">
+				<headerToolbar>
+					<Toolbar id="idToolbarAprobacionesAnt">
+						<Title text="{i18n>Records-found}" titleStyle="H6"/>
+						<Title id="idCountTableAprobacionesAnt" text="(0)" titleStyle="H6"/>
+						<ToolbarSpacer/>
+						<!-- 
+						<Button icon="sap-icon://add"
+							text="{i18n>ComprobacionGastos.Form.LtaAnticipos.Button}"
+							press="onSettingsTableProveedores" />
+						 -->
+						 
+						 <Button id="idOpciones1"
+							text="{i18n>Popup.Button.Opciones}"
+							press="onPressOpcionesAntc" />
+						 <!-- <Button
+							text="{i18n>Aprobaciones.ToolBar.Button.1}"
+							press="onPressAprobarAntc" />
+						<Button
+							text="{i18n>Aprobaciones.ToolBar.Button.2}"
+							press="onPressRechazarAntc" /> -->
+						<Button
+							icon="sap-icon://action-settings"
+							press="onSettingsTable" />
+						<Button icon="sap-icon://table-column" press="onPersoPress" />
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column id="idCol1"
+						visible="{mManageControls>Aprobaciones.Ant.Monitor.Table.Column.1}">
+						<Text text="{i18n>Aprobaciones.Ant.Monitor.Table.Column.1}"/>
+					</Column>
+					<Column id="idCol2"
+						visible="{mManageControls>Aprobaciones.Ant.Monitor.Table.Column.2}">
+						<Text text="{i18n>Aprobaciones.Ant.Monitor.Table.Column.2}"/>
+					</Column>
+					<Column id="idCol3"
+						visible="{mManageControls>Aprobaciones.Ant.Monitor.Table.Column.3}">
+						<Text text="{i18n>Aprobaciones.Ant.Monitor.Table.Column.3}"/>
+					</Column>
+					
+					<Column id="idCol4"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>Aprobaciones.Ant.Monitor.Table.Column.4}">
+						<Text text="{i18n>Aprobaciones.Ant.Monitor.Table.Column.4}"/>
+					</Column>
+					
+					<Column id="idCol5"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>Aprobaciones.Ant.Monitor.Table.Column.5}">
+						<Text text="{i18n>Aprobaciones.Ant.Monitor.Table.Column.5}"/>
+					</Column>
+					
+					<Column id="idCol6"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>Aprobaciones.Ant.Monitor.Table.Column.6}">
+						<Text text="{i18n>Aprobaciones.Ant.Monitor.Table.Column.6}"/>
+					</Column>
+					
+					<Column id="idCol7"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>Aprobaciones.Ant.Monitor.Table.Column.7}">
+						<Text text="{i18n>Aprobaciones.Ant.Monitor.Table.Column.7}"/>
+					</Column>
+					
+					<Column id="idCol8"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>Aprobaciones.Ant.Monitor.Table.Column.8}">
+						<Text text="{i18n>Aprobaciones.Ant.Monitor.Table.Column.8}"/>
+					</Column>
+					
+					<Column id="idCol9"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>Aprobaciones.Ant.Monitor.Table.Column.9}">
+						<Text text="{i18n>Aprobaciones.Ant.Monitor.Table.Column.9}"/>
+					</Column>
+					
+					<Column id="idCol10"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>Aprobaciones.Ant.Monitor.Table.Column.10}">
+						<Text text="{i18n>Aprobaciones.Ant.Monitor.Table.Column.10}"/>
+					</Column>
+					
+					<Column id="idCol11"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>Aprobaciones.Ant.Monitor.Table.Column.11}">
+						<Text text="{i18n>Aprobaciones.Ant.Monitor.Table.Column.11}"/>
+					</Column>
+					
+					<Column id="idCol12"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>Aprobaciones.Ant.Monitor.Table.Column.11}">
+						<Text text="{i18n>Aprobaciones.Ant.Monitor.Table.Column.12}"/>
+					</Column>
+					
+					<Column id="idCol13"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>Aprobaciones.Ant.Monitor.Table.Column.13}">
+						<Text text="{i18n>Aprobaciones.Ant.Monitor.Table.Column.13}"/>
+					</Column>
+					
+					<Column id="idCol14"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>Aprobaciones.Ant.Monitor.Table.Column.14}">
+						<Text text="{i18n>Aprobaciones.Ant.Monitor.Table.Column.14}"/>
+					</Column>
+					
+					<Column id="idCol15"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>Aprobaciones.Ant.Monitor.Table.Column.15}">
+						<Text text="{i18n>Aprobaciones.Ant.Monitor.Table.Column.15}"/>
+					</Column>
+					
+					<Column id="idCol16"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>Aprobaciones.Ant.Monitor.Table.Column.16}">
+						<Text text="{i18n>Aprobaciones.Ant.Monitor.Table.Column.14}"/>
+					</Column>
+					
+				</columns>
+			
+				<items>
+					<ColumnListItem
+						vAlign="Middle">
+						<cells>
+							<Text text="{mTables>CodigoProveedor}"/>
+							<Text text="{mTables>Proveedor}"/>
+							<Text text="{mTables>No.Solicitud}"/>
+							<Text text="{mTables>No.Anticipo}"/>
+							<Text text="{mTables>FechadeSolicitud}"/>
+							<Text text="{mTables>FechaDoc}"/>
+							<Text text="{mTables>FechaContabiliza}"/>
+							<Text text="{mTables>Importe}"/>
+							<Text text="{mTables>Moneda}"/>
+							<Text text="{mTables>TipoCambio}"/>
+							<Text text="{mTables>ImporteML}"/>
+							<Text text="{mTables>Estado}"/>
+							<Text text="{mTables>SolPago}"/>
+							<Text text="{mTables>Ejercicio}"/>
+							<Text text="{mTables>DocPago}"/>
+							<Text text="{mTables>Ejercicio_}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			
+			
+			
+			<Table
+				id="idTableAprobacionesComprob"
+				mode="MultiSelect"
+				visible="false"
+				inset="false"
+				items="{
+						path: 'mTables>/XXX'
+				}"
+				growing="true"
+				growingThreshold="100"
+				growingScrollToLoad="false"
+				itemPress="onItemPressAprobacionesComprob">
+				<headerToolbar>
+					<Toolbar id="idToolbarAprobacionesComprob">
+						<Title text="{i18n>Records-found}" level="H2"/>
+						<Title id="idCountTableAprobacionesComprob" text="(0)" level="H2"/>
+						<ToolbarSpacer/>
+						<!-- 
+						<Button icon="sap-icon://add"
+							text="{i18n>ComprobacionGastos.Form.LtaAnticipos.Button}"
+							press="onSettingsTableProveedores" />
+						 -->
+						 <Button id="idOpciones2"
+							text="{i18n>Popup.Button.Opciones}"
+							press="onPressOpcionesComprob" />
+						 <!-- <Button
+							text="{i18n>LtaComprobaciones.ToolBar.Button.3}"
+							press="onPressConsultar" />
+						<Button
+							text="{i18n>LtaComprobaciones.ToolBar.Button.4}"
+							press="onPressAprobar" /> -->
+						<!-- <Button
+							text="{i18n>LtaComprobaciones.ToolBar.Button.5}"
+							press="onPressRechazar" /> -->
+						<Button icon="sap-icon://table-column" press="onPersoPress" />
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column id="idCol21"
+						visible="{mManageControls>Aprobaciones.Comprob.Monitor.Table.Column.1}">
+						<Text text="{i18n>Aprobaciones.Comprob.Monitor.Table.Column.1}"/>
+					</Column>
+					<Column id="idCol22"
+						visible="{mManageControls>Aprobaciones.Comprob.Monitor.Table.Column.2}">
+						<Text text="{i18n>Aprobaciones.Comprob.Monitor.Table.Column.2}"/>
+					</Column>
+					<Column id="idCol23"
+						visible="{mManageControls>Aprobaciones.Comprob.Monitor.Table.Column.3}">
+						<Text text="{i18n>Aprobaciones.Comprob.Monitor.Table.Column.3}"/>
+					</Column>
+					
+					<Column id="idCol24"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>Aprobaciones.Comprob.Monitor.Table.Column.4}">
+						<Text text="{i18n>Aprobaciones.Comprob.Monitor.Table.Column.4}"/>
+					</Column>
+					
+					<Column id="idCol25"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>Aprobaciones.Comprob.Monitor.Table.Column.5}">
+						<Text text="{i18n>Aprobaciones.Comprob.Monitor.Table.Column.5}"/>
+					</Column>
+					
+					<Column id="idCol26"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>Aprobaciones.Comprob.Monitor.Table.Column.6}">
+						<Text text="{i18n>Aprobaciones.Comprob.Monitor.Table.Column.6}"/>
+					</Column>
+					
+					<Column id="idCol27"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>Aprobaciones.Comprob.Monitor.Table.Column.7}">
+						<Text text="{i18n>Aprobaciones.Comprob.Monitor.Table.Column.7}"/>
+					</Column>
+					
+					<Column id="idCol28"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>Aprobaciones.Comprob.Monitor.Table.Column.8}">
+						<Text text="{i18n>Aprobaciones.Comprob.Monitor.Table.Column.8}"/>
+					</Column>
+					
+					<Column id="idCol29"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>Aprobaciones.Comprob.Monitor.Table.Column.9}">
+						<Text text="{i18n>Aprobaciones.Comprob.Monitor.Table.Column.9}"/>
+					</Column>
+					
+					<Column id="idCol30"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>Aprobaciones.Comprob.Monitor.Table.Column.10}">
+						<Text text="{i18n>Aprobaciones.Comprob.Monitor.Table.Column.10}"/>
+					</Column>
+					
+					<Column id="idCol31"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>Aprobaciones.Comprob.Monitor.Table.Column.11}">
+						<Text text="{i18n>Aprobaciones.Comprob.Monitor.Table.Column.11}"/>
+					</Column>
+					
+					<Column id="idCol32"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>Aprobaciones.Comprob.Monitor.Table.Column.12}">
+						<Text text="{i18n>Aprobaciones.Comprob.Monitor.Table.Column.12}"/>
+					</Column>
+					
+				</columns>
+			
+				<items>
+					<ColumnListItem
+						vAlign="Middle">
+						<cells>
+							<Text text="{mTables>CodigoProveedor}"/>
+							<Text text="{mTables>Proveedor}"/>
+							<Text text="{mTables>No.Comprob}"/>
+							<Text text="{mTables>TipoDocumento}"/>
+							<Text text="{mTables>FechadeSolicitud}"/>
+							<Text text="{mTables>FechaDoc}"/>
+							<Text text="{mTables>FechaContabiliza}"/>
+							<Text text="{mTables>Importe}"/>
+							<Text text="{mTables>Anticipo}"/>
+							<Text text="{mTables>Saldo}"/>
+							<Text text="{mTables>Moneda}"/>
+							<Text text="{mTables>Estado}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			
+			<FlexBox height="100px"  />
+		</content>
+	</Page>
+</mvc:View>

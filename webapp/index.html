@@ -1,0 +1,849 @@
+<!DOCTYPE HTML>
+<html>
+
+<body class="sapUiBody sapUiSizeCompact" role="application" id="content" onload="onLoad()">
+	<!--<div id="splash-screen">
+		<img class="spinnImgSup" src="wisemobile/Public/Img/Logo_Wise.webp">
+	</div>-->
+</body>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- metadatas para limpiar cache -->
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Last-Modified" content="0">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, mustrevalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<!--  -->
+
+	<meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+	<title>Portal Proveedores QAS 520</title>
+
+	<link rel="stylesheet" type="text/css" href="wisemobile/Public/CSS/style.css" media="screen">
+
+	<script src="https://sapui5.hana.ondemand.com/1.71.69/resources/sap-ui-core.js" id="sap-ui-bootstrap"
+		data-sap-ui-libs="sap.m, sap.tnt,sap.uxap, sap.ui.commons, sap.ui.layout, sap.ui.table"
+		data-sap-ui-theme="sap_bluecrystal" data-sap-ui-compatVersion="1.16" data-sap-ui-xx-bindingSyntax="complex"
+		data-sap-ui-compatVersion="edge" data-sap-ui-resourceroots='{
+					"com.axiomasoluciones.wisemobile.Modulo_WiseMobile": "./wisemobile/Modulo_WiseMobile",
+					"com.axiomasoluciones.wisemobile": "./"
+				}'>
+				</script>
+	<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+	<script src="wisemobile/Public/JS/configuracionUsuario.js"></script>
+	<script src="wisemobile/Public/JS/colorPalette.js"></script>
+	<script src="wisemobile/Public/JS/xml2json.js"></script>
+
+	<!-- metadatas para limpiar cache -->
+	<script src="wisemobile/Public/JS/cachebuster.js"></script>
+	<!--  -->
+	<script>
+		sap.ui.localResources("wisemobile/Public/i18N");/* carpeta de titulos y propiedades*/
+		sap.ui.localResources("wisemobile/Public/Img");//carpeta de imagenes
+		sap.ui.localResources("wisemobile/Public/JsonTmp");//carpeta con datos
+		sap.ui.localResources("wisemobile/Public/JS");
+		sap.ui.localResources("wisemobile/Public/LibUtils");
+		sap.ui.localResources("wisemobile/Public/LibControls/Filters");
+		sap.ui.localResources("wisemobile/Public/LibControls/TablePag");
+
+
+		jQuery.sap.require("wisemobile.Public.LibControls.Filters.P13nFilterPanelVRD");
+		jQuery.sap.require("wisemobile.Public.LibControls.TablePag.TablePagVRD");
+		jQuery.sap.require("wisemobile.Public.LibUtils.Formatter");
+		jQuery.sap.require("wisemobile.Public.LibUtils.FHelps");
+		jQuery.sap.require("wisemobile.Public.LibUtils.ExportToExcel");
+		jQuery.sap.require("wisemobile.Public.LibUtils.DemoPersoService");
+		jQuery.sap.require("wisemobile.Public.LibUtils.Base64");
+		jQuery.sap.require("wisemobile.Public.JS.myJSONModel");
+		jQuery.sap.require("wisemobile.Public.JS.filters");
+		jQuery.sap.require("wisemobile.Public.JS.combos");
+
+		/*declara variable con modelo json  de sapUI5..
+		var moAction= new sap.ui.model.json.JSONModel();
+		sap.ui.getCore().setModel(moAction,"mAction");
+		*/
+		var sLangu = sap.ui.getCore().getConfiguration().getLanguage().toLowerCase(); // "es-Es";  idioma espaÃ±ol
+		sLangu = sLangu.split("-")[0];
+		//recursos del modelo
+		oI18nModel = new sap.ui.model.resource.ResourceModel({
+			bundleUrl: "wisemobile/Public/i18N/i18n.properties",
+			bundleLocale: sLangu
+		});
+		sap.ui.getCore().setModel(oI18nModel, "i18n");
+
+		/****** FILTERS ******/
+		var moFiltros = new sap.ui.model.json.JSONModel();
+		sap.ui.getCore().setModel(moFiltros, 'mFilt');
+		/* 
+		 * REEMPLAZADO POR 'onGetFiltersXTable'
+		jQuery.ajax("./wisemobile/Public/JsonTmp/filters.json", { // load the data from a relative URL (the Data.json file in the same directory)  
+			  dataType: "json",  
+			  success: function(data){
+				  
+				  moFiltros.setData(data);
+				  moFiltros.refresh();
+			  }
+		});
+		*/
+		var moFiltrosItems = new sap.ui.model.json.JSONModel();
+		sap.ui.getCore().setModel(moFiltrosItems, 'mFiltItems');
+
+		jQuery.ajax("./wisemobile/Public/JsonTmp/filtersItems.json", { // load the data from a relative URL (the Data.json file in the same directory)  
+			dataType: "json",
+			success: function (data) {
+
+				moFiltrosItems.setData(data);
+				moFiltrosItems.refresh();
+			}
+		});
+		/**** END-FILTERS ****/
+
+		function LogOut() {
+			// LOG OUT
+			if (sap.ui.getCore().User == undefined)
+				var sLanguA = sLangu;
+			else
+				var sLanguA = sap.ui.getCore().User.Language;
+
+			var oCore = sap.ui.getCore();
+
+			oCore.User = new Object();
+			oCore.User.Sesion = false;
+			oCore.User.Language = sLanguA.toUpperCase();
+
+			// Model update
+			if (oCore.getModel("mUser") != undefined) {
+				var aData = oCore.getModel("mUser").getData();
+				aData.User = oCore.User;
+				oCore.getModel("mUser").refresh();
+			}
+			console.log('User Undefined - com.axiomasoluciones.wisemobile.Modulo_WiseMobile');
+
+			oCore.byId("idBtnUser").setIcon("sap-icon://account");
+			//oCore.byId("idBtnUser").bindProperty("text", "i18n>ToolPage.Header.TooHeader.UserButton.Text" );
+			if (sap.ui.Device.system.phone === true)
+				oCore.byId("idBtnUser").bindProperty("text", "i18n>ToolPage.Header.TooHeader.UserButton.Text");
+			else
+				sap.ui.getCore().byId("idBtnUser").bindProperty("text", "i18n>Vacio");
+		};
+
+		function f_expandedSideNav(oBool) {
+			var oItems = sideNavigation.getItem().getItems()
+
+			for (var i = 0; i < oItems.length; i++) {
+				oItems[i].setExpanded(oBool);
+			}
+
+			var oFixeds = sideNavigation.getFixedItem().getItems();
+
+			for (var j = 0; j < oFixeds.length; j++) {
+				oFixeds[j].setExpanded(oBool);
+			}
+		};
+		// ToolPage..
+		function create_SideContent() {
+
+			var sideNavigation = new sap.tnt.SideNavigation("idSideNav", {
+				expanded: true,
+				itemSelect: function (oEvt) {
+					console.log("Se ejecuta itemselect");
+					var item = oEvt.getParameter('item');
+					//						var router = oC_Modulo_WiseMobile.getRouter(); //se declara en Component.js
+					//						var sesion = sap.ui.getCore().User.Sesion;
+
+					if (item.getKey() == "0") return;
+
+					var oCtrl = item.getCustomData()[0].getKey();
+
+					var string = oCtrl;
+					eval('var oController=' + string);
+					console.log(item.getKey());
+					oController.f_llamado(item.getKey());
+
+					toolPage.setSideExpanded(false);
+				},
+				item: new sap.tnt.NavigationList("idNavigationListMaster", {
+					expanded: true,
+					items: [
+						// Recepción Cotizaciones
+						new sap.tnt.NavigationListItem({
+							text: '{i18n>ToolPage.NavigationList.2}',
+							icon: 'sap-icon://documents',
+							key: '0',
+							visible: false,
+							items: [
+								//  Cotizaciones
+								new sap.tnt.NavigationListItem({
+									text: '{i18n>ToolPage.NavigationList.NavigationListItem.7}',
+									key: '7',
+									visible: sap.ui.getCore().getModel("mConfiguracion").getProperty("/1/PERMISOSV/0").INV_QUOTATION,
+									customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_P2P" })
+								}),
+								// Estatus Cotizaciones
+								new sap.tnt.NavigationListItem({
+									text: '{i18n>ToolPage.NavigationList.NavigationListItem.8}',
+									key: '8',
+									visible: sap.ui.getCore().getModel("mConfiguracion").getProperty("/1/PERMISOSV/0").INV_STATUS_QUOTATION,
+									customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_P2P" })
+								})
+							],
+							customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_P2P" })
+						}),
+						/* var REQ=sap.ui.getCore().getModel("mConfiguracion").getProperty("/0/PERMISOS/0").AppPurreq;
+						var OC=sap.ui.getCore().getModel("mConfiguracion").getProperty("/0/PERMISOS/0").AppPurord;
+						if(REQ==true || OC==true){ */
+
+						// Aprobaciones
+						new sap.tnt.NavigationListItem({
+							text: '{i18n>ToolPage.NavigationList.4}',
+							icon: 'sap-icon://approvals',
+							key: '0',
+							visible: false,
+							items: [
+								// Listado de Requisiciones por Autorizar
+								new sap.tnt.NavigationListItem({
+									text: '{i18n>ToolPage.NavigationList.NavigationListItem.9}',
+									key: '9',
+									visible: sap.ui.getCore().getModel("mConfiguracion").getProperty("/0/PERMISOS/0").AppPurreq,
+									customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_P2P" })
+								}),
+								//Listado de Ordenes de Compra por Autorizar
+								new sap.tnt.NavigationListItem({
+									text: '{i18n>ToolPage.NavigationList.NavigationListItem.10}',
+									key: '10',
+									visible: sap.ui.getCore().getModel("mConfiguracion").getProperty("/0/PERMISOS/0").AppPurord,
+									customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_P2P" })
+								})/*
+										new sap.tnt.NavigationListItem({
+											text: '{i18n>ToolPage.NavigationList.NavigationListItem.12}',
+											key: '-1',
+											customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_P2P" })
+										})*/
+							],
+							customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_P2P" })
+						}),
+						//}
+						//Envio de Facturas
+						new sap.tnt.NavigationListItem({
+							text: '{i18n>ToolPage.NavigationList.1}',
+							icon: 'sap-icon://expense-report',
+							key: '0',
+							visible: false,
+							items: [
+								new sap.tnt.NavigationListItem({
+									text: '{i18n>ToolPage.NavigationList.NavigationListItem.2}',
+									key: '2',
+									customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_P2P" })
+								}),
+								// ORR Buzón de facturas
+								/*
+								new sap.tnt.NavigationListItem({
+									text: 'Buzón de facturas',
+									key: '3',
+									customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_P2P" })
+								})
+								*/
+							],
+							customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_P2P" })
+						}),
+						//Recepción Complementos de pago
+						new sap.tnt.NavigationListItem({
+							text: '{i18n>ToolPage.NavigationList.5}',
+							icon: 'sap-icon://batch-payments',
+							key: '0',
+							visible: false,
+							items: [
+								new sap.tnt.NavigationListItem({
+									text: '{i18n>ToolPage.NavigationList.NavigationListItem.5}',
+									key: '5',
+									customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_P2P" })
+								})
+							],
+							customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_P2P" })
+						}),
+						//
+						//Consultas
+						new sap.tnt.NavigationListItem({
+							text: '{i18n>ToolPage.NavigationList.3}',
+							icon: 'sap-icon://course-book',
+							key: '0',
+							visible: false,
+							items: [
+								new sap.tnt.NavigationListItem({
+									text: '{i18n>ToolPage.NavigationList.NavigationListItem.1}',
+									key: '1',
+									visible: sap.ui.getCore().getModel("mConfiguracion").getProperty("/1/PERMISOSV/0").INV_LIST_PO,
+									customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_P2P" })
+								}),
+								new sap.tnt.NavigationListItem({
+									text: '{i18n>ToolPage.NavigationList.NavigationListItem.4}',
+									key: '4',
+									visible: sap.ui.getCore().getModel("mConfiguracion").getProperty("/1/PERMISOSV/0").INV_REC_STATUS,
+									customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_P2P" })
+								}),
+								new sap.tnt.NavigationListItem({
+									text: '{i18n>ToolPage.NavigationList.NavigationListItem.3}',
+									key: '3',
+									visible: sap.ui.getCore().getModel("mConfiguracion").getProperty("/1/PERMISOSV/0").INV_LIST_STATUS,
+									customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_P2P" })
+								}),
+								new sap.tnt.NavigationListItem({
+									text: '{i18n>ToolPage.NavigationList.NavigationListItem.6}',
+									key: '6',
+									visible: sap.ui.getCore().getModel("mConfiguracion").getProperty("/1/PERMISOSV/0").INV_ACC_STATUS,
+									customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_P2P" })
+								})
+							],
+							customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_P2P" })
+						}),
+						//
+						//Avisos
+						new sap.tnt.NavigationListItem({
+							text: '{i18n>ToolPage.NavigationList.NavigationListItem.11}',
+							icon: 'sap-icon://bell',
+							key: '11',
+							visible: false,
+							customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_P2P" })
+						}),
+						//
+
+						new sap.tnt.NavigationListItem({
+							text: '{i18n>ToolPage.NavigationList.NavigationListItem.21}',
+							icon: 'sap-icon://add-activity-2',
+							key: '21',
+							customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_CG" })
+						}),
+						new sap.tnt.NavigationListItem({
+							text: '{i18n>ToolPage.NavigationList.NavigationListItem.22}',
+							icon: 'sap-icon://notes',
+							key: '22',
+							customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_CG" })
+						}),
+						new sap.tnt.NavigationListItem({
+							text: '{i18n>ToolPage.NavigationList.NavigationListItem.23}',
+							icon: 'sap-icon://activity-items',
+							key: '23',
+							customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_CG" })
+						}),
+						new sap.tnt.NavigationListItem({
+							text: '{i18n>ToolPage.NavigationList.NavigationListItem.24}',
+							icon: 'sap-icon://expense-report',
+							key: '24',
+							customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_CG" })
+						}),
+						new sap.tnt.NavigationListItem({
+							text: '{i18n>ToolPage.NavigationList.NavigationListItem.25}',
+							icon: 'sap-icon://approvals',
+							key: '0',
+							items: [
+								new sap.tnt.NavigationListItem({
+									text: '{i18n>ToolPage.NavigationList.NavigationListItem.25.1}',
+									key: '25.1',
+									customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_CG" })
+								}),
+								new sap.tnt.NavigationListItem({
+									text: '{i18n>ToolPage.NavigationList.NavigationListItem.25.2}',
+									key: '25.2',
+									customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_CG" })
+								}),
+							],
+							customData: new sap.ui.core.CustomData({ key: "oCtrl_Main_CG" })
+						})
+					]
+				}).attachItemSelect(function (oEvt) {
+					var oSelectedItem = oEvt.getParameter("item");
+
+					if (oSelectedItem.mProperties.key == "9" || oSelectedItem.mProperties.key == "10") {
+						//sap.ui.getCore().getModel("mUser").getProperty("/env:Envelope/env:Body/_-wi20_-fmWsLoginUserResponse/ImOutLogin").Bname=Bname;
+					}
+					else {
+						//sap.ui.getCore().getModel("mUser").getProperty("/env:Envelope/env:Body/_-wi20_-fmWsLoginUserResponse/ImOutLogin").Nombre=Name;
+					}
+					var oExpanded = oSelectedItem.getExpanded();
+					if (oExpanded === false) {
+						var oNavigationList = oEvt.getSource();
+						var oItems = oNavigationList.getItems();
+						for (var i = 0; i < oItems.length; i++) {
+							oItems[i].collapse();
+						}
+						oSelectedItem.expand();
+					}
+				}).addEventDelegate({
+					onAfterRendering: function (oEvt) {
+						var oItems = oEvt.srcControl.getItems();
+						for (var i = 1; i < oItems.length; i++) {
+							oItems[i].collapse();
+						}
+						for (var i = 0; i < oItems.length; i++) {
+							var oIconControl = oItems[i].getAggregation("_expandIconControl");
+
+							if (oIconControl == null) return;
+
+							oIconControl.attachPress(function (oEvent) {
+								var oSelectedItem = oEvent.getSource().getParent();
+								var oExpanded = oSelectedItem.getExpanded();
+								if (oExpanded === false) {
+									var oNavigationList = oEvent.getSource().getParent().getParent();
+									var oItems = oNavigationList.getItems();
+									for (var i = 0; i < oItems.length; i++) {
+										oItems[i].collapse();
+									}
+									oSelectedItem.collapse();
+								}
+							});
+						}
+					}
+				}, this),
+				fixedItem: new sap.tnt.NavigationList({
+					items: [
+						/*
+						
+						*/
+					]
+				}).attachItemSelect(function (oEvt) {
+					var oSelectedItem = oEvt.getParameter("item");
+					var oExpanded = oSelectedItem.getExpanded();
+					if (oExpanded === false) {
+						var oNavigationList = oEvt.getSource();
+						var oItems = oNavigationList.getItems();
+						for (var i = 0; i < oItems.length; i++) {
+							oItems[i].collapse();
+						}
+						oSelectedItem.expand();
+					}
+				})
+			});
+
+			return sideNavigation;
+		};
+		// bar titulos e iconos 
+		var toolPage = new sap.tnt.ToolPage("TntToolPage", {
+			sideExpanded: false,
+			header: new sap.tnt.ToolHeader({
+				content: [
+					new sap.m.Button("idBtnMenu", {
+						visible: false,
+						icon: "sap-icon://menu2",
+						press: function () {
+							var sideExpanded = toolPage.getSideExpanded();
+							toolPage.setSideExpanded(!toolPage.getSideExpanded());
+						},
+						type: "Transparent"
+					}).addStyleClass("ZsapMBtnTP"),
+					new sap.m.Button({
+						icon: "sap-icon://home",
+						press: function () {
+							//var router = sap.ui.core.UIComponent.getRouterFor(oCtrl_Home);
+							//var sesion = sap.ui.getCore().User.Sesion;
+							if (sesion) {
+								var app = sap.ui.getCore().byId("Modulos_wisemobile_Hom_Page");
+								var oViewId = app.getCurrentPage().getId();
+
+								if (oViewId == "idRLogin")
+									return;
+
+								var router = oC_Modulo_WiseMobile.getRouter(); //se declara en Component.js
+								router.navTo("Menu", {}, false);
+							}
+						},
+						type: "Transparent"
+					}).addStyleClass("ZsapMBtnTP"),
+					// ORR
+					new sap.m.Image({
+						src: 'wisemobile/Public/Img/Logo_Wise.webp',
+						width: "20px",
+						height: "20px"
+					}),
+					new sap.m.ToolbarSpacer(),
+					//new sap.m.Title({ text: "{i18n>ToolPage.Header.ToolHeader.Title}", textAlign: "Center" }),
+					new sap.m.Title(""),
+					/*
+					new sap.m.Image({
+						src: 'wisemobile/Public/Img/Logo_Wise.webp',
+						width: "20px",
+						height: "20px"
+					}),
+					*/
+					new sap.m.ToolbarSpacer(),
+					new sap.m.Switch("idCamniarLenguaje", {
+						customTextOff: "EN",
+						customTextOn: "ES",
+						state: true,
+						change: function () {
+							oCtrl_Login.onSetLanguageSwitch();
+						}
+					}),
+					/*
+					new sap.m.Button({
+						icon: "sap-icon://bell"
+					}).addStyleClass("notificationButton"),
+					*/
+					new sap.m.Button("idBtnCambiarContra", {
+						text: "{i18n>Login.Cambiar}",
+						icon: "sap-icon://key",
+						press: function () {
+							oCtrl_Login.onPressCambiar();
+						}
+					}).addStyleClass("ZsapMLnkTP"),
+
+					new sap.m.Link("idBtnBack_2", {
+						text: "{i18n>ToolPage.Header.TooHeader.Regresar.Text}",
+						press: function () {
+							onBackGlobal()
+						}
+					}).addStyleClass("ZsapMLnkTP"),
+					new sap.m.Button("idBtnUser", {
+						icon: "sap-icon://account",
+						//text:"{i18n>ToolPage.Header.TooHeader.UserButton.Text}",
+						press: function (oEvt) {
+							//var sesion = sap.ui.getCore().User.Sesion;
+							if (sesion) {
+								var that = this;
+								var oButton = oEvt.getSource();
+
+								if (this._actsheet == undefined)
+									this._actsheet = new sap.m.ActionSheet({
+										placement: "Auto",
+										buttons: [
+											/*
+											new sap.m.Button("idName", {
+												text: "{mUser>/SOAP:Envelope/SOAP:Body/n0:_-WI20_-FM_WS_LOGIN_USER.Response/IM_OUT_LOGIN/USERNAME}",
+												press: function (oEvt) {
+	
+												}
+											}),
+											*/
+											// ORR Se añade el nombre del proveedor
+											new sap.m.Button("idName", {
+												text: {
+													parts: [
+														{ path: "mUser>/SOAP:Envelope/SOAP:Body/n0:_-WI20_-FM_WS_LOGIN_USER.Response/IM_OUT_LOGIN/USERNAME" },
+														{ path: "mUser>/Name" } //nombre del usuario
+
+													],
+													formatter: function (Lifnr, Name) {
+														return Lifnr + " - " + Name; // Concatena num de proveedor y name
+													}
+												},
+												press: function (oEvt) {
+
+												}
+											}),
+											new sap.m.Button("idCerrarSesion", {
+												text: "{i18n>Cerrar.Sesion}",
+												press: function (oEvt) {
+													var router = oC_Modulo_WiseMobile.getRouter(); //se declara en Component.js
+													toolPage.setSideExpanded(false);
+													if (!sesion) {
+														router.navTo("Login", {}, false);
+														// ORR Recargar página al cerrar sesión
+														location.reload();
+													}
+													else
+														if (sesion) {
+															var dialog = new sap.m.Dialog({
+																title: '{i18n>Confirmar}',
+																icon: 'sap-icon://message-information',
+																type: 'Message',
+																content: new sap.m.Text({ text: '{i18n>Desea-cerrar-sesion}' }),
+																beginButton: new sap.m.Button({
+																	text: '{i18n>Popup.Button.Aceptar}',
+																	press: function () {
+																		// LOG OUT
+																		//LogOut();
+																		// ORR
+																		var toolbarText = sap.ui.getCore().byId("__title0");
+																		toolbarText.setText("Portal proveedores");
+																		//
+																		sesion = false;
+																		router.navTo("Login", {}, false);
+																		dialog.close();
+																		// ORR Recargar página al cerrar sesión
+																		location.reload();
+																	}
+																}),
+																endButton: new sap.m.Button({
+																	text: '{i18n>Popup.Button.Cancelar}',
+																	press: function () {
+																		dialog.close();
+																	}
+																}),
+																afterClose: function () {
+																	dialog.destroy();
+																}
+															}).addStyleClass("ResponsiveDialog");
+
+															dialog.open();
+														}
+												}
+											})
+										]
+									});
+
+								this._actsheet.openBy(oButton);
+								/* 							var router = oC_Modulo_WiseMobile.getRouter(); //se declara en Component.js
+															toolPage.setSideExpanded(false);
+															if(!sesion){
+																router.navTo("Login", {}, false);
+															}
+															else if(sesion){
+																var dialog = new sap.m.Dialog({
+																	title: '{i18n>Confirmar}',
+																	icon: 'sap-icon://message-information',
+																	type: 'Message',
+																	content: new sap.m.Text({ text: '{i18n>Desea-cerrar-sesion}' }),
+																	beginButton: new sap.m.Button({
+																		text: '{i18n>Popup.Button.Aceptar}',
+																		press: function () {
+																			// LOG OUT
+																			//LogOut();
+																			sesion=false;
+																			router.navTo("Login", {}, false);
+																			dialog.close();
+																		}
+																	}),
+																	endButton: new sap.m.Button({
+																		text: '{i18n>Popup.Button.Cancelar}',
+																		press: function () {
+																			dialog.close();
+																		}
+																	}),
+																	afterClose: function() {
+																		dialog.destroy();
+																	}
+																}).addStyleClass("ResponsiveDialog");
+							
+																dialog.open();
+															} */
+							}
+
+						},
+						type: "Transparent"
+					}).addStyleClass("ZsapMBtnTP")
+				]
+			}),
+			//sideContent: sideNavigation
+		});
+
+		function AddContentToolPage(pContainer) {
+			toolPage.removeAllMainContents();
+			toolPage.addMainContent(pContainer);
+		};
+		// mostrar el home de la pagina en el centro..
+		var Modulo_WiseMobile_App = new sap.ui.core.ComponentContainer("Modulo_WiseMobile_HomeContainer", {
+			name: 'com.axiomasoluciones.wisemobile'
+		});
+
+		var oRouter = new sap.ui.core.routing.Router();
+
+		oRouter.addRoute({
+			pattern: "",
+			name: "_home",
+			callback: function () {
+				AddContentToolPage(Modulo_WiseMobile_App);
+			}
+		});
+
+		function onBackGlobal() {
+			var app = sap.ui.getCore().byId("Modulos_wisemobile_Hom_Page");
+
+			var sidPage = app.getCurrentPage().getController();
+			//console.log(sidPage.oView.sId);
+
+			if (sidPage.oView.sId === "idRMenu") {
+				// ORR Recargar página al cerrar sesión
+				location.reload();
+			} else {
+				app.getCurrentPage().getController().back();
+			}
+
+
+		};
+
+		oRouter.register("app");
+		oRouter.initialize();
+
+	</script>
+
+	<script>
+		var oDireccion;
+
+		function onLoad() {
+			//console.log('onLoad called deviceready - index');
+			toolPage.placeAt("content");
+			setTimeout(function () {
+				TntToolPage_Borde(false);
+				onTapView();
+			}, 750);
+		};
+		function onTapView() {
+
+			if (sap.ui.Device.support.touch) {
+				document.querySelector('#TntToolPage-main').addEventListener(
+					"touchstart",
+					function (e) {
+						toolPage.setSideExpanded(false);
+					}
+				);
+			}
+			else {
+				document.querySelector('#TntToolPage-main').addEventListener(
+					"click",
+					function (e) {
+						toolPage.setSideExpanded(false);
+					}
+				);
+			}
+
+		};
+		function TntToolPage_Borde(borde) {
+
+			if (sap.ui.Device.system.phone === true) { //Desktop
+				return;
+			}
+			else { //Desktop Tablet
+				var oTntToolPage = document.getElementById("TntToolPage-main");
+				if (oTntToolPage == undefined) {
+					sesion = false;
+					var url = window.location.href.replace(window.location.hash, '')
+					window.location.replace(url);
+				} else {
+					oTntToolPage.className = oTntToolPage.className.replace(/(?:^|\s)TntTool_sinBorde(?!\S)/g, '');
+					oTntToolPage.className = oTntToolPage.className.replace(/(?:^|\s)TntTool_conBorde(?!\S)/g, '');
+
+					var oZIndex = -1;
+
+					if (borde == true) {
+						oTntToolPage.className += " TntTool_conBorde";
+						oZIndex = 1;
+					}
+					else {
+						oTntToolPage.className += " TntTool_sinBorde";
+						oZIndex = -1;
+					}
+
+					//app //user
+					$('head').append('<style data-style="app">.sap-desktop .sapTntToolPageAside, .sap-tablet .sapTntToolPageAside{z-index: ' + oZIndex + ' !important;}</style>');
+				}
+			}
+		};
+		function f_Show_Hide_TntToolPage_Items(oMyKey) {
+
+			var oList = sap.ui.getCore().byId("idNavigationListMaster").getItems();
+
+			if (oMyKey == undefined) {
+				for (var i = 0; i < oList.length; i++) {
+					oList[i].setVisible(false);
+				}
+				return;
+			}
+
+			var REQ_AUT = sap.ui.getCore().getModel("mConfiguracion").getProperty("/0/PERMISOS/0").AppPurreq;
+			var OC_AUT = sap.ui.getCore().getModel("mConfiguracion").getProperty("/0/PERMISOS/0").AppPurord;
+
+			var EF_COD_CDFDI = sap.ui.getCore().getModel("mConfiguracion").getProperty("/1/PERMISOSV/0").INV_OC_CFDI;
+			var EF_COD_SDFDI = sap.ui.getCore().getModel("mConfiguracion").getProperty("/1/PERMISOSV/0").INV_OC_NORMAL;
+			var EF_SOD_CDFDI = sap.ui.getCore().getModel("mConfiguracion").getProperty("/1/PERMISOSV/0").INV_WO_OC_CFDI;
+			var EF_SOD_SDFDI = sap.ui.getCore().getModel("mConfiguracion").getProperty("/1/PERMISOSV/0").INV_WO_OC_NORMAL;
+			var EF_ADD_OTHER_PDF = sap.ui.getCore().getModel("mConfiguracion").getProperty("/1/PERMISOSV/0").INV_ADD_OTHER_PDF;
+			var EF_CONSIGM = sap.ui.getCore().getModel("mConfiguracion").getProperty("/1/PERMISOSV/0").INV_CONSIGM;
+			var LF = sap.ui.getCore().getModel("mConfiguracion").getProperty("/1/PERMISOSV/0").INV_LIST_STATUS;
+			var OC_FAC = sap.ui.getCore().getModel("mConfiguracion").getProperty("/1/PERMISOSV/0").INV_LIST_PO;
+			var EC = sap.ui.getCore().getModel("mConfiguracion").getProperty("/1/PERMISOSV/0").INV_ACC_STATUS;
+			var ER = sap.ui.getCore().getModel("mConfiguracion").getProperty("/1/PERMISOSV/0").INV_REC_STATUS;
+			var COT = sap.ui.getCore().getModel("mConfiguracion").getProperty("/1/PERMISOSV/0").INV_QUOTATION;
+			var EST_COT = sap.ui.getCore().getModel("mConfiguracion").getProperty("/1/PERMISOSV/0").INV_STATUS_QUOTATION;
+			var COM_PAG = sap.ui.getCore().getModel("mConfiguracion").getProperty("/1/PERMISOSV/0").PAY_LIST_STATUS;
+			var AVI = sap.ui.getCore().getModel("mConfiguracion").getProperty("/1/PERMISOSV/0").INV_MESSAGE;
+
+
+			for (var i = 0; i < oList.length; i++) {
+				var oKey = oList[i].getCustomData()[0].getKey();
+
+				if (oMyKey == oKey) {
+					if (REQ_AUT == true || OC_AUT == true) {
+						oList[1].setVisible(true);
+					}
+
+					if ((EF_COD_CDFDI == true || EF_COD_SDFDI == true || EF_SOD_CDFDI == true || EF_SOD_SDFDI == true || EF_CONSIGM == true)) {
+						oList[2].setVisible(true);
+					}
+
+					if (COM_PAG == true) {
+						oList[3].setVisible(true);
+					}
+
+					if ((LF == true || OC_FAC == true || EC == true || ER == true)) {
+						oList[4].setVisible(true);
+					}
+
+					if ((EST_COT == true || COT == true)) {
+						oList[0].setVisible(true);
+					}
+
+					if (AVI == true) {
+						oList[5].setVisible(true);
+					}
+
+				}
+				else {
+					oList[i].setVisible(false);
+				}
+
+			}
+		};
+		function removeStyleForHead(Opc, callback) {
+			var hs = document.getElementsByTagName('style');
+			/*
+			// ELIMINAR TAG STYLE A EXCEPCION DEL PRIMER STYLE: UI5
+			var i = hs.length -1;
+			while(i >= 0) {
+			    
+				if(hs[i].getAttribute("data-style") == "user") hs[i].parentNode.removeChild(hs[i]);
+				i--;
+			}
+			*/
+			if (Opc != undefined) {
+				for (var i = hs.length - 1; i >= 0; --i) {
+					if (hs[i].getAttribute("data-opc") == Opc) hs[i].parentNode.removeChild(hs[i]);
+				}
+			}
+			else
+				for (var i = hs.length - 1; i >= 0; --i) {
+					if (hs[i].getAttribute("data-style") == "user") hs[i].parentNode.removeChild(hs[i]);
+				}
+
+			if (callback) callback();
+		};
+
+		function getStyleForHead(Opc, callback) {
+			var hs = document.getElementsByTagName('style');
+			/*
+			if(Opc != undefined){
+				for (var i = hs.length - 1; i >= 0; --i) {
+					if(hs[i].getAttribute("data-opc") == Opc) hs[i].parentNode.removeChild(hs[i]);
+				}
+			}
+			else
+				for (var i = hs.length - 1; i >= 0; --i) {
+					if(hs[i].getAttribute("data-style") == "user") hs[i].parentNode.removeChild(hs[i]);
+				}
+			*/
+			var Color;
+
+			for (var i = 0; i < hs.length; i++) {
+				if (hs[i].getAttribute("data-opc") == Opc) {
+					Color = hs[i].getAttribute("data-color");
+					break;
+				}
+			}
+
+			return Color;
+		};
+
+	</script>
+
+</head>
+
+</html>

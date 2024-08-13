@@ -1,0 +1,173 @@
+<mvc:View
+	controllerName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.GondiQA.controller.EstatusCotizaciones"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m">
+	<Page id="idPage" showHeader="false" floatingFooter="true">
+		<subHeader>
+			<Toolbar design="Solid" class="toolbarColorCydsa">
+				<Label text="{i18n>EstatusCotizaciones.title}" design="Bold" class="toolbarTextColor"/>
+			</Toolbar>
+		</subHeader>
+		<content>
+			<f:SimpleForm id="simpleFormEstatusCotizaciones" editable="true" layout="ResponsiveGridLayout" title="{i18n>FilterPanel.Title}">
+    			<f:content>
+					<Label text="{i18n>Filters.razon_social}" width="100%"/>
+					<ComboBox id="comboRazonSocial"
+					items="{mCombos>/SOCIEDADES_ZW12}"
+					change="" width="50%">
+					<core:ListItem key="{mCombos>BUKRS}" text="{mCombos>BUTXT}" />
+					</ComboBox>
+					
+					<Label text="{i18n>Filters.peticion_oferta}" width="100%"/>
+					<Input id="inputPeticionOferta" width="50%"/>
+					
+					<Label text="{i18n>Filters.f_licitacion}" width="100%"/>
+					<HBox>
+					<DatePicker
+					id="datePickerFrom"
+					placeholder="{i18n>Filters.fecha_inicial}"
+					change="" valueFormat="yyyy-MM-dd"/>
+					<Text text="-" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
+					<DatePicker
+					id="datePickerTo"
+					placeholder="{i18n>Filters.fecha_final}"
+					change="" valueFormat="yyyy-MM-dd"/>
+					</HBox>
+					
+					<Label text="{i18n>Filters.estado}" width="100%"/>
+					<ComboBox id="comboEstado"
+					items="{mCombos>/ESTADO_COTIZACIONES}"
+					change="" width="50%">
+					<core:ListItem key="{mCombos>TIPO}" text="{mCombos>TEXT}" />
+					</ComboBox>
+
+    			</f:content>
+			</f:SimpleForm>
+			<Button text="{i18n>FilterPanel.Button.1}" press="onPressFiltrar" class="sapUiSmallMarginBegin sapUiSmallMarginTop" type="Accept" icon="sap-icon://filter"/>
+			
+			<Table
+				id="idTableEstatusCotizaciones"
+				mode="None"
+				inset="false"
+				items="{
+						path: 'mTablesEstCotizaciones>/DOC_ESTCOTIZACIONES'
+				}"
+				growing="true"
+				growingThreshold="100"
+				growingScrollToLoad="false"
+				itemPress="onItemPressOrdnCompraXFacturar">
+				<headerToolbar>
+					<Toolbar id="idToolbarEstatusCotizaciones">
+						<Title text="{i18n>Records-found}" titleStyle="H6"/>
+						<Title id="idCountTableEstatusCotizaciones" text="(0)" titleStyle="H6"/>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://table-column" press="onPersoPress" />
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					
+					<Column id="idCol1"
+						visible="{mManageControls>EstatusCotizaciones.Monitor.Table.Column.1}">
+						<Text text="{i18n>Cotizaciones.Monitor.Table.Column.1}"/>
+					</Column>
+					<Column id="idCol2"
+						visible="{mManageControls>EstatusCotizaciones.Monitor.Table.Column.2}">
+						<Text text="{i18n>Cotizaciones.Monitor.Table.Column.2}"/>
+					</Column>
+					<Column id="idCol3"
+						visible="{mManageControls>EstatusCotizaciones.Monitor.Table.Column.3}">
+						<Text text="{i18n>Cotizaciones.Monitor.Table.Column.3}"/>
+					</Column>
+					
+					<Column id="idCol4"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>EstatusCotizaciones.Monitor.Table.Column.4}">
+						<Text text="{i18n>Cotizaciones.Monitor.Table.Column.4}"/>
+					</Column>
+					
+					<Column id="idCol5"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>EstatusCotizaciones.Monitor.Table.Column.5}">
+						<Text text="{i18n>Cotizaciones.Monitor.Table.Column.5}"/>
+					</Column>
+					
+					<Column id="idCol6"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>EstatusCotizaciones.Monitor.Table.Column.6}">
+						<Text text="{i18n>Cotizaciones.Monitor.Table.Column.6}"/>
+					</Column>
+					
+					<Column id="idCol7"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>EstatusCotizaciones.Monitor.Table.Column.7}">
+						<Text text="{i18n>Cotizaciones.Monitor.Table.Column.7}"/>
+					</Column>
+					
+					<Column id="idCol8"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>EstatusCotizaciones.Monitor.Table.Column.8}">
+						<Text text="{i18n>Cotizaciones.Monitor.Table.Column.8}"/>
+					</Column>
+					<Column id="idCol9"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>EstatusCotizaciones.Monitor.Table.Column.9}">
+						<Text text="{i18n>Cotizaciones.Monitor.Table.Column.10}"/>
+					</Column>
+					
+					<Column id="idCol10"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>EstatusCotizaciones.Monitor.Table.Column.10}">
+						<Text text="{i18n>Cotizaciones.Monitor.Table.Column.9}"/>
+					</Column>
+					
+					<Column id="idCol11"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>EstatusCotizaciones.Monitor.Table.Column.11}">
+						<Text text="{i18n>Cotizaciones.Monitor.Table.Column.11}"/>
+					</Column>
+					
+					
+					
+				</columns>
+			
+				<items>
+					<ColumnListItem
+						vAlign="Middle">
+						<cells>
+							<Text text="{mTablesEstCotizaciones>EBELN}"/>
+							<Text text="{mTablesEstCotizaciones>EBELP}"/>
+							<Text text="{mTablesEstCotizaciones>BEDAT}"/>
+							<Text text="{mTablesEstCotizaciones>ANGDT}"/>
+							<Text text="{mTablesEstCotizaciones>MATNR}"/>
+							<Text text="{mTablesEstCotizaciones>TXZ01}"/>
+							<Text text="{mTablesEstCotizaciones>KTMNG}"/>
+							<Text text="{mTablesEstCotizaciones>MEINS}"/>
+							<Text text="{path: 'mTablesEstCotizaciones>NETPR', formatter: '.formatter.formatCurrency'}"/>
+							<Text text="{mTablesEstCotizaciones>STATUS}"/>
+							<Button 
+								tooltip="{i18n>DownloadFile}"
+								press="onDownload"
+								icon="{path: 'mTablesEstCotizaciones>STATUS', formatter: 'util.Formatter.OrdnCompra'}"
+								visible="{path: 'mTablesEstCotizaciones>STATUS', formatter: 'util.Formatter.Visible_OrdnCompra'}"  />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			
+			<FlexBox height="100px"  />
+	
+			
+		</content>
+	</Page>
+</mvc:View>               

@@ -1,0 +1,85 @@
+<mvc:View height="100%"
+	controllerName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.ApplicationManager.controller.DetalleAplicacion"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns:table="sap.ui.table"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns="sap.m">
+	<Page showHeader="false" enableScrolling="true">
+		<content>
+			<Panel backgroundDesign="Solid">
+ 				<content>
+				<f:Form id="idfoApp"
+						editable="true"
+						class="isReadonly">
+						<f:title>
+							<core:Title text="{i18n>DetalleAplicacion.Form.1.Title}" />
+						</f:title>
+						<f:layout>
+							<f:ResponsiveGridLayout labelSpanXL="4"
+								labelSpanL="4" labelSpanM="4" labelSpanS="12"
+								adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"
+								emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2"
+								columnsM="2" singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer id="idfoApp1_input">
+								<f:formElements>
+									<f:FormElement label="{i18n>MonitorAplicaciones.Table.Column.1}">
+										<f:fields>
+											<Input value="{mAplicaciones>id_app}" id="inputIdApp"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="{i18n>MonitorAplicaciones.Table.Column.2}">
+										<f:fields>
+											<Input value="{mAplicaciones>nombre_app}" id="inputNombreApp"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="{i18n>MonitorAplicaciones.Table.Column.3}">
+										<f:fields>
+											<Input value="{mAplicaciones>descripcion}" id="inputDescripcion"/>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+							<f:FormContainer id="idfoApp2_input">
+								<f:formElements>
+									<f:FormElement label="{i18n>MonitorAplicaciones.Table.Column.4}">
+										<f:fields>
+											<Input value="{mAplicaciones>ruta}" id="inputRuta"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="{i18n>MonitorAplicaciones.Table.Column.5}">
+										<f:fields>
+											<Input value="{mAplicaciones>id_grupo}" id="inputIdGrupo"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement id="idformLabelSwitch" label="{i18n>MonitorAplicaciones.Table.Column.8}">
+										<Switch id="switchActivo" state="{mAplicaciones>activo}" 
+										    customTextOn="{i18n>DetalleAplicacion.Form.Switch.On}"
+										    customTextOff="{i18n>DetalleAplicacion.Form.Switch.Off}">
+										</Switch>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</content>
+			</Panel>
+		</content>
+		<footer>
+			<Bar>
+				<contentMiddle>
+					<Button text="{i18n>DetalleUsuario.Footer.Button.1}"  id="btnEdit" 	 visible="false" press="onPressEdit"	/>
+					<Button text="{i18n>DetalleUsuario.Footer.Button.2}"  id="btnDelete"  visible="false" press="onPressDelete"	/>
+					<Button text="{i18n>DetalleUsuario.Footer.Button.3}"  id="btnSave" 	 visible="false" press="onPressSave"	/>
+					<Button text="{i18n>DetalleUsuario.Footer.Button.4}"  id="btnCancel"  visible="false" press="onPressCancel"	/>
+				</contentMiddle>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>
+
+                

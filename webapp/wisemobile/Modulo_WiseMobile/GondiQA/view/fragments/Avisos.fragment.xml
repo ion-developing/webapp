@@ -1,0 +1,21 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<VBox class="sapUiSmallMargin">
+	
+		<List
+			items="{path: 'mTablesAvisosPopUp>/DOC_AVISOS'}"			
+			growing="true"
+			growingThreshold="100"
+			growingScrollToLoad="false">
+			<StandardListItem
+				title="{mTablesAvisosPopUp>FECHA} - {mTablesAvisosPopUp>TITULO}"
+				description="{mTablesAvisosPopUp>CUERPO}"
+				icon="{ProductPicUrl}"
+				iconDensityAware="false"
+				iconInset="false" />
+		</List>
+	</VBox>
+</core:FragmentDefinition>

@@ -1,0 +1,226 @@
+<mvc:View height="100%"
+	controllerName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.Roles.controller.DetalleRol"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns:table="sap.ui.table"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns="sap.m">
+	<Page showHeader="false" enableScrolling="true">
+		<content>
+			<Panel backgroundDesign="Solid">
+ 				<content>
+				<f:Form id="idfoRol"
+						editable="true"
+						class="isReadonly">
+						<f:title>
+							<core:Title text="{i18n>DetalleRol.Form.1.Title}" />
+						</f:title>
+						<f:layout>
+							<f:ResponsiveGridLayout labelSpanXL="3"
+								labelSpanL="3" labelSpanM="3" labelSpanS="12"
+								adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"
+								emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1"
+								columnsM="1" singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer id="idfoRol1_input">
+								<f:formElements>
+									<f:FormElement label="{i18n>MonitorRoles.Table.Column.1}">
+										<f:fields>
+											<Input value="{mRoles>id_rol}" id="inputIdRol"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="{i18n>MonitorRoles.Table.Column.2}">
+										<f:fields>
+											<Input value="{mRoles>nombre_rol}" id="inputNombre"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement id="idformLabelSwitch" label="{i18n>MonitorRoles.Table.Column.3}">
+										<Switch id="switchActivo" state="{mRoles>activo}" 
+										    customTextOn="{i18n>DetalleRol.Form.Switch.On}"
+										    customTextOff="{i18n>DetalleRol.Form.Switch.Off}">
+										</Switch>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+					<f:Form id="idfoRol2"
+						editable="true"
+						class="isReadonly">
+						<f:title>
+							<core:Title text="{i18n>DetalleRol.Form.2.Title}" />
+						</f:title>
+						<f:layout>
+							<f:ResponsiveGridLayout labelSpanXL="3"
+								labelSpanL="3" labelSpanM="3" labelSpanS="12"
+								adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"
+								emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1"
+								columnsM="1" singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer id="idfoRol2_input">
+								<f:formElements>
+									<f:FormElement label="">
+										<f:fields>
+											<!-- <table:Table
+												id="idTMonitorPermiso"
+												selectionMode="MultiSelect"
+												rows="{mMonitorAplicaciones>/Aplicaciones}"
+												visibleRowCount="7"
+												filter="onfilterTable"
+												enableColumnFreeze="true"
+												ariaLabelledBy="title"
+												cellClick ="listSelect">
+												
+												<table:toolbar>
+													<Toolbar design="Info">
+														<Title id="idTitleCount" text="(0)"></Title>
+								 						<ToolbarSpacer/>
+								 					</Toolbar>
+												</table:toolbar>
+												<table:columns>
+													<table:Column 
+														sortProperty="ID_ROL"
+														filterProperty="">
+														<Label text="{i18n>MonitorAplicaciones.Table.Column.1}" />
+														<table:template>
+															<Text text="{mMonitorAplicaciones>id_app}"/>
+														</table:template>
+													</table:Column>
+													<table:Column
+														sortProperty="DESCRIPCION"
+														filterProperty="DESCRIPCION"
+														defaultFilterOperator="Contains">
+														<Label text="{i18n>MonitorAplicaciones.Table.Column.2}" />
+														<table:template>
+														<Text text="{mMonitorAplicaciones>nombre_app}"/>
+														</table:template>
+													</table:Column>
+													<table:Column
+														sortProperty="ACTIVO"
+														filterProperty="ACTIVO"
+														defaultFilterOperator="Contains">
+														<Label text="{i18n>MonitorAplicaciones.Table.Column.3}" />
+														<table:template>
+														<Text text="{mMonitorAplicaciones>descripcion}"/>
+														</table:template>
+													</table:Column>
+													<table:Column
+														sortProperty="ACTIVO"
+														filterProperty="ACTIVO"
+														defaultFilterOperator="Contains">
+														<Label text="{i18n>MonitorAplicaciones.Table.Column.4}" />
+														<table:template>
+														<Text text="{mMonitorAplicaciones>ruta}"/>
+														</table:template>
+													</table:Column>
+													<table:Column
+														sortProperty="ACTIVO"
+														filterProperty="ACTIVO"
+														defaultFilterOperator="Contains">
+														<Label text="{i18n>MonitorAplicaciones.Table.Column.5}" />
+														<table:template>
+														<Text text="{mMonitorAplicaciones>id_grupo}"/>
+														</table:template>
+													</table:Column>
+													<table:Column
+														sortProperty="ACTIVO"
+														filterProperty="ACTIVO"
+														defaultFilterOperator="Contains">
+														<Label text="{i18n>MonitorAplicaciones.Table.Column.6}" />
+														<table:template>
+														<Text text="{mMonitorAplicaciones>icono}"/>
+														</table:template>
+													</table:Column>
+												</table:columns>
+											</table:Table> -->
+											
+											
+											
+											<Table id="idTMonitorRoles2"
+												mode="MultiSelect"
+												inset="false"
+												items="{ path: 'mMonitorAplicaciones>/Aplicaciones' }"
+												growing="true"
+											    growingThreshold="100"
+											    growingScrollToLoad="false"
+											    itemPress="onItemPressRoles">
+													<headerToolbar>
+														<Toolbar id="idTitle">
+															
+														</Toolbar>
+													</headerToolbar>
+													<columns>
+														<Column
+															minScreenWidth="Phone"
+															demandPopin="true">
+															<Text text="{i18n>MonitorAplicaciones.Table.Column.1}"/>
+														</Column>
+														<Column
+															minScreenWidth="Phone"
+															demandPopin="true">
+															<Text text="{i18n>MonitorAplicaciones.Table.Column.2}"/>
+														</Column>
+														<Column
+															minScreenWidth="Tablet"
+															demandPopin="true">
+															<Text text="{i18n>MonitorAplicaciones.Table.Column.3}"/>
+														</Column>
+														<Column
+															minScreenWidth="Tablet"
+															demandPopin="true">
+															<Text text="{i18n>MonitorAplicaciones.Table.Column.4}"/>
+														</Column>
+														<Column
+															minScreenWidth="Tablet"
+															demandPopin="true">
+															<Text text="{i18n>MonitorAplicaciones.Table.Column.5}"/>
+														</Column>
+														<Column
+															minScreenWidth="Tablet"
+															demandPopin="true">
+															<Text text="{i18n>MonitorAplicaciones.Table.Column.6}"/>
+														</Column>
+													</columns>
+													<items>
+														<ColumnListItem
+															vAlign="Middle">
+															<cells>
+																<Text text="{mMonitorAplicaciones>id_app}"/>
+																<Text text="{mMonitorAplicaciones>nombre_app}"/>
+																<Text text="{mMonitorAplicaciones>descripcion}"/>
+																<Text text="{mMonitorAplicaciones>ruta}"/>
+																<Text text="{mMonitorAplicaciones>id_grupo}"/>
+																<Text text="{mMonitorAplicaciones>icono}"/>
+															</cells>
+														</ColumnListItem>
+													</items>
+												</Table>
+				
+				
+				
+				
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</content>
+			</Panel>
+		</content>
+		<footer>
+			<Bar>
+				<contentMiddle>
+					<Button text="{i18n>DetalleUsuario.Footer.Button.1}"  id="btnEdit" 	 visible="false" press="onPressEdit"	/>
+					<Button text="{i18n>DetalleUsuario.Footer.Button.2}"  id="btnDelete"  visible="false" press="onPressDelete"	/>
+					<Button text="{i18n>DetalleUsuario.Footer.Button.3}"  id="btnSave" 	 visible="false" press="onPressSave"	/>
+					<Button text="{i18n>DetalleUsuario.Footer.Button.4}"  id="btnCancel"  visible="false" press="onPressCancel"	/>
+				</contentMiddle>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

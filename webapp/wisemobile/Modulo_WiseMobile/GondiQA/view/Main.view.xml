@@ -1,0 +1,105 @@
+<mvc:View
+	controllerName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.GondiQA.controller.Main"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns:ui="sap.ui"
+	xmlns="sap.m">
+	<Page id="idPage" showHeader="false">
+		<content>
+			<!-- 
+			<IconTabBar
+				id="idIconTabBarNoIcons"
+				select="handleIconTabBarSelect"
+				expandable="false"
+				selectedKey="1"
+				class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter id="idTabFilter_CrearSolicitud"
+						text="{i18n>GondiQA.Main.IconTabFilter.1}"
+						key="1" >
+						<content>
+							<mvc:XMLView id="idVOrdnCompraXFacturar" viewName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.GondiQA.view.OrdnCompraXFacturar" />
+						</content>
+					</IconTabFilter>
+					
+					<IconTabFilter
+						text="{i18n>GondiQA.Main.IconTabFilter.2}"
+						key="2" >
+						<content>
+							<mvc:XMLView id="idVEnvioFacturas" visible="false" viewName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.GondiQA.view.EnvioFacturas" />
+						</content>
+					</IconTabFilter>
+					
+					<IconTabFilter
+						text="{i18n>GondiQA.Main.IconTabFilter.3}"
+						key="3" >
+						<content>
+							
+						</content>
+					</IconTabFilter>
+					
+					<IconTabFilter
+						text="{i18n>GondiQA.Main.IconTabFilter.4}"
+						key="4" >
+						<content>
+							<mvc:XMLView id="idVEstatusRecepcion" viewName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.GondiQA.view.EstatusRecepcion" />
+						</content>
+					</IconTabFilter>
+					
+					<IconTabFilter 
+						text="{i18n>GondiQA.Main.IconTabFilter.5}"
+						key="5" >
+						<content>
+							<mvc:XMLView id="idVComplementosPago" viewName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.GondiQA.view.ComplementosPago" />
+						</content>
+					</IconTabFilter>
+						
+					<IconTabFilter 
+						text="{i18n>GondiQA.Main.IconTabFilter.6}"
+						key="6" >
+						<content>
+							<mvc:XMLView id="idVEstadoCuenta" viewName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.GondiQA.view.EstadoCuenta" />
+						</content>
+					</IconTabFilter>
+					<IconTabFilter 
+						text="{i18n>GondiQA.Main.IconTabFilter.7}"
+						key="7" >
+						<content>
+							<mvc:XMLView id="idVCotizaciones" viewName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.GondiQA.view.Cotizaciones" />
+						</content>
+					</IconTabFilter>
+					<IconTabFilter 
+						text="{i18n>GondiQA.Main.IconTabFilter.8}"
+						key="8" >
+						<content>
+							<mvc:XMLView id="idVEstatusCotizaciones" viewName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.GondiQA.view.EstatusCotizaciones" />
+						</content>
+					</IconTabFilter>
+					<IconTabFilter 
+						text="{i18n>GondiQA.Main.IconTabFilter.9}"
+						key="5" >
+						<content>
+							<mvc:XMLView id="idVRequisicionesporAutorizar" viewName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.GondiQA.view.RequisicionesPorAutorizar" />
+						</content>
+					</IconTabFilter>
+					<IconTabFilter 
+						text="{i18n>GondiQA.Main.IconTabFilter.10}"
+						key="5" >
+						<content>
+							<mvc:XMLView id="idVOrdenesdeCompraporAutorizar" viewName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.GondiQA.view.OrdenesCompraPorAutorizar" />
+						</content>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+			 -->
+		</content>
+		<footer>
+			<Bar id="idVEnvioFacturas_Footer" visible="false">
+				<contentRight>
+					<Button id="idBtnEnviar" press="onPressEnviar" text="{i18n>EnvioFacturas.Form.1.Button}" type="Accept" icon="sap-icon://feeder-arrow"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

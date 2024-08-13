@@ -1,0 +1,28 @@
+.mbsc-ltr .mbsc-event-list {
+    text-align: left;
+    overflow: scroll !important;
+/*     height: 15rem !important; */
+}
+/*#idRHome--demo{
+ width: 22rem !important;
+}*/
+
+#idRMonitorAgenda--idPage .mbsc-ltr .mbsc-event-list {
+	height: 70% !important;
+}
+.mbsc-lv-item > div + div + div + div {
+    visibility: hidden;
+}
+
+.mbsc-cal-cell-i.mbsc-cal-day-i div + div {
+    visibility: hidden;
+}
+.mbsc-sc-itm.mbsc-sc-itm-3d.mbsc-btn-e div {
+	visibility: hidden;
+}
+.mbsc-sc-itm.mbsc-btn-e.mbsc-sc-itm-sel div {
+	visibility: hidden;
+}
+.mbsc-sc-itm.mbsc-sc-itm-3d.mbsc-btn-e div {
+	visibility: hidden;
+}

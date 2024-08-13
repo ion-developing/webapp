@@ -1,0 +1,11 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ActionSheet
+		title="Opciones"
+		showCancelButton="true"
+		placement="Auto">
+			<Button text="{i18n>Aprobaciones.ToolBar.Button.1}" press="onPressAprobarAntc" />
+			<Button text="{i18n>Aprobaciones.ToolBar.Button.2}"  press="onPressRechazarAntc" />
+	</ActionSheet>
+</core:FragmentDefinition>

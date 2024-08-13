@@ -1,0 +1,128 @@
+<mvc:View
+	controllerName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.GondiQA.controller.FacturasWFPorAutorizar"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m">
+	<Page id="idPage" showHeader="false" floatingFooter="true">
+		<subHeader>
+			<Toolbar design="Solid" class="toolbarColorCydsa">
+				<Label text="{i18n>FacturasWFPorAutorizar.title}" design="Bold" class="toolbarTextColor"/>
+			</Toolbar>
+		</subHeader>
+		<content>
+			<Table
+				id="idTableFacturasWF"
+				mode="SingleSelectLeft"
+				inset="false"
+				items="{
+						path: 'mTablesFacturasWF>/FACTURASWF'
+				}"
+				growing="true"
+				growingThreshold="100"
+				growingScrollToLoad="false"
+				itemPress="">
+				<headerToolbar>
+					<Toolbar id="idToolbarCotizaciones">
+						<Title text="{i18n>Records-found}" titleStyle="H6"/>
+						<Title id="idCountTableCotizaciones" text="(0)" titleStyle="H6"/>
+						<ToolbarSpacer/>
+						<!-- 
+						<Button id="idBtnAprobar" press="onPressAprobar" text="{i18n>FacturasWF.Monitor.Aprobar.Button}" />
+						<Button id="idBtnRechazar" press="onPressRechazar" text="{i18n>FacturasWF.Monitor.Rechazar.Button}" />
+						 -->
+						<Button id="idOpciones" text="{i18n>Popup.Button.Opciones}" press="onPressOpciones" />
+						<Button icon="sap-icon://table-column" press="onPersoPress" />
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					
+					<Column id="idCol1"
+						visible="{mManageControls>FacturasWF.Monitor.Table.Column.1}">
+						<Text text="{i18n>FacturasWF.Monitor.Table.Column.1}"/>
+					</Column>
+					<Column id="idCol2"
+						visible="{mManageControls>FacturasWF.Monitor.Table.Column.2}">
+						<Text text="{i18n>FacturasWF.Monitor.Table.Column.2}"/>
+					</Column>
+					<Column id="idCol3"
+						visible="{mManageControls>FacturasWF.Monitor.Table.Column.3}">
+						<Text text="{i18n>FacturasWF.Monitor.Table.Column.3}"/>
+					</Column>
+					
+					<Column id="idCol4"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>FacturasWF.Monitor.Table.Column.4}">
+						<Text text="{i18n>FacturasWF.Monitor.Table.Column.4}"/>
+					</Column>
+					
+					<Column id="idCol5"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>FacturasWF.Monitor.Table.Column.5}">
+						<Text text="{i18n>FacturasWF.Monitor.Table.Column.5}"/>
+					</Column>
+					
+					<Column id="idCol6"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>FacturasWF.Monitor.Table.Column.6}">
+						<Text text="{i18n>FacturasWF.Monitor.Table.Column.6}"/>
+					</Column>
+					
+					<Column id="idCol7"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>FacturasWF.Monitor.Table.Column.7}">
+						<Text text="{i18n>FacturasWF.Monitor.Table.Column.7}"/>
+					</Column>
+					
+					<Column id="idCol8"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>FacturasWF.Monitor.Table.Column.8}">
+						<Text text="{i18n>FacturasWF.Monitor.Table.Column.8}"/>
+					</Column>
+					
+					<Column id="idCol9"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>FacturasWF.Monitor.Table.Column.9}">
+						<Text text="{i18n>FacturasWF.Monitor.Table.Column.9}"/>
+					</Column>
+					
+					<Column id="idCol10"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>FacturasWF.Monitor.Table.Column.10}">
+						<Text text="{i18n>FacturasWF.Monitor.Table.Column.10}"/>
+					</Column>
+					
+				</columns>
+			
+				<items>
+					<ColumnListItem
+						vAlign="Middle">
+						<cells>
+						    <Text text="{mTablesFacturasWF>InvDocNo}"/>
+							<Text text="{mTablesFacturasWF>Wftyp}"/>
+							<Text text="{mTablesFacturasWF>Wftyptxt}"/>
+							<Text text="{mTablesFacturasWF>BusArea}"/>
+							<Text text="{mTablesFacturasWF>HeaderTxt}"/>
+							<Text text="{mTablesFacturasWF>GrossAmnt}"/>
+							<Text text="{mTablesFacturasWF>Currency}"/>
+							<Text text="{mTablesFacturasWF>Username}"/>
+							<Text text="{mTablesFacturasWF>WiId}"/>
+							<Image src="./wisemobile/Public/Img/pdf.png" press="onDetallePdf"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			
+			<FlexBox height="100px"  />
+			
+		</content>
+	</Page>
+</mvc:View>               

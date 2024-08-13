@@ -1,0 +1,103 @@
+<mvc:View height="100%"
+	controllerName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.ApplicationManager.controller.MonitorAplicaciones"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns="sap.m">
+	<Page id="idPage" showHeader="false" enableScrolling="true">
+		<content>
+			<Table id="idTableMonitorAplicaciones"
+				inset="false"
+				items="{ path: 'mMonitorAplicaciones>/Aplicaciones' }"
+				growing="true"
+			    growingThreshold="5"
+			    growingScrollToLoad="false"
+			    itemPress="onItemPressAplicaciones">
+					<headerToolbar>
+						<Toolbar id="idTitle">
+							<Title text="{i18n>MonitorAplicaciones.Table.Toolbar.Title}" level="H2"/>
+							<Title id="idCountTableMonitorAplicaciones" text="(3)" level="H2"/>
+							<ToolbarSpacer/>
+							<Button	
+								icon="sap-icon://action-settings"
+								press="onSettingsTableAplicaciones" />
+							<Button icon="sap-icon://table-column" press="onPersoPress" />
+							<Button	
+								icon="sap-icon://add"
+								press="onNuevaAplicacion" />
+						</Toolbar>
+					</headerToolbar>
+					<columns>
+						<Column id="idCol1"
+							minScreenWidth="Phone"
+							demandPopin="true"
+							visible="{mManageControls>MonitorAplicaciones.Table.Column.1}">
+							<Text text="{i18n>MonitorAplicaciones.Table.Column.1}"/>
+						</Column>
+						<Column id="idCol2"
+							minScreenWidth="Phone"
+							demandPopin="true"
+							visible="{mManageControls>MonitorAplicaciones.Table.Column.2}">
+							<Text text="{i18n>MonitorAplicaciones.Table.Column.2}"/>
+						</Column>
+						<Column id="idCol3"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>MonitorAplicaciones.Table.Column.3}">
+							<Text text="{i18n>MonitorAplicaciones.Table.Column.3}"/>
+						</Column>
+						<Column id="idCol4"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>MonitorAplicaciones.Table.Column.4}">
+							<Text text="{i18n>MonitorAplicaciones.Table.Column.4}"/>
+						</Column>
+						<Column id="idCol5"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>MonitorAplicaciones.Table.Column.5}">
+							<Text text="{i18n>MonitorAplicaciones.Table.Column.5}"/>
+						</Column>
+						<Column id="idCol6"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>MonitorAplicaciones.Table.Column.6}">
+							<Text text="{i18n>MonitorAplicaciones.Table.Column.6}"/>
+						</Column>
+						<Column id="idCol7"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>MonitorAplicaciones.Table.Column.7}">
+							<Text text="{i18n>MonitorAplicaciones.Table.Column.7}"/>
+						</Column>
+						<Column id="idCol8"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>MonitorAplicaciones.Table.Column.8}">
+							<Text text="{i18n>MonitorAplicaciones.Table.Column.8}"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem
+							vAlign="Middle"
+							type="Navigation">
+							<cells>
+								<Text text="{mMonitorAplicaciones>id_app}"/>
+								<Text text="{mMonitorAplicaciones>nombre_app}"/>
+								<Text text="{mMonitorAplicaciones>descripcion}"/>
+								<Text text="{mMonitorAplicaciones>ruta}"/>
+								<Text text="{mMonitorAplicaciones>id_grupo}"/>
+								<Text text="{mMonitorAplicaciones>icono}"/>
+								<Text text="{mMonitorAplicaciones>total}"/>
+								<Text text="{mMonitorAplicaciones>activo}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+		</content>
+	</Page>
+</mvc:View>
+
+                

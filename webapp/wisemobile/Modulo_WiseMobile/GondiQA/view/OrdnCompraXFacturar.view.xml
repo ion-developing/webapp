@@ -1,0 +1,210 @@
+<mvc:View
+	controllerName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.GondiQA.controller.OrdnCompraXFacturar"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m">
+	<Page id="idPage" showHeader="false" floatingFooter="true">
+		<subHeader>
+			<Toolbar design="Solid" class="toolbarColorCydsa">
+				<Label text="{i18n>OrdnCompraXFacturar.title}" design="Bold" class="toolbarTextColor"/>
+			</Toolbar>
+		</subHeader>
+		<content>
+			<!--<f:SimpleForm layout="ResponsiveGridLayout" title="Filtros">
+			<HBox>
+				<Label text="Razón Social" class="sapUiSmallMarginEnd"/>
+				<ComboBox id="comboRazonSocial"
+				items="{mCombos>/SOCIEDADES_ZW18}"
+				change="" class="sapUiSmallMarginEnd">
+				<core:ListItem key="{mCombos>BUKRS}" text="{mCombos>BUTXT}" />
+				</ComboBox>
+
+				<Label text="Fecha orden de compra" class="sapUiSmallMarginEnd"/>
+				<DatePicker
+				id="datePickerFrom"
+				placeholder="Fecha inicial"
+				change=""/>
+				<Text text="-" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
+				<DatePicker
+				id="datePickerTo"
+				placeholder="Fecha final"
+				change=""/>
+
+				<Label text="Tipo Recepción" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
+				<ComboBox id="comboTipoRecepcion"
+				items="{mCombos>/TIPORECEPCION}"
+				change="" class="sapUiSmallMarginEnd">
+				<core:ListItem key="{mCombos>TIPO}" text="{mCombos>TEXT}" />
+				</ComboBox>
+
+				<Label text="Moneda" class="sapUiSmallMarginEnd"/>
+				<ComboBox id="comboMoneda"
+				items="{mCombos>/MONEDAS_ZW18}"
+				change="">
+				<core:ListItem key="{mCombos>WAERS}" text="{mCombos>LTEXT}" />
+				</ComboBox>		
+			</HBox>
+			</f:SimpleForm>-->
+			
+			<f:SimpleForm id="simpleFormOrdenesCompraXFacturar" editable="true" layout="ResponsiveGridLayout" title="{i18n>FilterPanel.Title}"> 
+    			<f:content>
+					<Label text="{i18n>Filters.razon_social}" width="100%"/>
+					<ComboBox id="comboRazonSocial"
+					items="{mCombos>/SOCIEDADES_ZW18}"
+					change="" width="50%">
+					<core:ListItem key="{mCombos>BUKRS}" text="{mCombos>BUTXT}" />
+					</ComboBox>
+					
+
+					<Label text="{i18n>Filters.f_orden_Compra}" width="100%"/>
+					<HBox>
+					<DatePicker
+					id="datePickerFrom"
+					placeholder="{i18n>Filters.fecha_inicial}"
+					change="" valueFormat="yyyy-MM-dd"/>
+					<Text text="-" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
+					<DatePicker
+					id="datePickerTo"
+					placeholder="{i18n>Filters.fecha_final}"
+					change="" valueFormat="yyyy-MM-dd"/>
+					</HBox>
+					
+					<Label text="{i18n>Filters.tipo_recepcion}" width="100%"/>
+					<ComboBox id="comboTipoRecepcion"
+					items="{mCombos>/TIPORECEPCION}"
+					change="" width="50%">
+					<core:ListItem key="{mCombos>TIPO}" text="{mCombos>TEXT}" />
+					</ComboBox>
+					
+					<!-- <Label text="{i18n>Filters.moneda}" width="100%"/>
+					<ComboBox id="comboMoneda"
+					items="{mCombos>/MONEDAS_ZW18}"
+					change="" width="50%">
+					<core:ListItem key="{mCombos>WAERS}" text="{mCombos>LTEXT}" />
+					</ComboBox> -->
+
+    			</f:content>
+			</f:SimpleForm>
+			<Button text="{i18n>FilterPanel.Button.1}" press="onPressFiltrar" class="sapUiSmallMarginBegin sapUiSmallMarginTop" type="Accept" icon="sap-icon://filter"/>
+			
+			<Table
+				id="idTableOrdnCompraXFacturar"
+				mode="MultiSelect"
+				inset="false"
+				items="{
+						path: 'mTablesOrdenesCompraxFacturar>/DOC_ORDENESCOMPRAXFACTURAR'
+				}"
+				growing="true"
+				growingThreshold="100"
+				growingScrollToLoad="false"
+				itemPress="">
+           <!-- itemPress="onItemPressOrdnCompraXFacturar" -->
+				<headerToolbar>
+					<Toolbar>
+						<Title text="{i18n>Records-found}" titleStyle="H6"/>
+						<Title id="idCountTableOrdnCompraXFacturar" text="(0)" titleStyle="H6"/>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://table-column" press="onPersoPress" />
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column id="idCol1"
+						visible="{mManageControls>OrdnCompraXFacturar.Monitor.Table.Column.1}">
+						<Text text="{i18n>OrdnCompraXFacturar.Monitor.Table.Column.1}"/>
+					</Column>
+					<Column id="idCol2"
+						visible="{mManageControls>OrdnCompraXFacturar.Monitor.Table.Column.2}">
+						<Text text="{i18n>OrdnCompraXFacturar.Monitor.Table.Column.2}"/>
+					</Column>
+					<Column id="idCol3"
+						visible="{mManageControls>OrdnCompraXFacturar.Monitor.Table.Column.3}">
+						<Text text="{i18n>OrdnCompraXFacturar.Monitor.Table.Column.3}"/>
+					</Column>
+					
+					<Column id="idCol4"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>OrdnCompraXFacturar.Monitor.Table.Column.4}">
+						<Text text="{i18n>OrdnCompraXFacturar.Monitor.Table.Column.4}"/>
+					</Column>
+					
+					<Column id="idCol5"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>OrdnCompraXFacturar.Monitor.Table.Column.5}">
+						<Text text="{i18n>OrdnCompraXFacturar.Monitor.Table.Column.5}"/>
+					</Column>
+					
+					<Column id="idCol6"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>OrdnCompraXFacturar.Monitor.Table.Column.6}">
+						<Text text="{i18n>OrdnCompraXFacturar.Monitor.Table.Column.6}"/>
+					</Column>
+					
+					<Column id="idCol7"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>OrdnCompraXFacturar.Monitor.Table.Column.7}">
+						<Text text="{i18n>OrdnCompraXFacturar.Monitor.Table.Column.7}"/>
+					</Column>
+					
+					<Column id="idCol8"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>OrdnCompraXFacturar.Monitor.Table.Column.8}">
+						<Text text="{i18n>OrdnCompraXFacturar.Monitor.Table.Column.8}"/>
+					</Column>
+					
+					<Column id="idCol9"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>OrdnCompraXFacturar.Monitor.Table.Column.9}">
+						<Text text="{i18n>OrdnCompraXFacturar.Monitor.Table.Column.9}"/>
+					</Column>
+					
+					<Column id="idCol10"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>OrdnCompraXFacturar.Monitor.Table.Column.10}">
+						<Text text="{i18n>OrdnCompraXFacturar.Monitor.Table.Column.10}"/>
+					</Column>
+					
+					<Column id="idCol11"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>OrdnCompraXFacturar.Monitor.Table.Column.11}">
+						<Text text="{i18n>OrdnCompraXFacturar.Monitor.Table.Column.11}"/>
+					</Column>
+					
+				</columns>
+			
+				<items>
+					<ColumnListItem
+						vAlign="Middle">
+						<cells>
+							<Text text="{mTablesOrdenesCompraxFacturar>EBELN}"/>
+							<Text text="{mTablesOrdenesCompraxFacturar>EBELP}"/>
+							<Text text="{mTablesOrdenesCompraxFacturar>MBLNR}"/>
+							<Text text="{mTablesOrdenesCompraxFacturar>XBLNR}"/>
+							<Text text="{mTablesOrdenesCompraxFacturar>AEDAT}"/>
+							<Text text="{mTablesOrdenesCompraxFacturar>MATNR}"/>
+							<Text text="{mTablesOrdenesCompraxFacturar>PO_UNIT}"/>
+							<Text text="{mTablesOrdenesCompraxFacturar>TXZ01}"/>
+							<Text text="{mTablesOrdenesCompraxFacturar>MENGE}"/>
+							<Text text="{path: 'mTablesOrdenesCompraxFacturar>NETWR', formatter: '.formatter.formatCurrency'}"/>
+							<Text text="{mTablesOrdenesCompraxFacturar>WAERS}"/>
+<!-- 							<Text text="{mTablesOrdenesCompraxFacturar>DocPago}"/> -->
+<!-- 							<Text text="{mTablesOrdenesCompraxFacturar>c}"/> -->
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			
+			<FlexBox height="100px"  />
+			
+		</content>
+	</Page>
+</mvc:View>

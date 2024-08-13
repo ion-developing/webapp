@@ -1,0 +1,111 @@
+{
+	"Grupos":[
+		{
+		"id_grupo":"1",
+		"nombre_grupo": "Gestion de Usuarios",
+		"descripcion_grupo": "Administra a los Usuarios y sus roles",
+		"orden_grupo": "2",
+		"activo": true
+		},{
+		"id_grupo":"2",
+		"nombre_grupo": "Grupos / Aplicaciones / Roles",
+		"descripcion_grupo": "Administre el Launchpad",
+		"orden_grupo": "2",
+		"activo": true
+		},{
+		"id_grupo":"3",
+		"nombre_grupo": "Gestion de Viaje",
+		"descripcion_grupo": "Te permite administrar tu viaje",
+		"orden_grupo": "1",
+		"activo": true
+		}
+	],
+	"Usuarios":[
+		{
+		"nombre":"Victor",
+		"apellidos": "Ramirez Dominguez",
+		"nombre_usuario": "VRAMIREZ",
+		"telefono": "8291100201",
+		"direccion": "Benito Juarez 1202",
+		"descripcion": "SAP",
+		"activo": true
+		},{
+		"nombre":"Exon",
+		"apellidos": "Marcelo Juarez",
+		"nombre_usuario": "EMARCELO",
+		"telefono": "7224350847",
+		"direccion": "Coahuila 115",
+		"descripcion": "Software Developer",
+		"activo": true
+		},{
+		"nombre":"Jorge",
+		"apellidos": "Varillas Merino",
+		"nombre_usuario": "JVARILLAS",
+		"telefono": "000000000",
+		"direccion": "Metepec",
+		"descripcion": "",
+		"activo": true
+		},{
+		"nombre":"Christian",
+		"apellidos": "Pacheco Sarango",
+		"nombre_usuario": "CPACHECO",
+		"telefono": "000000000",
+		"direccion": "Metepec",
+		"descripcion": "",
+		"activo": true
+		}
+	],
+	"Aplicaciones":[
+		{
+		"id_app":"1",
+		"nombre_app": "Usuarios",
+		"descripcion": "Administra, usuarios y sus Roles",
+		"ruta": "users",
+		"id_grupo": "1",
+		"icono": "users",
+		"total": "7",
+		"activo": true
+		},{
+		"id_app":"2",
+		"nombre_app": "Grupos",
+		"descripcion": "Administra los Grupos",
+		"ruta": "groups",
+		"id_grupo": "2",
+		"icono": "groups",
+		"total": "7",
+		"activo": true
+		},{
+		"id_app":"3",
+		"nombre_app": "Aplicaciones",
+		"descripcion": "Administra Aplicaciones",
+		"ruta": "apps",
+		"id_grupo": "2",
+		"icono": "apps-store",
+		"total": "7",
+		"activo": true
+		}
+	],
+	"Roles":[
+		{
+		"id_rol":"1",
+		"nombre_rol": "System Admin",
+		"activo": true,
+		"apps": "4"
+		},{
+		"id_rol":"2",
+		"nombre_rol": "Cambiar Colores",
+		"activo": true,
+		"apps": "1"
+		},{
+		"id_rol":"3",
+		"nombre_rol": "Foto de perfil",
+		"activo": true,
+		"apps": "1"
+		},{
+		"id_rol":"4",
+		"nombre_rol": "Stack",
+		"activo": true,
+		"apps": "1"
+		}
+	]
+}

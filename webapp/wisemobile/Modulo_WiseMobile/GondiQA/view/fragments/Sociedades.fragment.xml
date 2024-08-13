@@ -1,0 +1,23 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<VBox class="sapUiSmallMargin">
+		<!--<SearchField id="searchSociedades" liveChange="onSearchSociedades" placeholder="Buscar sociedad"/>-->
+		<List
+			items="{path: 'mCombos>/SOCIEDADES_ZW20'}"			
+			growing="true"
+			growingThreshold="100"
+			growingScrollToLoad="false"
+			mode="SingleSelectMaster"
+			select="onChangeSociedad">
+			<StandardListItem
+				title="{mCombos>BUKRS}"
+				description="{mCombos>BUTXT}"
+				icon="{ProductPicUrl}"
+				iconDensityAware="false"
+				iconInset="false" />
+		</List>
+	</VBox>
+</core:FragmentDefinition>

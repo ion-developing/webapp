@@ -1,0 +1,235 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	controllerName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.Colores.controller.Color">
+	
+	<Page>
+		
+		<customHeader>
+			<Bar>
+				<contentLeft>
+<!-- 					<Button icon="sap-icon://synchronize" press="oPressReset"/> -->
+				</contentLeft>
+				<contentMiddle>
+					<Label text="{i18n>Color.Table.HeaderText}" />
+				</contentMiddle>
+				<contentRight>
+					<Select id="idCombinacion" items="{mCombos>/COMBINCAIONES_COLOR}"
+						change="onChangeCominacion" forceSelection="false">
+						<core:ListItem key="{mCombos>id}" text="{mCombos>text}" />
+					</Select>
+					<Button icon="sap-icon://save" press="oPressSave"/>
+				</contentRight>
+			</Bar>
+		</customHeader>
+		
+		<Panel headerText="{i18n>Color.1.HeaderText}"
+			expandAnimation="false" expandable="true" expanded="true" >
+			<content>
+				<Table
+					inset="false"
+					growing="true"
+					growingThreshold="10"
+					growingScrollToLoad="false">
+					<columns>
+						<Column width="5%">
+							<Text text="Id"/>
+						</Column>
+						<Column>
+							<Text text="{i18n>Color.Table.Column.1}"/>
+						</Column>
+						<Column width="10%">
+							<Text text="{i18n>Color.Table.Column.2}"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<Label text="1"/>
+								<Label text="{i18n>Color.Table.Row.1}"/>
+								<Button press="oPressOpc" class="C1">
+									<customData> <core:CustomData key="1"/> </customData>
+								</Button>
+							</cells>
+						</ColumnListItem>
+						
+						<ColumnListItem>
+							<cells>
+								<Label text="2"/>
+								<Label text="{i18n>Color.Table.Row.2}"/>
+								<Button press="oPressOpc" class="C2">
+									<customData> <core:CustomData key="2"/> </customData>
+								</Button>
+							</cells>
+						</ColumnListItem>
+						
+						<ColumnListItem>
+							<cells>
+								<Label text="3"/>
+								<Label text="{i18n>Color.Table.Row.3}"/>
+								<Button press="oPressOpc" class="C3">
+									<customData> <core:CustomData key="3"/> </customData>
+								</Button>
+							</cells>
+						</ColumnListItem>
+						
+						<ColumnListItem>
+							<cells>
+								<Label text="4"/>
+								<Label text="{i18n>Color.Table.Row.4}"/>
+								<Button press="oPressOpc" class="C4">
+									<customData> <core:CustomData key="4"/> </customData>
+								</Button>
+							</cells>
+						</ColumnListItem>
+						
+						<ColumnListItem>
+							<cells>
+								<Label text="5"/>
+								<Label text="{i18n>Color.Table.Row.5}"/>
+								<Button press="oPressOpc" class="C5">
+									<customData> <core:CustomData key="5"/> </customData>
+								</Button>
+							</cells>
+						</ColumnListItem>
+						
+						<ColumnListItem>
+							<cells>
+								<Label text="6"/>
+								<Label text="{i18n>Color.Table.Row.6}"/>
+								<Button press="oPressOpc" class="C6">
+									<customData> <core:CustomData key="6"/> </customData>
+								</Button>
+							</cells>
+						</ColumnListItem>
+						
+						<ColumnListItem>
+							<cells>
+								<Label text="7"/>
+								<Label text="{i18n>Color.Table.Row.7}"/>
+								<Button press="oPressOpc" class="C7">
+									<customData> <core:CustomData key="7"/> </customData>
+								</Button>
+							</cells>
+						</ColumnListItem>
+						
+						<ColumnListItem>
+							<cells>
+								<Label text="8"/>
+								<Label text="{i18n>Color.Table.Row.8}"/>
+								<Button press="oPressOpc" class="C8">
+									<customData> <core:CustomData key="8"/> </customData>
+								</Button>
+							</cells>
+						</ColumnListItem>
+						
+						<ColumnListItem>
+							<cells>
+								<Label text="9"/>
+								<Label text="{i18n>Color.Table.Row.9}"/>
+								<Button press="oPressOpc" class="C9">
+									<customData> <core:CustomData key="9"/> </customData>
+								</Button>
+							</cells>
+						</ColumnListItem>
+						
+						<ColumnListItem>
+							<cells>
+								<Label text="10"/>
+								<Label text="{i18n>Color.Table.Row.10}"/>
+								<Button press="oPressOpc" class="C10">
+									<customData> <core:CustomData key="10"/> </customData>
+								</Button>
+							</cells>
+						</ColumnListItem>
+						
+						<ColumnListItem>
+							<cells>
+								<Label text="11"/>
+								<Label text="{i18n>Color.Table.Row.11}"/>
+								<Button press="oPressOpc" class="C11">
+									<customData> <core:CustomData key="11"/> </customData>
+								</Button>
+							</cells>
+						</ColumnListItem>
+						
+						<ColumnListItem>
+							<cells>
+								<Label text="12"/>
+								<Label text="{i18n>Color.Table.Row.12}"/>
+								<Button press="oPressOpc" class="C12">
+									<customData> <core:CustomData key="12"/> </customData>
+								</Button>
+							</cells>
+						</ColumnListItem>
+						
+						<ColumnListItem>
+							<cells>
+								<Label text="13"/>
+								<Label text="{i18n>Color.Table.Row.13}"/>
+								<Button press="oPressOpc" class="C13">
+									<customData> <core:CustomData key="13"/> </customData>
+								</Button>
+							</cells>
+						</ColumnListItem>
+						
+						<ColumnListItem>
+							<cells>
+								<Label text="14"/>
+								<Label text="{i18n>Color.Table.Row.14}"/>
+								<Button press="oPressOpc" class="C14">
+									<customData> <core:CustomData key="14"/> </customData>
+								</Button>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+				
+			</content>
+		</Panel>
+		
+		<Panel headerText="{i18n>Color.2.HeaderText}"
+			expandAnimation="false" expandable="true" expanded="true" >
+			<content>
+				<f:Form
+					editable="true">
+					<f:layout>
+						<f:ResponsiveGridLayout
+							labelSpanXL="3"
+							labelSpanL="3"
+							labelSpanM="3"
+							labelSpanS="12"
+							adjustLabelSpan="false"
+							emptySpanXL="4"
+							emptySpanL="4"
+							emptySpanM="4"
+							emptySpanS="0"
+							columnsXL="1"
+							columnsL="1"
+							columnsM="1"
+							singleContainerFullSize="false" />
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="">
+									<f:fields>
+										<FlexBox width="200px" height="200px" class="Degradados">
+											<Button text="{i18n>Color.Editar}" press="oPressOpcMenu"
+										 		width="80px" icon="sap-icon://palette" class="sapUiTinyMarginBegin" />
+										</FlexBox>
+									</f:fields>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+				
+				
+			</content>
+		</Panel>
+	</Page>
+</mvc:View>

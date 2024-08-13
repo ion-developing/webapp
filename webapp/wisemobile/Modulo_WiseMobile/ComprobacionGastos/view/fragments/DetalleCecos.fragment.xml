@@ -1,0 +1,116 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<VBox class="sapUiSmallMargin">
+		<f:Form
+			editable="true">
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="4"
+					emptySpanL="4"
+					emptySpanM="4"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement label="{i18n>EditCecos.Form.Label.1}">
+							<f:fields>
+								<Input value="{mDetalleCecos>/No.Comprob}" enabled="false"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="{i18n>EditCecos.Form.Label.2}">
+							<f:fields>
+								<Input value="{mDetalleCecos>/Linea}" enabled="false"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="{i18n>EditCecos.Form.Label.3}">
+							<f:fields>
+								<Input value="{mDetalleCecos>/ClaseGasto}" enabled="false"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="{i18n>EditCecos.Form.Label.4}">
+							<f:fields>
+								<Input value="{mDetalleCecos>/Importe}" enabled="false" />
+								<Input value="{mDetalleCecos>/Moneda}" enabled="false">
+									<layoutData>
+										<l:GridData span="XL1 L2 M2 S4" />
+									</layoutData>
+								</Input>
+							</f:fields>
+						</f:FormElement>
+						
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+		<Table
+			id="idTableDetalleCecos"
+			mode="MultiSelect"
+			inset="false"
+			items="{
+					path: 'mTables>/CECOS'
+			}"
+			growing="true"
+			growingThreshold="100"
+			growingScrollToLoad="false"
+			itemPress="onItemPressDetalleCecos">
+			<headerToolbar>
+				<Toolbar id="idToolbarDetalleCecos">
+					<Title text="{i18n>Records-found}" titleStyle="H6"/>
+					<Title id="idCountTableDetalleCecos" text="(0)" titleStyle="H6"/>
+					<ToolbarSpacer/>
+					<Button icon="sap-icon://table-column" press="onPersoPress" />
+				</Toolbar>
+			</headerToolbar>
+			<columns>
+				<Column id="idCol181" width="2.5rem">
+					<Text text="{i18n>EditCecos.Monitor.Table.Column.1}"/>
+				</Column>
+				<Column id="idCol182" width="8rem"
+					minScreenWidth="Tablet"
+					demandPopin="true">
+					<Text text="{i18n>EditCecos.Monitor.Table.Column.2}"/>
+				</Column>
+				<Column id="idCol183" hAlign="Center"
+					minScreenWidth="Tablet"
+					demandPopin="true">
+					<Text text="{i18n>EditCecos.Monitor.Table.Column.3}"/>
+				</Column>
+				
+				<Column id="idCol184" width="4rem">
+					<Text text="{i18n>EditCecos.Monitor.Table.Column.4}"/>
+				</Column>
+				
+				<Column id="idCol185" width="4rem">
+					<Text text="{i18n>EditCecos.Monitor.Table.Column.5}"/>
+				</Column>
+				
+			</columns>
+			
+			<items>
+				<ColumnListItem
+					vAlign="Middle">
+					<cells>
+						<Text text="{mTables>Item}"/>
+						<Text text="{mTables>CentroCosto}"/>
+						<Text text="{mTables>Descripcion}"/>
+						<Text text="{mTables>Distr}"/>
+						<Text text="{mTables>Importe}"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</VBox>
+</core:FragmentDefinition>

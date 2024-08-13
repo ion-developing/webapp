@@ -1,0 +1,242 @@
+<mvc:View height="100%"
+	controllerName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.ComprobacionGastos.controller.EstadoCuenta"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m">
+	<Page id="idPage" showHeader="false" enableScrolling="true">
+		<subHeader>
+			<Toolbar design="Solid" class="toolbarColorCydsa">
+				<Label text="{i18n>EstadoCuenta.title}" design="Bold" class="toolbarTextColor"/>
+			</Toolbar>
+		</subHeader>
+		<content>
+			<Panel id="idPanelPartidasAbiertas" headerText="{i18n>EstadoCuenta.Panel.2.title}"
+				expandAnimation="false" expandable="true" expanded="true" >
+				<Table
+					id="idTablePartidasAbiertas"
+					inset="false"
+					items="{
+							path: 'mTables>/PARTIDASABIERTAS'
+					}"
+					growing="true"
+					growingThreshold="100"
+					growingScrollToLoad="false"
+					itemPress="onItemPressAprobaciones">
+					<headerToolbar>
+						<Toolbar id="idToolbarPartidasAbiertas">
+							<Title text="{i18n>Records-found}" titleStyle="H6"/>
+							<Title id="idCountTablePartidasAbiertas" text="(0)" titleStyle="H6"/>
+							<ToolbarSpacer/>
+							<Button
+								icon="sap-icon://action-settings"
+								press="onSettingsTable" />
+							<Button icon="sap-icon://table-column" press="onPersoPress" />
+						</Toolbar>
+					</headerToolbar>
+					<columns>
+						<Column id="idCol0" width="1.5rem"
+							visible="{mManageControls>CP_PA_EstadoCuenta.Monitor.Table.1.Column.0}">
+							<Text text="Pos"/>
+						</Column>
+						<Column id="idCol1"
+							visible="{mManageControls>CP_PA_EstadoCuenta.Monitor.Table.1.Column.1}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.1}"/>
+						</Column>
+						<Column id="idCol2"
+							visible="{mManageControls>CP_PA_EstadoCuenta.Monitor.Table.1.Column.2}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.2}"/>
+						</Column>
+						<Column id="idCol3"
+							visible="{mManageControls>CP_PA_EstadoCuenta.Monitor.Table.1.Column.3}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.3}"/>
+						</Column>
+						
+						<Column id="idCol4"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>CP_PA_EstadoCuenta.Monitor.Table.1.Column.4}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.4}"/>
+						</Column>
+						
+						<Column id="idCol5"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>CP_PA_EstadoCuenta.Monitor.Table.1.Column.5}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.5}"/>
+						</Column>
+						
+						<Column id="idCol6"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>CP_PA_EstadoCuenta.Monitor.Table.1.Column.6}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.6}"/>
+						</Column>
+						
+						<Column id="idCol7"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>CP_PA_EstadoCuenta.Monitor.Table.1.Column.7}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.7}"/>
+						</Column>
+						
+						<Column id="idCol8"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>CP_PA_EstadoCuenta.Monitor.Table.1.Column.8}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.8}"/>
+						</Column>
+						
+						<Column id="idCol9"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>CP_PA_EstadoCuenta.Monitor.Table.1.Column.9}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.9}"/>
+						</Column>
+						
+						<Column id="idCol10"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>CP_PA_EstadoCuenta.Monitor.Table.1.Column.10}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.10}"/>
+						</Column>
+						
+					</columns>
+				
+					<items>
+						<ColumnListItem
+							vAlign="Middle">
+							<cells>
+								<Text text="{mTables>id}"/>
+								<Text text="{mTables>NoDocumento}"/>
+								<Text text="{mTables>AnioFiscal}"/>
+								<Text text="{mTables>ClaseDocumento}"/>
+								<Text text="{mTables>FechaContabiliza}"/>
+								<Text text="{mTables>VenNeto}"/>
+								<Text text="{mTables>Referencia}"/>
+								<Text text="{mTables>Importe}"/>
+								<Text text="{mTables>Moneda}"/>
+								<Text text="{mTables>DocCompensacion}"/>
+								<Text text="{mTables>FechaCompensacion}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</Panel>
+			
+			<Panel id="idPanelPartidasCompensadas" headerText="{i18n>EstadoCuenta.Panel.3.title}"
+				expandAnimation="false" expandable="true" expanded="true" >
+				
+				<Table
+					id="idTablePartidasCompensadas"
+					inset="false"
+					items="{
+							path: 'mTables>/PARTIDASCOMPENSADAS'
+					}"
+					growing="true"
+					growingThreshold="100"
+					growingScrollToLoad="false"
+					itemPress="onItemPressPartidasCompensadas">
+					<headerToolbar>
+						<Toolbar id="idToolbarPartidasCompensadas">
+							<Title text="{i18n>Records-found}" titleStyle="H6"/>
+							<Title id="idCountTablePartidasCompensadas" text="(0)" titleStyle="H6"/>
+							<ToolbarSpacer/>
+							<Button
+								icon="sap-icon://action-settings"
+								press="onSettingsTable" />
+							<Button icon="sap-icon://table-column" press="onPersoPress" />
+						</Toolbar>
+					</headerToolbar>
+					<columns>
+						<Column id="idCol11"  width="1.5rem"
+							visible="{mManageControls>CP_PC_EstadoCuenta.Monitor.Table.1.Column.0}">
+							<Text text="Pos"/>
+						</Column>
+						<Column id="idCol12"
+							visible="{mManageControls>CP_PC_EstadoCuenta.Monitor.Table.1.Column.1}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.1}"/>
+						</Column>
+						<Column id="idCol13"
+							visible="{mManageControls>CP_PC_EstadoCuenta.Monitor.Table.1.Column.2}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.2}"/>
+						</Column>
+						<Column id="idCol14"
+							visible="{mManageControls>CP_PC_EstadoCuenta.Monitor.Table.1.Column.3}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.3}"/>
+						</Column>
+						
+						<Column id="idCol15"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>CP_PC_EstadoCuenta.Monitor.Table.1.Column.4}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.4}"/>
+						</Column>
+						
+						<Column id="idCol16"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>CP_PC_EstadoCuenta.Monitor.Table.1.Column.6}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.6}"/>
+						</Column>
+						
+						<Column id="idCol17"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>CP_PC_EstadoCuenta.Monitor.Table.1.Column.7}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.7}"/>
+						</Column>
+						
+						<Column id="idCol18"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>CP_PC_EstadoCuenta.Monitor.Table.1.Column.8}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.8}"/>
+						</Column>
+						
+						<Column id="idCol19"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>CP_PC_EstadoCuenta.Monitor.Table.1.Column.9}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.9}"/>
+						</Column>
+						
+						<Column id="idCol20"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>CP_PC_EstadoCuenta.Monitor.Table.1.Column.10}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.10}"/>
+						</Column>
+						
+						<Column id="idCol21"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>CP_PC_EstadoCuenta.Monitor.Table.1.Column.5}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.5}"/>
+						</Column>
+						
+					</columns>
+				
+					<items>
+						<ColumnListItem
+							vAlign="Middle">
+							<cells>
+								<Text text="{mTables>id}"/>
+								<Text text="{mTables>NoDocumento}"/>
+								<Text text="{mTables>AnioFiscal}"/>
+								<Text text="{mTables>ClaseDocumento}"/>
+								<Text text="{mTables>FechaContabiliza}"/>
+								<Text text="{mTables>Referencia}"/>
+								<Text text="{mTables>Importe}"/>
+								<Text text="{mTables>Moneda}"/>
+								<Text text="{mTables>DocCompensacion}"/>
+								<Text text="{mTables>FechaCompensacion}"/>
+								<Text text="{mTables>VenNeto}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</Panel>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,122 @@
+<mvc:View
+	controllerName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.ComprobacionGastos.controller.CrearSolicitud"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m">
+	<Page id="idPage" showHeader="false" enableScrolling="true">
+		<subHeader>
+			<Toolbar design="Solid" class="toolbarColorCydsa">
+				<Label text="{i18n>CrearSolicitud.title}" design="Bold" class="toolbarTextColor"/>
+			</Toolbar>
+		</subHeader>
+		<content>
+			<Panel>
+				<f:Form id="idForm"
+					editable="true">
+					<f:title>
+						<core:Title text="{i18n>ComprobacionGastos.Form.Title.CrearSoliciud}" />
+					</f:title>
+					<f:layout>
+						<f:ResponsiveGridLayout
+							labelSpanXL="4"
+							labelSpanL="4"
+							labelSpanM="4"
+							labelSpanS="12"
+							adjustLabelSpan="false"
+							emptySpanXL="0"
+							emptySpanL="0"
+							emptySpanM="0"
+							emptySpanS="0"
+							columnsXL="3"
+							columnsL="2"
+							columnsM="2"
+							singleContainerFullSize="false" />
+					</f:layout>
+					<f:formContainers>
+						
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="{i18n>ComprobacionGastos.Form.Label.1}">
+									<f:fields>
+										<Select id="idRazonSocial" items="{mCombos>/RAZONSOCIAL}"
+												selectedKey="" forceSelection="false">
+												<core:ListItem key="{mCombos>id}" text="{mCombos>text}" />
+										</Select>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="{i18n>ComprobacionGastos.Form.Label.2}">
+									<f:fields>
+										<Select id="idTipoDoc" items="{mCombos>/TIPODOC}"
+												selectedKey="" forceSelection="false">
+												<core:ListItem key="{mCombos>id}" text="{mCombos>text}" />
+										</Select>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="{i18n>ComprobacionGastos.Form.Label.5}">
+									<f:fields>
+										<DatePicker id="idFechaSolicitud"
+											placeholder=""
+											displayFormat="yyyy-MM-dd"
+											change="handleChange"
+											class="sapUiSmallMarginBottom"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="{i18n>ComprobacionGastos.Form.Label.6}">
+									<f:fields>
+										<DatePicker
+											placeholder=""
+											displayFormat="yyyy-MM-dd"
+											change="handleChange"
+											class="sapUiSmallMarginBottom"/>
+									</f:fields>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+						
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="{i18n>ComprobacionGastos.Form.Label.3}">
+									<f:fields>
+										<Select items="{mCombos>/DIVISION}" change="selectionChange"
+												selectedKey="" forceSelection="false" id="idDivision">
+												<core:ListItem key="{mCombos>id}" text="{mCombos>text}" />
+										</Select>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="{i18n>ComprobacionGastos.Form.Label.4}">
+									<f:fields>
+										<Input id="idCeco" value="" />
+									</f:fields>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+						
+					</f:formContainers>
+				</f:Form>
+				
+				<f:Form
+					editable="true">
+					<f:layout>
+						<f:ResponsiveGridLayout />
+					</f:layout>
+					<f:formContainers>
+						
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="{i18n>ComprobacionGastos.Form.Label.7}">
+									<f:fields>
+										<TextArea id="idTAComentarios" value="" showExceededText="true" maxLength="40" width="100%"/>
+									</f:fields>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+						
+					</f:formContainers>
+				</f:Form>
+				
+			</Panel>
+		</content>
+	</Page>
+</mvc:View>               

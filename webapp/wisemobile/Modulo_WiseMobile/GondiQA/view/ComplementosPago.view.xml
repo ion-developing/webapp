@@ -1,0 +1,197 @@
+<mvc:View
+	controllerName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.GondiQA.controller.ComplementosPago"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m">
+	<Page id="idPage" showHeader="false" enableScrolling="true">
+		<subHeader>
+			<Toolbar design="Solid" class="toolbarColorCydsa">
+				<Label text="{i18n>ComplementosPago.title}" design="Bold" class="toolbarTextColor"/>
+			</Toolbar>
+		</subHeader>
+		<content>
+			<f:SimpleForm id="simpleFormcComplementosPago" editable="true" layout="ResponsiveGridLayout" title="{i18n>FilterPanel.Title}">
+    			<f:content>
+					<Label text="{i18n>Filters.sociedad}" width="100%"/>
+					<ComboBox id="comboSociedad"
+					items="{mCombos>/SOCIEDADES_ZW12}"
+					change="" width="50%">
+					<core:ListItem key="{mCombos>BUKRS}" text="{mCombos>BUTXT}" />
+					</ComboBox>
+
+					
+					<Label text="{i18n>Filters.f_pago}" width="100%"/>
+					<HBox>
+					<DatePicker
+					id="datePickerFrom"
+					placeholder="{i18n>Filters.fecha_inicial}"
+					change="" valueFormat="yyyy-MM-dd"/>
+					<Text text="-" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
+					<DatePicker
+					id="datePickerTo"
+					placeholder="{i18n>Filters.fecha_final}"
+					change="" valueFormat="yyyy-MM-dd"/>
+					</HBox>
+					
+					<Label text="{i18n>Filters.estado}" width="100%"/>
+					<ComboBox id="comboEstado"
+					items="{mCombos>/ESTATUS_ZW12}"
+					change="" width="50%">
+					<core:ListItem key="{mCombos>STATUS}" text="{mCombos>STATDESC}" />
+					</ComboBox>
+
+    			</f:content>
+			</f:SimpleForm>
+			<Button text="{i18n>FilterPanel.Button.1}" press="onPressFiltrar" class="sapUiSmallMarginBegin sapUiSmallMarginTop" type="Accept" icon="sap-icon://filter"/>
+
+			<Table
+				id="idTableComplementosPago"
+				mode="SingleSelectLeft"
+				inset="false"
+				items="{mTablesListadoDocComp>/DOC_COMPENSADOS}"
+				growing="true"
+				growingThreshold="100"
+				growingScrollToLoad="false"
+				itemPress="onItemPressComplementosPago">
+				<headerToolbar>
+					<Toolbar id="idToolbarComplementosPago">
+						<Title text="{i18n>Records-found}" titleStyle="H6"/>
+						<Title id="idCountTableComplementosPago" text="(0)" titleStyle="H6"/>
+						<ToolbarSpacer/>
+						<!-- 
+						<Button
+							text="{i18n>ComplementosPago.Monitor.Table.Toolbar.Button.1}"
+							press="onPressCargarXML" />
+						<Button
+							text="{i18n>ComplementosPago.Monitor.Table.Toolbar.Button.2}"
+							press="onPressError" />
+						<Button
+							text="{i18n>ComplementosPago.Monitor.Table.Toolbar.Button.3}"
+							press="onPressDetPagos" />
+						 -->
+						<Button id="idOpciones" text="{i18n>Popup.Button.Opciones}" press="onPressOpciones" />
+						<Button icon="sap-icon://table-column" press="onPersoPress" />
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column id="idCol0" width="2.5rem"
+						visible="{mManageControls>ComplementosPago.Monitor.Table.Column.0}">
+						<Text text="Pos"/>
+					</Column>
+					<Column id="idCol1"
+						visible="{mManageControls>ComplementosPago.Monitor.Table.Column.1}">
+						<Text text="{i18n>ComplementosPago.Monitor.Table.Column.1}"/>
+					</Column>
+					<Column id="idCol2"
+						visible="{mManageControls>ComplementosPago.Monitor.Table.Column.2}">
+						<Text text="{i18n>ComplementosPago.Monitor.Table.Column.2}"/>
+					</Column>
+					<Column id="idCol3"
+						visible="{mManageControls>ComplementosPago.Monitor.Table.Column.3}">
+						<Text text="{i18n>ComplementosPago.Monitor.Table.Column.3}"/>
+					</Column>
+					
+					<Column id="idCol4"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>ComplementosPago.Monitor.Table.Column.4}">
+						<Text text="{i18n>ComplementosPago.Monitor.Table.Column.4}"/>
+					</Column>
+					
+					<Column id="idCol5"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>ComplementosPago.Monitor.Table.Column.5}">
+						<Text text="{i18n>ComplementosPago.Monitor.Table.Column.5}"/>
+					</Column>
+					
+					<Column id="idCol6"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>ComplementosPago.Monitor.Table.Column.6}">
+						<Text text="{i18n>ComplementosPago.Monitor.Table.Column.6}"/>
+					</Column>
+					
+					<Column id="idCol7"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>ComplementosPago.Monitor.Table.Column.7}">
+						<Text text="{i18n>ComplementosPago.Monitor.Table.Column.7}"/>
+					</Column>
+					
+					<Column id="idCol8"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>ComplementosPago.Monitor.Table.Column.8}">
+						<Text text="{i18n>ComplementosPago.Monitor.Table.Column.8}"/>
+					</Column>
+					
+					<Column id="idCol9"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>ComplementosPago.Monitor.Table.Column.9}">
+						<Text text="{i18n>ComplementosPago.Monitor.Table.Column.9}"/>
+					</Column>
+					
+					<Column id="idCol10"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						hAlign="Center"
+						visible="{mManageControls>ComplementosPago.Monitor.Table.Column.10}">
+						<Text text="{i18n>ComplementosPago.Monitor.Table.Column.10}"/>
+					</Column>
+					
+					<Column id="idCol11"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>ComplementosPago.Monitor.Table.Column.11}">
+						<Text text="{i18n>ComplementosPago.Monitor.Table.Column.11}"/>
+					</Column>
+					
+					<Column id="idCol12"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>ComplementosPago.Monitor.Table.Column.12}">
+						<Text text="{i18n>ComplementosPago.Monitor.Table.Column.12}"/>
+					</Column>
+					
+					<Column id="idCol13"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>ComplementosPago.Monitor.Table.Column.13}">
+						<Text text="{i18n>ComplementosPago.Monitor.Table.Column.13}"/>
+					</Column>
+					
+				</columns>
+			
+				<items>
+					<ColumnListItem
+						vAlign="Middle">
+						<cells>
+							<Text text="{mTablesListadoDocComp>No}"/>
+							<Text text="{mTablesListadoDocComp>BELNR}"/>
+							<Text text="{mTablesListadoDocComp>GJAHR}"/>
+							<Text text="{mTablesListadoDocComp>BUDAT}"/>
+							<Text text="{path:'mTablesListadoDocComp>NETWR', formatter:'.formatter.formatCurrency'}"/>
+							<Text text="{mTablesListadoDocComp>WAERS}"/>
+							<Text text="{mTablesListadoDocComp>KURSF}"/>
+							<Text text="{mTablesListadoDocComp>UUID}"/>
+							<Text text="{mTablesListadoDocComp>REFERENCE}"/>
+							<Text text="{mTablesListadoDocComp>ERDAT}"/>
+							<Image src="wisemobile/Public/Img/rojo.png" width="35%"
+								visible="{path: 'mTablesListadoDocComp>FLGERR', formatter: 'util.Formatter.ErrorXML'}"  />
+							<Text text="{mTablesListadoDocComp>NROXML}"/>
+							<Text text="{mTablesListadoDocComp>NROPDF}"/>
+							<Text text="{mTablesListadoDocComp>STATUS_TXT}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			
+			<FlexBox height="100px"  />
+			
+		</content>
+	</Page>
+</mvc:View>               

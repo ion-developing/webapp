@@ -1,0 +1,296 @@
+<mvc:View height="100%"
+	controllerName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.GondiQA.controller.EstadoCuenta"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	xmlns:c="sap.ui.commons"
+	xmlns="sap.m">
+	<Page id="idPage" showHeader="false" enableScrolling="true">
+		<subHeader>
+			<Toolbar design="Solid" class="toolbarColorCydsa">
+				<Label text="{i18n>EstadoCuenta.title}" design="Bold" class="toolbarTextColor"/>
+			</Toolbar>
+		</subHeader>
+		<content>
+			<f:SimpleForm id="simpleFormEstadoCuenta" editable="true" layout="ResponsiveGridLayout" title="{i18n>FilterPanel.Title}">
+    			<f:content>
+					<Label text="{i18n>Filters.razon_social}" width="100%"/>
+					<ComboBox id="comboRazonSocial"
+					items="{mCombos>/SOCIEDADES_ZW18}"
+					change="" width="50%">
+					<core:ListItem key="{mCombos>BUKRS}" text="{mCombos>BUTXT}" />
+					</ComboBox>
+
+					<Label text="Fecha Documento" width="100%"/>
+						<HBox>
+						<DatePicker
+						id="datePickerFrom"
+						placeholder="{i18n>Filters.fecha_inicial}"
+						change="" valueFormat="yyyy-MM-dd"/>
+						<Text text="-" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
+						<DatePicker
+						id="datePickerTo"
+						placeholder="{i18n>Filters.fecha_final}"
+						change="" valueFormat="yyyy-MM-dd"/>
+						</HBox>
+
+    			</f:content>
+			</f:SimpleForm>
+			<Button text="{i18n>FilterPanel.Button.1}" press="onPressFiltrar" class="sapUiSmallMarginBegin sapUiSmallMarginTop" type="Accept" icon="sap-icon://filter"/>
+			
+			<Panel id="idPanelPartidasAbiertas" headerText="{i18n>EstadoCuenta.Panel.2.title}"
+				expandAnimation="false" expandable="true" expanded="true" >
+				<Label text="Búsqueda por No. Documento / Referencia / UUID" design="Bold"/>
+				<SearchField id="searchIdPA" search="handleChangeSearchPA" width="15%"/>
+				<Table
+					id="idTablePartidasAbiertas"
+					inset="false"
+					items="{
+							path: 'mTablesPartidasAbiertas>/DOC_PARTIDASABIERTAS'
+					}"
+					growing="true"
+					growingThreshold="100"
+					growingScrollToLoad="false"
+					itemPress="">
+<!-- 					itemPress="onItemPressAprobaciones"> -->
+					<headerToolbar>
+						<Toolbar id="idToolbarPartidasAbiertas">
+							<Title text="{i18n>Records-found}" titleStyle="H6"/>
+							<Title id="idCountTablePartidasAbiertas" text="(0)" titleStyle="H6"/>
+							<ToolbarSpacer/>
+							<Button press="onPressExportar" text="{i18n>Exportar}" />
+							<!--<Button
+								icon="sap-icon://action-settings"
+								press="onSettingsTable" />
+							<Button icon="sap-icon://table-column" press="onPersoPress" />-->
+						</Toolbar>
+					</headerToolbar>
+					<columns>
+						<Column id="idCol1"
+							visible="{mManageControls>QA_PA_EstadoCuenta.Monitor.Table.1.Column.1}"
+							width="130px">
+							<!--<c:Label icon="sap-icon://filter" text="{i18n>EstadoCuenta.Monitor.Table.1.Column.1}" class="iconFilter"></c:Label>-->
+							<!--<Button id="docPaButton" text="{i18n>EstadoCuenta.Monitor.Table.1.Column.1}" press="onFilterDocPa"/>-->
+							<Link id="docPaButton" text="{i18n>EstadoCuenta.Monitor.Table.1.Column.1}" press="onFilterColumnDocPa"/>
+						</Column>
+
+						<!--<Column id="idCol2"
+							visible="{mManageControls>QA_PA_EstadoCuenta.Monitor.Table.1.Column.2}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.2}"/>
+						</Column>-->
+
+						<Column id="idCol3"
+							visible="{mManageControls>QA_PA_EstadoCuenta.Monitor.Table.1.Column.3}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.3}"/>
+						</Column>
+						
+						<!--<Column id="idCol4"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>QA_PA_EstadoCuenta.Monitor.Table.1.Column.4}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.4}"/>
+						</Column>-->
+						
+						<Column id="idCol5"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>QA_PA_EstadoCuenta.Monitor.Table.1.Column.5}">
+							<!--<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.5}"/>-->
+							<!--<c:Label icon="sap-icon://filter" text="{i18n>EstadoCuenta.Monitor.Table.1.Column.5}" class="iconFilter"></c:Label>-->
+							<Link id="referenciaPaButton" text="{i18n>EstadoCuenta.Monitor.Table.1.Column.5}" press="onFilterColumnReferenciaPa"/>
+						</Column>
+						
+						<Column id="idCol6"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>QA_PA_EstadoCuenta.Monitor.Table.1.Column.6}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.6}"/>
+						</Column>
+						
+						<Column id="idCol7"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>QA_PA_EstadoCuenta.Monitor.Table.1.Column.7}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.7}"/>
+						</Column>
+						
+						<Column id="idCol8"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>QA_PA_EstadoCuenta.Monitor.Table.1.Column.8}">
+							<!--<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.8}"/>-->
+							<Link id="docDePagoPaPaButton" text="{i18n>EstadoCuenta.Monitor.Table.1.Column.8}" press="onFilterColumnDocDePagosPa"/>
+						</Column>
+						
+						<Column id="idCol9"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>QA_PA_EstadoCuenta.Monitor.Table.1.Column.9}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.9}"/>
+						</Column>
+
+						<Column id="idCol20"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>QA_PA_EstadoCuenta.Monitor.Table.1.Column.9}">
+							<Text text="Orden de compra"/>
+						</Column>
+
+						<Column id="idCo21"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>QA_PA_EstadoCuenta.Monitor.Table.1.Column.9}">
+							<!--<c:Label icon="sap-icon://filter" text="UUID" class="iconFilter"></c:Label>-->
+							<Link id="uuidPaButton" text="UUID" press="onFilterColumnUuidPa"/>
+						</Column>
+					</columns>
+				
+					<items>
+						<ColumnListItem
+							vAlign="Middle">
+							<cells>
+								<Text text="{mTablesPartidasAbiertas>BELNR}"/>
+								<!--<Text text="{mTablesPartidasAbiertas>BLART}"/>-->
+								<Text text="{mTablesPartidasAbiertas>BUDAT}"/>
+								<!--<Text text="{mTablesPartidasAbiertas>ZFBDT}"/>-->
+								<Text text="{mTablesPartidasAbiertas>XBLNR}"/>
+								<Text text="{path:'mTablesPartidasAbiertas>WRBTR', formatter:'.formatter.formatCurrency'}"/>
+								<Text text="{mTablesPartidasAbiertas>WAERS}"/>
+								<Text text="{mTablesPartidasAbiertas>AUGBL}"/>
+								<Text text="{mTablesPartidasAbiertas>AUGDT}"/>
+								<Text text="{mTablesPartidasAbiertas>EBELN}"/>
+								<Text text="{mTablesPartidasAbiertas>UUID}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</Panel>
+			
+			<Panel id="idPanelPartidasCompensadas" headerText="{i18n>EstadoCuenta.Panel.3.title}"
+				expandAnimation="false" expandable="true" expanded="true" >
+				<Label text="Búsqueda por No.Documento / Referencia / UUID" design="Bold"/>
+				<SearchField id="searchIdPC" search="handleChangeSearchPC" width="15%"/>
+				<Table
+					id="idTablePartidasCompensadas"
+					inset="false"
+					items="{
+							path: 'mTablesPartidasCompensadas>/DOC_PARTIDASCOMPENSADAS'
+					}"
+					growing="true"
+					growingThreshold="100"
+					growingScrollToLoad="false"
+					itemPress="onItemPressPartidasCompensadas">
+					<headerToolbar>
+						<Toolbar id="idToolbarPartidasCompensadas">
+							<Title text="{i18n>Records-found}" titleStyle="H6"/>
+							<Title id="idCountTablePartidasCompensadas" text="(0)" titleStyle="H6"/>
+							<ToolbarSpacer/>
+							<!--<Button
+								icon="sap-icon://action-settings"
+								press="onSettingsTable" />
+							<Button icon="sap-icon://table-column" press="onPersoPress" />-->
+						</Toolbar>
+					</headerToolbar>
+					<columns>
+						<Column id="idCol10"
+							visible="{mManageControls>QA_PC_EstadoCuenta.Monitor.Table.1.Column.1}"
+							width="130px">
+							<!--<c:Label icon="sap-icon://filter" text="{i18n>EstadoCuenta.Monitor.Table.1.Column.1}" class="iconFilter"></c:Label>-->
+							<Link id="docPcButton" text="{i18n>EstadoCuenta.Monitor.Table.1.Column.1}" press="onFilterColumnDocPc"/>
+						</Column>
+
+						<!--<Column id="idCol11"
+							visible="{mManageControls>QA_PC_EstadoCuenta.Monitor.Table.1.Column.2}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.2}"/>
+						</Column>-->
+
+						<Column id="idCol12"
+							visible="{mManageControls>QA_PC_EstadoCuenta.Monitor.Table.1.Column.3}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.3}"/>
+						</Column>
+						
+						<!--<Column id="idCol13"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>QA_PC_EstadoCuenta.Monitor.Table.1.Column.4}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.4}"/>
+						</Column>-->
+						
+						<Column id="idCol14"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>QA_PC_EstadoCuenta.Monitor.Table.1.Column.5}">
+							<!--<c:Label icon="sap-icon://filter" text="{i18n>EstadoCuenta.Monitor.Table.1.Column.5}" class="iconFilter"></c:Label>-->
+							<Link id="referenciaPcButton" text="{i18n>EstadoCuenta.Monitor.Table.1.Column.5}" press="onFilterColumnReferenciaPc"/>
+						</Column>
+						
+						<Column id="idCol15"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>QA_PC_EstadoCuenta.Monitor.Table.1.Column.6}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.6}"/>
+						</Column>
+						
+						<Column id="idCol16"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>QA_PC_EstadoCuenta.Monitor.Table.1.Column.7}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.7}"/>
+						</Column>
+						
+						<Column id="idCol17"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>QA_PC_EstadoCuenta.Monitor.Table.1.Column.8}">
+							<!--<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.8}"/>-->
+							<Link id="docDePagoPcButton" text="{i18n>EstadoCuenta.Monitor.Table.1.Column.8}" press="onFilterColumnDocDePagosPc"/>
+						</Column>
+						
+						<Column id="idCol18"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>QA_PA_EstadoCuenta.Monitor.Table.1.Column.9}">
+							<Text text="{i18n>EstadoCuenta.Monitor.Table.1.Column.9}"/>
+						</Column>
+
+						<Column id="idCol19"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>QA_PA_EstadoCuenta.Monitor.Table.1.Column.9}">
+							<Text text="Orden de compra"/>
+						</Column>
+
+						<Column id="idCo20"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>QA_PA_EstadoCuenta.Monitor.Table.1.Column.9}">
+							<!--<c:Label icon="sap-icon://filter" text="UUID" class="iconFilter"></c:Label>-->
+							<Link id="uuidPcButton" text="UUID" press="onFilterColumnUuidPc"/>
+						</Column>
+						
+					</columns>
+				
+					<items>
+						<ColumnListItem
+							vAlign="Middle">
+							<cells>
+								<Text text="{mTablesPartidasCompensadas>BELNR}"/>
+								<!--<Text text="{mTablesPartidasCompensadas>BLART}"/>-->
+								<Text text="{mTablesPartidasCompensadas>BUDAT}"/>
+								<!--<Text text="{mTablesPartidasCompensadas>ZFBDT}"/>-->
+								<Text text="{mTablesPartidasCompensadas>XBLNR}"/>
+								<Text text="{path:'mTablesPartidasCompensadas>WRBTR', formatter:'.formatter.formatCurrency'}"/>
+								<Text text="{mTablesPartidasCompensadas>WAERS}"/>
+								<Text text="{mTablesPartidasCompensadas>AUGBL}"/>
+								<Text text="{mTablesPartidasCompensadas>AUGDT}"/>
+								<Text text="{mTablesPartidasAbiertas>EBELN}"/>
+								<Text text="{mTablesPartidasAbiertas>UUID}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</Panel>
+		</content>
+	</Page>
+</mvc:View>

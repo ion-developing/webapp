@@ -1,0 +1,178 @@
+{
+    "_version": "1.7.0",
+    "sap.app": {
+        "id": "com.axiomasoluciones.wisemobile",
+        "type": "application",
+        "i18n": "wisemobile/Public/I18N/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "sourceTemplate": {
+            "id": "servicecatalog.connectivityComponent",
+            "version": "0.0.0",
+            "toolsId": "86d2c16e-44e7-40a6-ac1f-e7bdd3c54b5b"
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "supportedThemes": [
+            "sap_hcb",
+            "sap_belize"
+        ]
+    },
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "com.axiomasoluciones.wisemobile.Modulo_WiseMobile.view",
+            "type": "XML",
+            "id": "app"
+        },
+        "dependencies": {
+            "minUI5Version": "1.30.0",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.m": {},
+                "sap.ui.layout": {},
+                "sap.ushell": {},
+                "sap.collaboration": {},
+                "sap.ui.comp": {},
+                "sap.uxap": {},
+                "sap.ui.table": {},
+                "sap.ui.unified": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "wisemobile.Public.i18N.i18n"
+                }
+            }
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "com.axiomasoluciones.wisemobile.Modulo_WiseMobile",
+                "targetControl": "Modulos_wisemobile_Hom_Page",
+                "targetAggregation": "pages",
+                "clearTarget": false
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "Login",
+                    "view": "Login/view/Login",
+                    "viewId": "idRLogin"
+                },
+                {
+                    "pattern": "Menu",
+                    "name": "Menu",
+                    "view": "Main/view/Menu",
+                    "viewId": "idRMenu"
+                },
+                {
+                    "pattern": "Cambio",
+                    "name": "Cambio",
+                    "view": "Login/view/CambioPassword",
+                    "viewId": "idRCambio"
+                },
+                {
+                    "pattern": "PortalComprobacionGastosDEV",
+                    "name": "Main_PCG",
+                    "view": "ComprobacionGastos/view/Main",
+                    "viewId": "idRMain_PCG"
+                },
+                {
+                    "pattern": "PortalCydsa",
+                    "name": "Main_PG",
+                    "view": "GondiQA/view/Main",
+                    "viewId": "idRMain_PG"
+                },
+                {
+                    "pattern": "Grupos",
+                    "name": "Grupos",
+                    "view": "GroupManager/view/MonitorGrupos",
+                    "viewId": "idRMonitorGrupos"
+                },
+                {
+                    "pattern": "DetalleGrupo/:Modelo:/:oModelo:",
+                    "name": "DetalleGrupo",
+                    "view": "GroupManager/view/DetalleGrupo",
+                    "viewId": "idRDetalleGrupo"
+                },
+                {
+                    "pattern": "Usuarios",
+                    "name": "Usuarios",
+                    "view": "Usuarios/view/MonitorUsuarios",
+                    "viewId": "idRMonitorUsuarios"
+                },
+                {
+                    "pattern": "DetalleUsuario/:Modelo:/:oModelo:",
+                    "name": "DetalleUsuario",
+                    "view": "Usuarios/view/DetalleUsuario",
+                    "viewId": "idRDetalleUsuario"
+                },
+                {
+                    "pattern": "Aplicaciones",
+                    "name": "Aplicaciones",
+                    "view": "ApplicationManager/view/MonitorAplicaciones",
+                    "viewId": "idRMonitorAplicaciones"
+                },
+                {
+                    "pattern": "DetalleAplicacion/:Modelo:/:oModelo:",
+                    "name": "DetalleAplicacion",
+                    "view": "ApplicationManager/view/DetalleAplicacion",
+                    "viewId": "idRDetalleAplicacion"
+                },
+                {
+                    "pattern": "Roles",
+                    "name": "Roles",
+                    "view": "Roles/view/MonitorRoles",
+                    "viewId": "idRMonitorRoles"
+                },
+                {
+                    "pattern": "DetalleRol/:Modelo:/:oModelo:",
+                    "name": "DetalleRol",
+                    "view": "Roles/view/DetalleRol",
+                    "viewId": "idRDetalleRol"
+                },
+                {
+                    "pattern": "Color",
+                    "name": "Color",
+                    "view": "Colores/view/Color",
+                    "viewId": "idRColor"
+                }
+            ]
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        }
+    },
+    "sap.cloud": {
+        "public": true,
+        "service": "comaxiomasolucioneswisemobile"
+    }
+}

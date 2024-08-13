@@ -1,0 +1,45 @@
+specVersion: "3.1"
+metadata:
+  name: com.axiomasoluciones.wisemobile
+type: application
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: true
+        backend:
+          - path: /sap/bc/srt/rfc/sap/zw12_ws_methods_payment_vendor/100/zw12_ws_methods_payment_vendor/zw12_ws_methods_payment_vendor
+            url: http://POL-QRO-R3DEV.polioles.com.mx:8000
+           
+          - path: /sap/bc/srt/rfc/sap/zw18_ws_methd_incinv_po/100/zw18_ws_methd_incinv_po/zw18_ws_methd_incinv_po
+            url: http://POL-QRO-R3DEV.polioles.com.mx:8000
+      
+          - path: /sap/bc/srt/rfc/sap/zw18_ws_methd_incinv_wo_po/100/zw18_ws_methd_incinv_wo_po/zw18_ws_methd_incinv_wo_po
+            url: http://POL-QRO-R3DEV.polioles.com.mx:8000
+     
+          - path: /sap/bc/srt/rfc/sap/zw18_ws_methd_quote/100/zw18_ws_methd_quote/zw18_ws_methd_quote
+            url: http://POL-QRO-R3DEV.polioles.com.mx:8000
+       
+          - path: /sap/bc/srt/rfc/sap/zw20_ws_methods_login/100/zw20_ws_methods_login/zw20_ws_methods_login
+            url: http://POL-QRO-R3DEV.polioles.com.mx:8000
+        
+          - path: /sap/bc/srt/rfc/sap/zw04_ws_methd_pr_po/100/zw04_ws_methd_pr_po/zw04_ws_methd_pr_po
+            url: http://POL-QRO-R3DEV.polioles.com.mx:8000
+        ui5:
+          path:
+            - /resources
+            - /test-resources
+          url: https://ui5.sap.com
+          version: 1.38.59
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: fiori-tools-preview
+      afterMiddleware: fiori-tools-appreload
+      configuration:
+        component: com.axiomasoluciones.wisemobile
+        ui5Theme: sap_fiori_3

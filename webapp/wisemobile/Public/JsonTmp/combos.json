@@ -1,0 +1,217 @@
+{
+	"COMBINCAIONES_COLOR":[
+		{
+			"id": "0",
+			"text": "Color 1"
+		},
+		{
+			"id": "1",
+			"text": "Color 2"
+		},
+		{
+			"id": "2",
+			"text": "Color 3"
+		}
+	],
+	"RESPONSABLE":[
+		{
+			"id": "1",
+			"text": "CONTRALORIA"
+		}
+	],
+	"IVA":[
+		{
+			"id": "1",
+			"text": "0.0"
+		},
+		{
+			"id": "2",
+			"text": "16.0"
+		}
+	],
+	"TIPORECEPCION":[
+		{
+			"id": "1",
+			"text": "MERCANCIAS/POSICIONES DE SERVICIO"
+		},
+		{
+			"id": "2",
+			"text": "COSTES INDIRECTOS PLANIFICADOS"
+		},
+		{
+			"id": "3",
+			"text": "MCIA/SERVICIO + CST. INDIRECTOS PLANIF"
+		}
+	],
+	"AREA":[
+		{
+			"id": "1",
+			"text": "PLANEACION Y FINANZAS"
+		}
+	],
+	"SOCIEDAD":[
+		{
+			"id": "1",
+			"text": "1003 - BN"
+		},
+		{
+			"id": "2",
+			"text": "1005 - TRC"
+		},
+		{
+			"id": "3",
+			"text": "2002 - PJK"
+		}
+	],
+	"RAZONSOCIAL":[
+		{
+			"id": "1",
+			"text": "WISE TECHNOLOGY SERVICES"
+		}
+	],
+	"DIVISION":[
+		{
+			"id": "1",
+			"text": "Oficinas Mexico"
+		},
+		{
+			"id": "2",
+			"text": "Lerma Sur, Estado Mexico"
+		},
+		{
+			"id": "3",
+			"text": "Altamira"
+		}
+	],
+	"ESTADO_LISTADOFACTURA":[
+		{
+			"id": "1",
+			"text": "Todos"
+		},
+		{
+			"id": "2",
+			"text": "Pagado"
+		},
+		{
+			"id": "3",
+			"text": "Aprobado-Contabilizado"
+		},
+		{
+			"id": "4",
+			"text": "Pendiente por Aprobar"
+		},
+		{
+			"id": "5",
+			"text": "Rechazado"
+		}
+	],
+	"ESTADO":[
+		{
+			"id": "1",
+			"text": "Todos"
+		},
+		{
+			"id": "2",
+			"text": "Pendiente"
+		},
+		{
+			"id": "3",
+			"text": "Aprobado"
+		},
+		{
+			"id": "4",
+			"text": "Rechazado"
+		},
+		{
+			"id": "5",
+			"text": "Sustitucion"
+		}
+	],
+	"ESTADO_COTIZACION":[
+		{
+			"id": "3",
+			"text": "Aprobado"
+		},
+		{
+			"id": "4",
+			"text": "Rechazado"
+		},
+		{
+			"id": "2",
+			"text": "Pendiente"
+		}
+	],
+	"TIPODOC":[
+		{
+			"id": "1",
+			"text": "GASTOS DE VIAJE"
+		},
+		{
+			"id": "2",
+			"text": "EJECUCION NEGOCIO"
+		},
+		{
+			"id": "3",
+			"text": "DIVERSOS"
+		},
+		{
+			"id": "4",
+			"text": "GASTOS DE VIAJE EXTRANJERO"
+		}
+	],
+	"MONEDA":[
+		{
+			"id": "1",
+			"text": "EUR"
+		},
+		{
+			"id": "2",
+			"text": "MXN"
+		},
+		{
+			"id": "3",
+			"text": "USD"
+		}
+	],
+	"CLASEGASTOS":[
+		{
+			"id": "1", "text": "Avion"
+		},
+		{
+			"id": "2", "text": "Hospedaje"
+		},
+		{
+			"id": "3", "text": "Alimentos"
+		},
+		{
+			"id": "4", "text": "Taxis"
+		},
+		{
+			"id": "5", "text": "Gasolina"
+		},
+		{
+			"id": "6", "text": "Casetas"
+		},
+		{
+			"id": "7", "text": "Renta automovil"
+		},
+		{
+			"id": "8", "text": "Lavandera"
+		},
+		{
+			"id": "9", "text": "Ejecucion Negocios"
+		},
+		{
+			"id": "10", "text": "Propina"
+		},
+		{
+			"id": "11", "text": "Gastos sin comprobantes"
+		},
+		{
+			"id": "12", "text": "Cafeteria y comestibles"
+		},
+		{
+			"id": "13", "text": "Alimentos"
+		}
+	]
+}

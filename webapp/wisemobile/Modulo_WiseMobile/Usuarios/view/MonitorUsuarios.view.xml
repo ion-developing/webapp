@@ -1,0 +1,98 @@
+<mvc:View height="100%"
+	controllerName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.Usuarios.controller.MonitorUsuarios"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns="sap.m">
+	<Page id="idPage" showHeader="false" enableScrolling="true">
+		<content>
+			<Table id="idTableMonitorUsuarios"
+				inset="false"
+				items="{ path: 'mMonitorUsuarios>/Usuarios' }"
+				growing="true"
+			    growingThreshold="100"
+			    growingScrollToLoad="false"
+			    itemPress="onItemPressUsuarios">
+					<headerToolbar>
+						<Toolbar id="idTitle">
+							<Title text="{i18n>MonitorUsuarios.Table.Toolbar.Title}" level="H2"/>
+							<Title id="idCountTableMonitorUsuarios" text="(4)" level="H2"/>
+							<ToolbarSpacer/>
+							<Button	
+								tooltip="{i18n>MonitorUsuarios.Table.Header.Button.1.Tooltip}"
+								icon="sap-icon://action-settings"
+								press="onSettingsTableUsuarios" />
+							<Button icon="sap-icon://table-column" press="onPersoPress" />
+							<Button	
+								tooltip="{i18n>MonitorUsuarios.Table.Header.Button.2.Tooltip}"
+								icon="sap-icon://add"
+								press="onNuevoUsuario" />
+						</Toolbar>
+					</headerToolbar>
+					<columns>
+						<Column id="idCol1"
+							minScreenWidth="Phone"
+							demandPopin="true"
+							visible="{mManageControls>MonitorUsuarios.Table.Column.1}">
+							<Text text="{i18n>MonitorUsuarios.Table.Column.1}"/>
+						</Column>
+						<Column id="idCol2"
+							minScreenWidth="Phone"
+							demandPopin="true"
+							visible="{mManageControls>MonitorUsuarios.Table.Column.2}">
+							<Text text="{i18n>MonitorUsuarios.Table.Column.2}"/>
+						</Column>
+						<Column id="idCol3"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>MonitorUsuarios.Table.Column.3}">
+							<Text text="{i18n>MonitorUsuarios.Table.Column.3}"/>
+						</Column>
+						<Column id="idCol4"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>MonitorUsuarios.Table.Column.4}">
+							<Text text="{i18n>MonitorUsuarios.Table.Column.4}"/>
+						</Column>
+						<Column id="idCol5"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>MonitorUsuarios.Table.Column.5}">
+							<Text text="{i18n>MonitorUsuarios.Table.Column.5}"/>
+						</Column>
+						<Column id="idCol6"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>MonitorUsuarios.Table.Column.6}">
+							<Text text="{i18n>MonitorUsuarios.Table.Column.6}"/>
+						</Column>
+						<Column id="idCol7"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>MonitorUsuarios.Table.Column.7}">
+							<Text text="{i18n>MonitorUsuarios.Table.Column.7}"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem
+							vAlign="Middle"
+							type="Navigation">
+							<cells>
+								<Text text="{mMonitorUsuarios>nombre}"/>
+								<Text text="{mMonitorUsuarios>apellidos}"/>
+								<Text text="{mMonitorUsuarios>nombre_usuario}"/>
+								<Text text="{mMonitorUsuarios>telefono}"/>
+								<Text text="{mMonitorUsuarios>direccion}"/>
+								<Text text="{mMonitorUsuarios>descripcion}"/>
+								<Text text="{mMonitorUsuarios>activo}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+		</content>
+	</Page>
+</mvc:View>
+
+                

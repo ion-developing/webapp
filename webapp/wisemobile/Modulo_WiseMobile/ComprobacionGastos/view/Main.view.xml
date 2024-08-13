@@ -1,0 +1,71 @@
+<mvc:View
+	controllerName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.ComprobacionGastos.controller.Main"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns:ui="sap.ui"
+	xmlns="sap.m">
+	<Page id="idPage" showHeader="false">
+		<content>
+			<!-- 
+			<IconTabBar
+				id="idIconTabBarNoIcons"
+				select="handleIconTabBarSelect"
+				expandable="false"
+				selectedKey="1"
+				class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter id="idTabFilter_CrearSolicitud"
+						text="{i18n>ComprobacionGastos.Main.IconTabFilter.1}"
+						key="1" >
+						<content>
+							<mvc:XMLView id="idVCrearSolicitud" viewName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.ComprobacionGastos.view.CrearSolicitud" />
+						</content>
+					</IconTabFilter>
+					
+					<IconTabFilter
+						text="{i18n>ComprobacionGastos.Main.IconTabFilter.2}"
+						key="2" >
+						<content>
+							<mvc:XMLView id="idVLtaAnticipos" viewName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.ComprobacionGastos.view.LtaAnticipos" />
+						</content>
+					</IconTabFilter>
+					
+					<IconTabFilter
+						text="{i18n>ComprobacionGastos.Main.IconTabFilter.3}"
+						key="3" >
+						<content>
+							<mvc:XMLView id="idVLtaComprobaciones" viewName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.ComprobacionGastos.view.LtaComprobaciones" />
+						</content>
+					</IconTabFilter>
+					
+					<IconTabFilter
+						text="{i18n>ComprobacionGastos.Main.IconTabFilter.4}"
+						key="4" >
+						<content>
+							<mvc:XMLView id="idVEstadoCuenta" viewName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.ComprobacionGastos.view.EstadoCuenta" />
+						</content>
+					</IconTabFilter>
+					
+					<IconTabFilter 
+						text="{i18n>ComprobacionGastos.Main.IconTabFilter.5}"
+						key="5" >
+						<content>
+							<mvc:XMLView id="idVAprobaciones" viewName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.ComprobacionGastos.view.Aprobaciones" />
+						</content>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+			-->
+		</content>
+		<footer>
+			<Bar id="idVCrearSolicitud_Footer" visible="false">
+				<contentRight>
+					<Button id="idBtnEnviar" press="onPressNuevaSolicitud" text="{i18n>ComprobacionGastos.Form.CrearSoliciud.Button}" />
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>
+
+                

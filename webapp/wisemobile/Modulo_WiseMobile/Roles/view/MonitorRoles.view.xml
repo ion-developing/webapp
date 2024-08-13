@@ -1,0 +1,81 @@
+<mvc:View height="100%"
+	controllerName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.Roles.controller.MonitorRoles"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns="sap.m">
+	<Page id="idPage"  showHeader="false" enableScrolling="true">
+		<content>
+			<Table id="idTableMonitorRoles"
+				inset="false"
+				items="{ path: 'mMonitorRoles>/Roles' }"
+				growing="true"
+			    growingThreshold="100"
+			    growingScrollToLoad="false"
+			    itemPress="onItemPressRoles">
+					<headerToolbar>
+						<Toolbar id="idTitle">
+							<Title text="{i18n>MonitorRoles.Table.Toolbar.Title}" level="H2"/>
+							<Title id="idCountTableMonitorRoles" text="(4)" level="H2"/>
+							<ToolbarSpacer/>
+							<Button	
+								tooltip="{i18n>MonitorRoles.Table.Header.Button.1.Tooltip}"
+								icon="sap-icon://action-settings"
+								press="onSettingsTableRoles" />
+							<Button icon="sap-icon://table-column" press="onPersoPress" />
+							<Button	
+								tooltip="{i18n>MonitorRoles.Table.Header.Button.2.Tooltip}"
+								icon="sap-icon://add"
+								press="onNuevoRol" />
+							<Button	
+								tooltip="Descargar Excel"
+								icon="sap-icon://excel-attachment"
+								press="onDataExportRE" />
+						</Toolbar>
+					</headerToolbar>
+					<columns>
+						<Column id="idCol1"
+							minScreenWidth="Phone"
+							demandPopin="true"
+							visible="{mManageControls>MonitorRoles.Table.Column.1}">
+							<Text text="{i18n>MonitorRoles.Table.Column.1}"/>
+						</Column>
+						<Column id="idCol2"
+							minScreenWidth="Phone"
+							demandPopin="true"
+							visible="{mManageControls>MonitorRoles.Table.Column.2}">
+							<Text text="{i18n>MonitorRoles.Table.Column.2}"/>
+						</Column>
+						<Column id="idCol3"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>MonitorRoles.Table.Column.3}">
+							<Text text="{i18n>MonitorRoles.Table.Column.3}"/>
+						</Column>
+						<Column id="idCol4"
+							minScreenWidth="Tablet"
+							demandPopin="true"
+							visible="{mManageControls>MonitorRoles.Table.Column.4}">
+							<Text text="{i18n>MonitorRoles.Table.Column.4}"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem
+							vAlign="Middle"
+							type="Navigation">
+							<cells>
+								<Text text="{mMonitorRoles>id_rol}"/>
+								<Text text="{mMonitorRoles>nombre_rol}"/>
+								<Text text="{mMonitorRoles>activo}"/>
+								<Text text="{mMonitorRoles>apps}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+		</content>
+	</Page>
+</mvc:View>
+
+                

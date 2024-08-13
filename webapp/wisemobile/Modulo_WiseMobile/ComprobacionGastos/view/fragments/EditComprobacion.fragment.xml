@@ -1,0 +1,169 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<VBox class="sapUiSmallMargin">
+		<f:Form
+			editable="true">
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="4"
+					emptySpanL="4"
+					emptySpanM="4"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement label="{i18n>EditComprobacion.Form.Label.1}">
+							<f:fields>
+								<Input value="{mEditComprobacion>/No.Comprob}" enabled="false"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="{i18n>EditComprobacion.Form.Label.2}">
+							<f:fields>
+								<Input value="{mEditComprobacion>/FechaDoc}" enabled="false"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="{i18n>EditComprobacion.Form.Label.3}">
+							<f:fields>
+								<Input value="{mEditComprobacion>/FechaContabiliza}" enabled="false"/>
+							</f:fields>
+						</f:FormElement>
+						
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+		<Table
+			id="idTableFLtaComprobaciones"
+			mode="MultiSelect"
+			inset="false"
+			items="{
+					path: 'mTables>/FCOMPROBACIONES'
+			}"
+			growing="true"
+			growingThreshold="100"
+			growingScrollToLoad="false"
+			itemPress="onItemPressFLtaComprobaciones">
+			<headerToolbar>
+				<Toolbar id="idToolbarFLtaComprobaciones">
+					<Title text="{i18n>Records-found}" titleStyle="H6"/>
+					<Title id="idCountTableFLtaComprobaciones" text="(1)" titleStyle="H6"/>
+					<ToolbarSpacer/>
+					<Button icon="sap-icon://table-column" press="onPersoPress" />
+				</Toolbar>
+			</headerToolbar>
+			<columns>
+				<Column id="idCol161">
+					<Text text="{i18n>EditComprobacion.Monitor.Table.Column.1}"/>
+				</Column>
+				<Column id="idCol162">
+					<Text text="{i18n>EditComprobacion.Monitor.Table.Column.2}"/>
+				</Column>
+				<Column id="idCol163">
+					<Text text="{i18n>EditComprobacion.Monitor.Table.Column.3}"/>
+				</Column>
+				
+				<Column id="idCol164"
+					minScreenWidth="Tablet"
+					demandPopin="true">
+					<Text text="{i18n>EditComprobacion.Monitor.Table.Column.4}"/>
+				</Column>
+				
+				<Column id="idCol165"
+					minScreenWidth="Tablet"
+					demandPopin="true">
+					<Text text="{i18n>EditComprobacion.Monitor.Table.Column.5}"/>
+				</Column>
+				
+				<Column id="idCol166"
+					minScreenWidth="Tablet"
+					demandPopin="true">
+					<Text text="{i18n>EditComprobacion.Monitor.Table.Column.6}"/>
+				</Column>
+				
+				<Column id="idCol167"
+					minScreenWidth="Tablet"
+					demandPopin="true">
+					<Text text="{i18n>EditComprobacion.Monitor.Table.Column.7}"/>
+				</Column>
+				
+				<Column id="idCol168"
+					minScreenWidth="Tablet"
+					demandPopin="true">
+					<Text text="{i18n>EditComprobacion.Monitor.Table.Column.8}"/>
+				</Column>
+				
+				<Column id="idCol169"
+					minScreenWidth="Tablet"
+					demandPopin="true">
+					<Text text="{i18n>EditComprobacion.Monitor.Table.Column.9}"/>
+				</Column>
+				
+				<Column id="idCol170"
+					minScreenWidth="Tablet"
+					demandPopin="true">
+					<Text text="{i18n>EditComprobacion.Monitor.Table.Column.10}"/>
+				</Column>
+				
+				<Column id="idCol171"
+					minScreenWidth="Tablet"
+					demandPopin="true">
+					<Text text="{i18n>EditComprobacion.Monitor.Table.Column.11}"/>
+				</Column>
+				
+				<Column id="idCol172"
+					minScreenWidth="Tablet"
+					demandPopin="true">
+					<Text text="{i18n>EditComprobacion.Monitor.Table.Column.12}"/>
+				</Column>
+				
+				<Column id="idCol173"
+					minScreenWidth="Tablet"
+					demandPopin="true">
+					<Text text="{i18n>EditComprobacion.Monitor.Table.Column.13}"/>
+				</Column>
+				
+				<Column id="idCol174"
+					minScreenWidth="Tablet"
+					demandPopin="true">
+					<Text text="{i18n>EditComprobacion.Monitor.Table.Column.14}"/>
+				</Column>
+				
+			</columns>
+			
+			<items>
+				<ColumnListItem
+					vAlign="Middle">
+					<cells>
+						<Text text="{mTables>Linea}"/>
+						<Text text="{mTables>TipoDoc}"/>
+						<Text text="{mTables>ClaseGasto}"/>
+						<Text text="{mTables>Importe}"/>
+						<Text text="{mTables>Moneda}"/>
+						<Text text="{mTables>Sociedad}"/>
+						<Text text="{mTables>IVA}"/>
+						<Text text="{mTables>FomaPago}"/>
+						<Text text="{mTables>TipoCambio}"/>
+						<Text text="{mTables>Centrocoste}"/>
+						<Text text="{mTables>UUID}"/>
+						<Text text="{mTables>RFC}"/>
+						<Text text="{mTables>XML}"/>
+						<Text text="{mTables>PDF}"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</VBox>
+</core:FragmentDefinition>

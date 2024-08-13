@@ -1,0 +1,899 @@
+{
+	"ESTATUS_COTIZACIONES":[
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Raz\u00f3n social :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "BUKRS",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_1",
+		    "ztext": "Peticion de Oferta # :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "peticion_oferta",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_1",
+		    "ztext": "Fecha de Licitacion :=",
+			"zexclude" : false,
+			"zoperation" : "BT",
+		    "zcolumnKey": "f_licitacion",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_2",
+		    "ztext": "Estado :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "estado",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"LISTADOFACTURA":[
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Raz\u00f3n social :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "BUKRS",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_1",
+		    "ztext": "Fecha Factura :=",
+			"zexclude" : false,
+			"zoperation" : "BT",
+		    "zcolumnKey": "f_Factura",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_2",
+		    "ztext": "Estado :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "estado",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"ORDENCOMPRAFACTURAR":[
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Raz\u00f3n social :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "BUKRS",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_1",
+		    "ztext": "Fecha Orden de compra :=",
+			"zexclude" : false,
+			"zoperation" : "BT",
+		    "zcolumnKey": "f_orden_Compra",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_2",
+		    "ztext": "Tipo Recepci�n :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "tipo_recepcion",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_3",
+		    "ztext": "Moneda :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "WAERS",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"CONSIGNACIONFACTURAR":[
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Raz\u00f3n social :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "BUKRS",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_1",
+		    "ztext": "Fecha Orden de compra :=",
+			"zexclude" : false,
+			"zoperation" : "BT",
+		    "zcolumnKey": "f_orden_Compra",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"ESTATUSRECEPCION":[
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Raz\u00f3n social :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "BUKRS",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_1",
+		    "ztext": "Fecha Factura :=",
+			"zexclude" : false,
+			"zoperation" : "BT",
+		    "zcolumnKey": "f_Factura",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"ORDENESDECOMPRAPORAUTORIZAR":[
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Fecha Orden de Compra :=",
+			"zexclude" : false,
+			"zoperation" : "BT",
+		    "zcolumnKey": "f_orden_compra",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"REQUISICIONESPORAUTORIZAR":[
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Fecha requisiciones :=",
+			"zexclude" : false,
+			"zoperation" : "BT",
+		    "zcolumnKey": "f_requisiciones",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"ORDENCOMPRACFACTURA_2":[
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Raz\u00f3n social :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "BUKRS",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_1",
+		    "ztext": "Fecha orden de Compra :=",
+			"zexclude" : false,
+			"zoperation" : "BT",
+		    "zcolumnKey": "AEDAT",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_2",
+		    "ztext": "Tipo Recepci�n :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "TIPO",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_3",
+		    "ztext": "Moneda :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "WAERS",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_4",
+		    "ztext": "Orden de Compra :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+			"zcolumnKey": "EBELN",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"ORDENCOMPRACFACTURA":[
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Raz\u00f3n social :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "BUKRS",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_1",
+		    "ztext": "Fecha orden de Compra :=",
+			"zexclude" : false,
+			"zoperation" : "BT",
+		    "zcolumnKey": "f_orden_Compra",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_2",
+		    "ztext": "Tipo Recepci�n :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "tipo_recepcion",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_3",
+		    "ztext": "Moneda :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "WAERS",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"CONSIGNACIONCFACTURA_2":[
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Raz\u00f3n social :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "BUKRS",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_1",
+		    "ztext": "Fecha orden de Compra :=",
+			"zexclude" : false,
+			"zoperation" : "BT",
+		    "zcolumnKey": "AEDAT",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_2",
+		    "ztext": "Orden de Compra :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+			"zcolumnKey": "EBELN",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"CONSIGNACIONCFACTURA":[
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Raz\u00f3n social :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "BUKRS",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_1",
+		    "ztext": "Fecha orden de Compra :=",
+			"zexclude" : false,
+			"zoperation" : "BT",
+		    "zcolumnKey": "f_orden_Compra",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"GRUPOS": [
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Descripcion :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "descripcion",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Id Grupo:=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "id_grupo",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"USUARIOS": [
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Nombre :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "nombre",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Apellidos:=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "apellidos",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"APLICACIONES": [
+		{
+			"zkey" : "condition_0",
+		    "ztext": "ID App:=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "id_app",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Nombre App:=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "nombre_app",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"ROLES": [
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Id Rol:=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "id_rol",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Nombre Rol:=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "nombre_rol",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"COMPLEMENTOS": [
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Sociedad :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "sociedad",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_1",
+		    "ztext": "Fecha Pago :=",
+			"zexclude" : false,
+			"zoperation" : "BT",
+		    "zcolumnKey": "f_pago",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_2",
+		    "ztext": "Estado :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "estado",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"APROBACIONES": [
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Raz�n social :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "BUKRS",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_1",
+		    "ztext": "Divisi�n :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "division",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_2",
+		    "ztext": "Fecha de Solicitud :=",
+			"zexclude" : false,
+			"zoperation" : "BT",
+		    "zcolumnKey": "f_solicitud",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_3",
+		    "ztext": "Estado :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "estado",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_4",
+		    "ztext": "No. de Comrpobaci\u00f3n :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "nocomprobacion",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"LTAANTICIPOS": [
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Raz�n social :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "BUKRS",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_1",
+		    "ztext": "Divisi�n :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "division",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_2",
+		    "ztext": "Fecha de Solicitud :=",
+			"zexclude" : false,
+			"zoperation" : "BT",
+		    "zcolumnKey": "f_solicitud",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_3",
+		    "ztext": "Estado :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "estado",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"ESTADOCUENTA": [
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Raz�n social :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "BUKRS",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"TICKETS": [
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Descripcion Corta :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "descripcion_corta",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Id Tipo Ticket :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "id_tipo_ticket",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"EMPLEADOS": [
+		{
+			"zkey" : "condition_0",
+		    "ztext": "ID Empleado :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "id_persona",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Nombre :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "nombre",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"CLIENTES": [
+		{
+			"zkey" : "condition_0",
+		    "ztext": "ID Cliente :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "id_cliente",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Nombre :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "BUKRS",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"PROVEEDORES": [
+		{
+			"zkey" : "condition_0",
+		    "ztext": "ID Proveedor :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "id_proveedor",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Nombre :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "BUKRS",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"PERSONACONTACTOS": [
+		{
+			"zkey" : "condition_0",
+		    "ztext": "ID Contacto :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "id_persona",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Nombre :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "nombre",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"CONTRATOCABS": [
+		{
+			"zkey" : "condition_0",
+		    "ztext": "ID Contrato :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "id_contrato_cab",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Descripcion :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "nombre_largo",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"EMPRESAS": [
+		{
+			"zkey" : "condition_0",
+		    "ztext": "ID Empresa :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "id_empresa",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Razon Social :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "BUKRS",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"ETAPAS": [
+		{
+			"zkey" : "condition_0",
+		    "ztext": "ID etapa :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "id_etapa",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Descripcion :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "descripcion",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"METODOLOGIAXPLATAFORMASS": [
+		{
+			"zkey" : "condition_0",
+		    "ztext": "ID Plataforma :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "id_plataforma",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_0",
+		    "ztext": "ID Metodologia :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "id_metodologia",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"C_TIPOSERVICIOS": [
+		{
+			"zkey" : "condition_0",
+		    "ztext": "ID Tipo de Servicio :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "id_tipo_servicio",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Descripcion :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "descripcion_corta",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"C_PLATAFORMAS": [
+		{
+			"zkey" : "condition_0",
+		    "ztext": "ID Plataforma :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "id_plataforma",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Descripcion :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "descripcion",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"TIPOUSUARIOROLS": [
+		
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Tipo de Usuario :=",
+			"zexclude" : false,
+			"zoperation" : "Contains",
+		    "zcolumnKey": "descripcion_tipo_usuario",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Rol de Usuario :=",
+			"zexclude" : false,
+			"zoperation" : "Contains",
+		    "zcolumnKey": "descripcion_rol_user",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"COTIZACIONES":[
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Raz\u00f3n social :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "BUKRS",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_1",
+		    "ztext": "Fecha De Licitacion :=",
+			"zexclude" : false,
+			"zoperation" : "BT",
+		    "zcolumnKey": "f_licitacion",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_2",
+		    "ztext": "Peticion de Oferta # :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "peticion_oferta",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	],
+	"ESTADO_COTIZACIONES":[
+		{
+			"zkey" : "condition_0",
+		    "ztext": "Raz\u00f3n social :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "BUKRS_RAN",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_1",
+		    "ztext": "Fecha De Licitacion :=",
+			"zexclude" : false,
+			"zoperation" : "BT",
+		    "zcolumnKey": "f_licitacion",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_2",
+		    "ztext": "Peticion de Oferta # :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "peticion_oferta",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		},
+		{
+			"zkey" : "condition_3",
+		    "ztext": "Estado :=",
+			"zexclude" : false,
+			"zoperation" : "EQ",
+		    "zcolumnKey": "estado",
+			"zvalue1" : "",
+			"zvalue2" : null,
+			"zshowIfGrouped": false
+		}
+	]
+}

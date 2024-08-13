@@ -1,0 +1,569 @@
+#idRHome--FormDashboard_1--Grid {
+	padding: 0 !important;
+}
+
+#idRMain_PCG--idIconTabBarNoIcons-containerContent .sapMPage>section,
+#idRMain_PG--idIconTabBarNoIcons-containerContent .sapMPage>section  {
+    position: initial !important;
+}
+
+#idRMain_PG--idPage .sapMPage>section,
+#idRMain_PCG--idPage .sapMPage>section{
+	position: initial !important;
+}
+/* CSS COMBO ELEMENTO SELECCIONADO */
+.sapMSelectListItemBaseSelected {
+	/*background: #f8d7d7 !important;*/
+}
+/* CSS BUTTONS COLOR TEXTO */
+.sapMBtnInner{
+	/*color: #bc2423;*/
+}
+/* CSS BUTTONS COLOR FONDO */
+.sapMBtnInner {
+    /*background-color: #f7f7f7;*/
+}
+:not(.sapMBtnDisabled)>.sapMBtnInner.sapMBtnActive{
+	/*color: #ffffff;*/
+}
+/* CSS BUTTONS MODO MOVIL - INICIO SESION */
+.sapContrast.sapMOTAPopover .sapMBtnTransparent:not(.sapMBtnActive):not(.sapMToggleBtnPressed), .sapContrast .sapMOTAPopover .sapMBtnTransparent:not(.sapMBtnActive):not(.sapMToggleBtnPressed){
+	/*color: #ffffff !important;*/
+}
+/* CSS BUTTON 3 PUNTOS SELECTED HOVER*/
+.sapContrast.sapMBtn:hover>.sapMBtnHoverable.sapMToggleBtnPressed:not(.sapMBtnActive), .sapContrast .sapMBtn:hover>.sapMBtnHoverable.sapMToggleBtnPressed:not(.sapMBtnActive){
+	/*background-color: #bc2423;
+    border-color: #730505;*/
+}
+/* CSS BUTTON 3 PUNTOS FOCUS HOVER (cuando el boton esta seleccionado y das click sobre el) */
+.sapContrast.sapMBtn .sapMBtnHoverable.sapMToggleBtnPressed:hover,
+.sapContrast .sapMBtn .sapMBtnHoverable.sapMToggleBtnPressed:hover{
+	/*background-color: #730505;
+    border-color: #bc2423;*/
+}
+/* CSS BUTTON 3 PUNTOS ACTIVE HOVER (cuando el boton no ha sido tocado para nada y das click sobre el) */
+.sapContrast :not(.sapMBtnDisabled):hover>.sapMBtnTransparent.sapMBtnActive{
+	/*background-color: #730505;
+    border-color: #bc2423;*/
+}
+html.sap-desktop .sapContrast .sapMToggleBtnPressed, html.sap-desktop .sapContrast.sapMToggleBtnPressed {
+    /*background-color: #bc2423;
+    border-color: #730505;*/
+}
+.sapContrast.sapMToggleBtnPressed:not(.sapMBtnDisabled), .sapContrast .sapMToggleBtnPressed:not(.sapMBtnDisabled) {
+    /*background-image: none;
+    background-color: #ff8888;
+    border-color: #ff8888;
+    color: #2f3c48;
+    text-shadow: none;*/
+}
+/* CSS SWITCH ON/OFF*/
+.sapMSwtOn:not(.sapMSwtAcceptReject) {
+    /*background: #bc2423;
+    border-color: #bc2423;*/
+}
+.sapMSwtHoverable.sapMSwtOn:not(.sapMSwtAcceptReject):hover {
+    /*background: #ff8888;
+    border-color: #ff8888;*/
+}
+
+/* CSS POPUP FOOTER ICONO COLOR  */
+.sapContrast.sapMBtnIcon, .sapContrast .sapMBtnIcon {
+    /*color: #ffffff !important;*/
+}
+/* CSS LIST PAGIANCION */
+.sapMGrowingListTriggerText>.sapMSLITitle {
+    /*color: #bc2423;*/
+}
+.sapMGrowingListDescription.sapMSLIDescription {
+    /*color: #bc2423;*/
+}
+/* CSS LIST FILA HOVER */
+.sapMLIBHoverable.sapMLIBSelected:hover {
+    /*background: #ffeded;*/
+}
+/* CSS POPUP FOOTER BUTTON COLOR */
+.sapContrast.sapMBtnInner, .sapContrast .sapMBtnInner {
+    /*color: #ffffff;*/
+}
+
+.sapMBar {
+    /*background-color: #ffeded;*/
+}
+/* CSS RADIOBUTTON */
+.sapMRbSel .sapMRbBInn {
+    /*background-color: #bc2423;*/
+}
+
+/* CSS COLOR TODOS ICONOS EN EL CONTROL SAP.M.INPUT */
+.sapMInputBaseIcon {
+    /*color: #bc2423;*/
+}
+.sapMInputBaseIcon:Active{
+	/*background-color: #bc2423 !important;*/
+}
+
+/* CSS COLOR COMBOS*/
+.sapMSltArrow {
+    /*color: #bc2423;*/
+}
+.sapMSltPressed>.sapMSltArrow {
+	/*background: #bc2423 !important;*/
+}
+/* CSS COLOR BORDE COMBO */
+.sapMSltHoverable:not(.sapMSltState):not(.sapMSltIconOnly):hover {
+    /*border-color: #bc2423;
+    background: #ffffff;*/
+}
+/* CSS COLOR BORDE COMBO DESPEGABLE */
+.sapMSltPressed:not(.sapMSltDisabled):not(.sapMSltState) {
+    /*border-color: #bc2423;*/
+}
+/* COLOR DE FONDO AL SELECCIONAR OTRO ELEMENTO DEL COMBO */
+.sapMSelectListItemBase.sapMSelectListItemBasePressed,
+.sapMSelectListItemBase.sapMSelectListItemBasePressed.sapMSelectListItemBaseSelected{
+	/*background: #bc2423;*/
+}
+.sapMSelectListItemBaseSelected.sapMSelectListItemBaseHoverable:hover {
+    /*background-color: #f4c1c1;*/
+}
+
+/* CSS COLOR DE SELECCION COMBO
+.sapMSelectListItemBaseSelected {
+    background: #f8d7d7;
+}*/
+
+/* CSS COLOR DE FONDO AL CONTROL SAP.M.INPUT : ACTIVE */
+.sapMInputBaseContentWrapper:not(.sapMInputBaseReadonlyWrapper):not(.sapMInputBaseContentWrapperState):not(.sapMInputBaseDisabledWrapper):active {
+    /*background: #ffffff;
+    border-color: #bc2423;*/
+}
+/* CSS COLOR DE BODE AL CONTROL SAP.M.INPUT : HOVER */
+.sapMInputBaseContentWrapper:not(.sapMInputBaseReadonlyWrapper):not(.sapMInputBaseContentWrapperState):not(.sapMInputBaseDisabledWrapper):hover {
+    /*border-color: #bc2423;*/
+}
+.sapMInputBaseIconPressed .sapMInputBaseIcon,
+.sapMInputBaseIconPressed .sapMInputBaseIcon:hover{
+	/*background: #bc2423 !important;*/
+}
+/* CSS COLOR BUSYDIALOG */
+.sapUiLocalBusyIndicatorAnimation>div::before {
+    /*background: #bc2423;*/
+}
+.sapUiLocalBusyIndicatorAnimation>div::after {
+    /*box-shadow: inset 0 0 2px 1px #bc2423;*/
+}
+
+/* CSS COLOR ICONOS TOOLPAGE*/
+/*#TntToolPage-header .sapContrast :not(.sapMBtnDisabled) .sapMBtnTransparent>.sapMBtnIcon {*/
+/*.ZsapMBtnTP.sapMBtnIcon:not(:hover), .ZsapMBtnTP .sapMBtnIcon:not(:hover){*/
+.ZsapMBtnTP.sapMBtnIcon, .ZsapMBtnTP .sapMBtnIcon{
+	/*color: #ffffff !important;*/
+}
+/* CSS PARA EL TEXTO "BACK" */
+/*#idBtnBack_2 .sapContrast.sapMLnk, .sapContrast .sapMLnk {*/
+.ZsapMLnkTP.sapMLnk, .ZsapMLnkTP .sapMLnk{
+    /*color: #eaecf2;
+    text-decoration: none;*/
+}
+/* CSS TOOLPAGE LINK HOVER */
+/*#TntToolPage .sapContrast.sapMLnk:hover:not(.sapMLnkDsbl), .sapContrast .sapMLnk:hover:not(.sapMLnkDsbl) {*/
+.sapContrast.ZsapMLnkTP.sapMLnk:hover:not(.sapMLnkDsbl), .sapContrast .ZsapMLnkTP.sapMLnk:hover:not(.sapMLnkDsbl) {
+    /*color: #f4c1c1;*/
+}
+/* CSS TOOLPAGE LINK FOCUS */
+/*#TntToolPage .sapContrast.sapMLnk:focus:not(.sapMLnkDsbl), .sapContrast .sapMLnk:focus:not(.sapMLnkDsbl) {*/
+.sapContrast.ZsapMLnkTP.sapMLnk:focus:not(.sapMLnkDsbl), .sapContrast .ZsapMLnkTP.sapMLnk:focus:not(.sapMLnkDsbl) {
+    /*color: #f4c1c1;*/
+}
+/* CSS BUTTON COLOR TEXTO HOVER */
+.sapMIBar-CTX .sapMBtn:hover>.sapMBtnHoverable:not(.sapMBtnActive) {
+	/*color: #bc2423;*/
+}
+/* CSS BUTTON COLOR FONDO ACTIVE DE UN BUTON EN UN SAP.M.BAR */
+.sapMIBar.sapMHeader-CTX :not(.sapMBtnDisabled)>.sapMBtnActive,
+.sapMIBar.sapMHeader-CTX.sapMFooter-CTX :not(.sapMBtnDisabled)>.sapMBtnActive {
+	/*background-color: #bc2423;*/
+}
+/* CSS BUTTON COLOR ICONOS */
+.sapMBtnIcon {
+    /*color: #730505;*/
+}
+/* CSS BUTTON COLOR FONDO ACTIVE */
+:not(.sapMBtnDisabled)>.sapMBtnInner.sapMBtnActive{
+	/*background-color: #bc2423;
+	border-color: #730505;*/
+}
+/* CSS TABLA COLOR FILA SELECCIONADA */
+.sapMLIB.sapMLIBSelected {
+    /*background: #f5f2f2;*/
+}
+/* CSS TABLA COLOR FILA SELECCIONADA MODO MOVIL */
+.sapMLIBSelected + .sapMListTblSubRow, .sapMLIBSelected.sapMListTblRowAlternate + .sapMListTblSubRow {
+    /*background: #f5f2f2;*/
+}
+/* CSS TABLA COLOR FOOTER*/
+.sapMListFtr{
+	/*background-color: #f4c1c1;*/
+}
+/* CSS POPUP TABLA ORDENAR COLOR BORDE ICONO */
+.sapMSegBBtn.sapMSegBBtnFocusable.sapMSegBBtnSel {
+    /*border-right: 1px solid #bc2423;*/
+}
+/* CSS TABLA POPUP ORDENAR COLOR ICONO DESSELECCIONADO */
+.sapMSegBBtn .sapUiIcon{
+	/*color: #bc2423;*/
+}
+/* CSS TABLA POPUP ORDENAR COLOR ICONO HOVER */
+html.sap-desktop .sapMSegBBtn.sapMSegBBtnFocusable.sapMSegBBtnSel:hover,
+html.sap-desktop .sapMSegBBtnFocusable.sapMBtnActive:hover {
+    /*background: #bc2423;*/
+}
+/* CSS TABLA POPUP ORDENAR COLOR FONDO BUTTON SELECCIONADO */
+.sapMSegBBtn.sapMSegBBtnSel {
+    /*background: #730505;
+    border-color: #bc2423;*/
+}
+/* CSS TABLA POPUP ORDENAR BUTTON OK COLOR  */
+.sapMDialogFooter .sapContrast span.sapMBtnInner.sapMBtnEmphasized {
+    /*background-color: #bc2423;
+    border-color: #730505;*/
+}
+
+/* CSS POPUP ORDENAR BUTTON OK COLOR HOVER  */
+.sapContrast.sapMIBar-CTX .sapMBtn:hover>.sapMBtnHoverable.sapMBtnEmphasized:not(.sapMBtnActive), .sapContrast .sapMIBar-CTX .sapMBtn:hover>.sapMBtnHoverable.sapMBtnEmphasized:not(.sapMBtnActive) {
+    /*background-color: #730505;
+    border-color: #bc2423;*/
+}
+/* CSS TABLA POPUP ORDENAR BUTTON CANCELAR COLOR  */
+.sapContrast.sapMIBar-CTX.sapMFooter-CTX :not(.sapMBtnDisabled)>.sapMBtnActive,
+.sapContrast .sapMIBar-CTX.sapMFooter-CTX :not(.sapMBtnDisabled)>.sapMBtnActive{
+	/*color: #ffffff !important;*/
+}
+
+/* CSS LISTA TITULO COLOR*/
+.sapMListUl .sapMLIB.sapMGHLI{
+	/*color: #bc2423;*/
+}
+/* CSS LISTA TYPE NAVIGATION ACIVE*/
+.sapMLIB.sapMLIBActive{
+	/*background-color: #bc2423;
+	background: #bc2423;*/
+}
+/* CSS FILTRO COLOR ICONOS PANEL */
+.sapMPanelExpandableIcon {
+    /*color: #bc2423;*/
+}
+/* CSS FILTRO COLOR MENOS-MAS FILTROS */
+:not(.sapMBtnDisabled) .sapMBtnTransparent>.sapMBtnIcon,
+:not(.sapMBtnDisabled) .sapMBtnGhost>.sapMBtnIcon {
+    /*color: #bc2423;*/
+}
+/* CSS PersoDialog COLOR ICON */
+.sapMSFB{
+	/*color: #bc2423;*/
+}
+/* CSS PersoDialog INPUT BUSQUEDA */
+:not(.sapMSFDisabled)>.sapMSFF:hover {
+    /*border-color: #bc2423;*/
+}
+/* CSS PersoDialog INPUT BUSQUEDA ACTIVE */
+.sapMSFF>.sapMSFB:not(.sapMSFBF):active, .sapMSFF>.sapMSFB.sapMSFBA {
+    /*background-color: #bc2423;*/
+}
+/* CSS PersoDialog INPUT BUSQUEDA ACTIVE */
+.sapMFocus>.sapMSFF>.sapMSFB{
+	/*color: #bc2423;*/
+}
+/* CSS CHECKBOX ICONO CHECK */
+.sapMCbBg.sapMCbMarkChecked:before {
+    /*color: #bc2423;*/
+}
+/* CSS CHECKBOX SELECCIONADO COLOR BORDES  */
+.sapMCbHoverable:hover {
+    /*border-color: #730505;*/
+}
+/* CSS DATEPICKER SELECCION DIA*/
+.sapUiCalItemSel {
+    /*background-color: #bc2423;*/
+}
+/* CSS DATEPICKER CABECERA MES A�O ACTIVE*/
+.sapUiCalHead>button:active, .sapUiCalCancel:active, .sapUiCalHead>button:active, .sapUiCalHead>button:active>.sapUiCalHeadBAddText, .sapUiCalCancel:active {
+    /*background-color: #bc2423;*/
+}
+/* CSS DATEPICKER FLECHAS LATERALES */
+.sapUiCalHead>button, .sapUiCalCancel {
+    /*color: #bc2423;*/
+}
+/* CSS DATEPICKER DIA SELECCIONADO X DEFAULT */
+.sapUiCalItemSel:hover, .sapUiCalItemSel:focus {
+    /*background-color: #bc2423 !important;*/
+}
+
+/* CSS DATEPICKER CABECERA MES A�O : HOVER */
+.sapUiCalHead>.sapUiCalHeadB, .sapUiCalCancel, .sapUiCalHead>.sapUiCalHeadB:hover, .sapUiCalHead>.sapUiCalHeadB:focus {
+    /*color: #bc2423;*/
+}
+.sapUiCalHead>.sapUiCalHeadB, .sapUiCalCancel, html.sap-desktop .sapUiCalHead>.sapUiCalHeadB:hover, html.sap-desktop .sapUiCalHead>.sapUiCalHeadB:focus {
+    /*color: #bc2423;*/
+}
+/* CSS DATEPICKER MES A�O BACKGROUND ACTIVE */
+.sapUiCalHead>button:active, .sapUiCalCancel:active, .sapUiCalHead>button:active, .sapUiCalHead>button:active>.sapUiCalHeadBAddText, .sapUiCalCancel:active {
+    /*background-color: #bc2423 !important;
+    color: #ffffff !important;*/
+}
+/* CSS PARA EL HEADER TOOLPAGE */
+.sapContrast.sapTntToolHeader.sapMTB,
+.sapContrast .sapTntToolHeader.sapMTB {
+	/*background-color: #171818 !important;
+	border: 0px solid #3f5161 !important;*/
+}
+.sapTntToolHeader.sapMTB{
+	/*border: 1px solid #3f5161;*/
+}
+/* CSS PARA EL SIDECONTENT TOOLPAGE */
+.sapContrast.sapTntSideNavigation, .sapContrast .sapTntSideNavigation {
+    /*background: #171818 !important;
+    border-right: 1px solid #171818 !important;*/
+}
+/* CSS PARA EL TOOLPAGE BUUTON ARRI BA ABAJO (se muestra en caso el tama�o sea muy peque�o)*/
+.sapContrast.sapTntSideNavigationScrollIcon, .sapContrast .sapTntSideNavigationScrollIcon {
+    /*color: #ffffff;*/
+}
+/* CSS TOOLPAGE BUTTON ITEMS DE ACCION */
+.sapContrast.sapTntNavLIItem, .sapContrast .sapTntNavLIItem {
+    /*background-color: #171818 !important;*/
+}
+.sapContrast.sapTntNavLIGroupItem.sapTntNavLIItem, .sapContrast .sapTntNavLIGroupItem.sapTntNavLIItem {
+    /*background-color: #3f5161 !important;*/
+}
+.sapContrast.sapTntNavLIItem>.sapUiIcon,
+.sapContrast .sapTntNavLIItem>.sapUiIcon {
+    /*color: #ffffff;*/
+}
+
+/* CSS MENU BORDE REDONDEADO A LOS TILES */
+.sapMGT,
+.sapMGT.sapMPointer * {
+	/*border-radius: 0.7rem !important;*/
+}
+/* CSS MENU - COLOR ICONOS*/
+.sapMImageContentImageIcon.sapUiIcon {
+    /*color: #bc2423;*/
+}
+/* CSS PARA EL ROTULO DE LOS TILES*/
+.sapMGTHdrTxt>.sapMText {
+    /*color: #c00932 !important;*/
+}
+/* CSS PARA LA BANDA DE LOS MOUDLOS (sap.m.Page - subHeader - Toolbar(Info) COLOR)  */
+.sapMTB-Info-CTX.sapMTB {
+    /*background: #940f0f !important;
+    color: #ffffff !important;*/
+}
+
+.toolbarColorWise {
+    background: #1e3259 !important;
+}
+
+.toolbarColorCydsa {
+    background: #0047B9 !important;
+}
+
+.toolbarTextColor {
+    color: #ffffff !important;
+    font-size: 17px;
+}
+
+.sapMTitle {
+    font-weight:bold;
+}
+
+.textLoginCopyright {
+    font-size: 10px;
+}
+
+.tileLayout {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.sapMBtnEmphasized {
+    background: #0047B9 !important;
+    border-color: #0047B9 !important;
+}
+
+.sapMSwtOn {
+    background: #0047B9 !important;
+    border-color: #0047B9 !important;
+}
+
+.sapMImageContentImageIcon {
+    color: #0047B9 !important;
+}
+
+.ZsapMLnkTP {
+    color: #0047B9 !important;
+}
+
+.iconFilter {
+    color: #0047B9 !important;
+}
+
+/*
+.sapUiLblIco,
+.sapUiLblIcoL,
+.sapUiIcon,
+.sapUiIconMirrorInRTL {
+    color: #0047B9 !important;
+}
+*/
+
+/*
+.sapMPageEnableScrolling {
+    background-color: #3881e0;
+}
+*/
+
+/*
+.sapUiFormResGrid.sapUiFormToolbar>div:first-child {
+    background-color: #f7f7f7;
+}
+*/
+.spinnImgSup {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	top: 0;
+	margin: auto;
+	max-height: 30%;
+	max-width: 30%;
+}
+.sapUiForm .mbsc-control{
+	width: 97%;
+    max-width: 98%;
+	position: relative;
+    vertical-align: top;
+    outline: none;
+    height: 2.45rem;
+    margin: 0.25rem 0 0.25rem 0;
+    border: 1px solid #bfbfbf;
+    background: #ffffff;
+    padding-left: 0.625rem;
+    font-size: 0.875rem;
+    font-family: "72",Arial,Helvetica,sans-serif;
+}
+/*
+#idRMenu--idPage-cont {
+    background: #121212;
+    background: -moz-linear-gradient(top,  #121212 0%, #d53a3a 50%, #d34848 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#121212), color-stop(50%,#d53a3a), color-stop(100%,#d34848));
+    background: -webkit-linear-gradient(top,  #121212 0%,#d53a3a 50%,#d34848 100%);
+    background: -o-linear-gradient(top,  #121212 0%,#d53a3a 50%,#d34848 100%);
+    background: -ms-linear-gradient(top,  #121212 0%,#d53a3a 50%,#d34848 100%);
+    background: linear-gradient(to bottom,  #121212 0%,#d53a3a 50%,#d34848 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#121212', endColorstr='#d34848',GradientType=0 );
+}
+*/
+.Degradado > section, .Degradados {
+    /*background: #121212; /* Old browsers */
+    /*background: -moz-linear-gradient(top,  #121212 0%, #d53a3a 50%, #d34848 100%); /* FF3.6+ */
+    /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#121212), color-stop(50%,#d53a3a), color-stop(100%,#d34848)); /* Chrome,Safari4+ */
+    /*background: -webkit-linear-gradient(top,  #121212 0%,#d53a3a 50%,#d34848 100%); /* Chrome10+,Safari5.1+ */
+    /*background: -o-linear-gradient(top,  #121212 0%,#d53a3a 50%,#d34848 100%); /* Opera 11.10+ */
+    /*background: -ms-linear-gradient(top,  #121212 0%,#d53a3a 50%,#d34848 100%); /* IE10+ */
+    /*background: linear-gradient(to bottom,  #121212 0%,#d53a3a 50%,#d34848 100%); /* W3C */
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#121212', endColorstr='#d34848',GradientType=0 ); /* IE6-9 */
+}
+
+/*#idRMenu--idPage-cont .sapMOHTitle h1 .sapMText {*/
+.ZsapMOHTitle .sapMOHTitle h1 .sapMText {
+	/*color: #ffffff !important;*/
+}
+.TntTool_sinBorde {
+	padding-left: 0rem !important;
+}
+.TntTool_conBorde {
+	padding-left: 3rem !important;
+}
+.sapMListTblSubCntValBlock {
+    display: inline-block !important;
+    float: right !important;
+    text-align: right !important;
+}
+.BtnNegritaSub {
+	font-weight: bold;
+	text-decoration: underline;
+}
+.BtnNegritaSub:active {
+	/*text-decoration-color: #ffffff;*/
+}
+
+
+#idPageDialog .sapUiRespGridMedia-Std-Phone.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanS12)>.sapMLabel, .sapUiRespGridMedia-Std-Tablet.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanM12)>.sapMLabel, .sapUiRespGridMedia-Std-Desktop.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanL12)>.sapMLabel, .sapUiRespGridMedia-Std-LargeDesktop.sapUiFormResGridCont>.sapUiFormElementLbl:not(.sapUiRespGridSpanXL12)>.sapMLabel {
+	text-align: start !important;
+}
+
+
+Estilo alineado
+{
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+/*Animación menú*/
+.tile-hover-effect {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.tile-hover-effect:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px);
+}
+
+.tile-hover-effect img {
+    width: 100%;
+    height: auto;
+    transition: filter 0.5s ease;
+}
+
+/*Texto encima del efecto del fondo*/
+.tile-hover-effect .sapMTileContent {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 2; 
+}
+
+/* Estilo para resaltar el título */
+.tile-hover-effect .sapMTileContentText {
+    position: relative;
+    z-index: 3; 
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente del texto*/
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    pointer-events: none; /* Permite que el clic pase al contenedor padre */
+}
+
+/* Estilos de desvanecimiento y desenfoque */
+.tile-hover-effect::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none; /* Permite que el clic pase a través */
+}
+
+
+.tile-hover-effect:hover::before {
+    opacity: 1;
+}
+
+.no-fade {
+    transition: none !important;
+}

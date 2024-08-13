@@ -1,0 +1,15 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ActionSheet
+		title="Opciones"
+		showCancelButton="true"
+		placement="Auto">
+			<Button id="idBtnAgregarL" text="{i18n>EditComprobacion.Button.1}" icon="sap-icon://add" press="onPressAgregarL" />
+			<Button id="idBtnEditarL" text="{i18n>EditComprobacion.Button.2}" icon="sap-icon://edit" press="onPressEditarL" />
+			<Button id="idBtnBorrarL" text="{i18n>EditComprobacion.Button.3}" icon="sap-icon://delete" press="onPressBorrarL" />
+			<Button id="idBtnDistCecos" text="{i18n>EditComprobacion.Button.4}" icon="sap-icon://forward" press="onPressDistCecos" />
+			<Button id="idBtnDtosContabl" text="{i18n>EditComprobacion.Button.5}" icon="sap-icon://expense-report" press="onPressDtosContabl" />
+			<Button id="idBtnDoc" text="{i18n>EditComprobacion.Button.6}" icon="sap-icon://notes" press="onPressDoc" />
+	</ActionSheet>
+</core:FragmentDefinition>

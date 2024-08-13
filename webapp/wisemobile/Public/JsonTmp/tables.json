@@ -1,0 +1,827 @@
+{
+	"LISTA":[
+		{ "id": "1", "class": "C1",  "text": "i18n>Color.Table.Row.1" },
+		{ "id": "2", "class": "C2",  "text": "i18n>Color.Table.Row.2" },
+		{ "id": "3", "class": "C3",  "text": "i18n>Color.Table.Row.3" },
+		{ "id": "4", "class": "C4",  "text": "i18n>Color.Table.Row.4" },
+		{ "id": "5", "class": "C5",  "text": "i18n>Color.Table.Row.5" },
+		{ "id": "6", "class": "C6",  "text": "i18n>Color.Table.Row.6" },
+		{ "id": "7", "class": "C7",  "text": "i18n>Color.Table.Row.7" },
+		{ "id": "8", "class": "C8",  "text": "i18n>Color.Table.Row.8" },
+		{ "id": "9", "class": "C9",  "text": "i18n>Color.Table.Row.9" },
+		{ "id": "10", "class": "C10",  "text": "i18n>Color.Table.Row.10" },
+		{ "id": "11", "class": "C11",  "text": "i18n>Color.Table.Row.11" },
+		{ "id": "12", "class": "C12",  "text": "i18n>Color.Table.Row.12" },
+		{ "id": "13", "class": "C13",  "text": "i18n>Color.Table.Row.13" },
+		{ "id": "14", "class": "C14",  "text": "i18n>Color.Table.Row.14" },
+		{ "id": "15", "class": "C15",  "text": "i18n>Color.Table.Row.15" }
+	],
+	"FLUJOAUTORIZACION":[
+		{
+			"Autorizado": "P",
+			"Estrategia": "B7",
+			"Responsable": "PAREVALOA"
+		},
+		{
+			"Autorizado": "P",
+			"Estrategia": "C3",
+			"Responsable": "GWONG"
+		},
+		{
+			"Autorizado": "P",
+			"Estrategia": "A8",
+			"Responsable": "VZABALAM"
+		},
+		{
+			"Autorizado": "P",
+			"Estrategia": "B3",
+			"Responsable": "ROROZCO"
+		},
+		{
+			"Autorizado": "P",
+			"Estrategia": "C2",
+			"Responsable": "APLETNNERR"
+		},
+		{
+			"Autorizado": "P",
+			"Estrategia": "A7",
+			"Responsable": "HHORTAG"
+		},
+		{
+			"Autorizado": "P",
+			"Estrategia": "B1",
+			"Responsable": "JLZEPEDAP"
+		},
+		{
+			"Autorizado": "P",
+			"Estrategia": "B8",
+			"Responsable": "JJVALDEZ29"
+		}
+	],
+	"CECOS":[
+		{
+			"Linea": "0001",
+			"Item" : "001",
+			"CentroCosto" : "0001520000",
+			"Descripcion" : "DIR DE OPERACIONES",
+			"Distr" : "100.0",
+			"Importe" : "2426.0"
+		}
+	],
+	"LISTADOFACTURAS":[
+		{
+			"Factura" : "R28239",
+			"NoDoc" : "10000506",
+			"ImporteSinIva" : "$ 543,345,121.00",
+			"Moneda" : "MXN",
+			"VenNeto" : "20656789",
+			"FechaPago" : "",
+			"Fecha" : "",
+			"Estado" : "Pendiente por aprobar"
+		}
+	],
+	"AVISOS":[
+		{
+			"Fecha": "2016 1",
+			"Titulo": "VIGENCIA POR",
+			"Mensaje": "A partir de 10 de enero del 2017 el uso del portal de recepcion de facturas es obligatorio.",
+			"Leido": false
+		}
+	],
+	"DOCUMENTOS":[
+		{
+			"Linea": "1",
+			"Nombre": "000334676232.PDF",
+			"Tipo": "pdf"
+		}
+	],
+	"FCOMPROBACIONES":[
+		{
+			"Linea": "0001",
+			"TipoDoc": "0003",
+			"ClaseGasto": "Avion",
+			"Importe": "1500.0",
+			"Moneda": "MXN",
+			"Sociedad": "1135",
+			"IVA": "0",
+			"FomaPago": "01",
+			"FechaDoc": "2018-04-18",
+			"TipoCambio": "1.0",
+			"Centrocoste": "000152050",
+			"UUID": "",
+			"RFC": "XEXX000101000",
+			"XML": "No",
+			"PDF": "Si",
+			"No.Comprob": "00000000381"
+		}
+	],
+	"COMPLEMENTOSPAGO":[
+		{
+			"No": "1",
+			"Sociedad":"1003",
+			"NoDoc": "1500039402",
+			"Ejercicio": "2018",
+			"FechaPago": "2018-04-15",
+			"TotalPagado": "$965.00",
+			"Moneda": "MXN",
+			"TipoCambio": "0.000",
+			"UUID": "",
+			"Referencia": "",
+			"Creadoel": "2018-04-15",
+			"Error": "",
+			"xml": "0",
+			"pdf": "0",
+			"estado": "PENDIENTE",
+			"DET_PAGOS":[
+				{
+					"No": "1",
+					"ID": "0001",
+					"Sociedad": "1003",
+					"NoDocumento": "1500039402",
+					"Ejercicio": "2018",
+					"FormaPago": "03",
+					"Importe": "$67,200.00",
+					"Subtotal": "$67,200.00",
+					"ImpTrasla": "$0.00",
+					"ImpReteni": "$2,400.00",
+					"Moneda": "MXN",
+					"TipoCambio": "0.00000",
+					"ClaseDocDesc": "Pago acreedor",
+					"Tipo": "",
+					"Referencia": "",
+					"Ordende": "",
+					"DOC_RELACIONADOS":[
+						{
+							"No": "1",
+							"ID": "0001",
+							"NoDocumento": "1500039402",
+							"Referencia": "CM2",
+							"UUID": "G18130-Ytd4-1422",
+							"MetodoPago": "PPD",
+							"NoParcialidad": "1",
+							"Moneda": "MXN",
+							"TipoCambio": "1,00000",
+							"SaldoInicial": "$67,200.00",
+							"Pago": "$67,200.00",
+							"SaldoFinal": "$0.00",
+							"Sociedad": "1003",
+							"Ejercicio": "2018"
+						}
+					]
+				}
+			]
+		},
+		{
+			"No": "2",
+			"Sociedad":"1003",
+			"NoDoc": "1500039404",
+			"Ejercicio": "2018",
+			"FechaPago": "2018-04-15",
+			"TotalPagado": "$67,200.00",
+			"Moneda": "MXN",
+			"TipoCambio": "0.000",
+			"UUID": "",
+			"Referencia": "",
+			"Creadoel": "2018-04-15",
+			"Error": "",
+			"xml": "0",
+			"pdf": "0",
+			"estado": "PENDIENTE",
+			"DET_PAGOS":[
+				{
+					"No": "1",
+					"ID": "0001",
+					"Sociedad": "1003",
+					"NoDocumento": "1500039404",
+					"Ejercicio": "2018",
+					"FormaPago": "03",
+					"Importe": "$47,200.00",
+					"Subtotal": "$47,200.00",
+					"ImpTrasla": "$0.00",
+					"ImpReteni": "$3,800.00",
+					"Moneda": "MXN",
+					"TipoCambio": "0.00000",
+					"ClaseDocDesc": "Pago acreedor",
+					"Tipo": "",
+					"Referencia": "",
+					"Ordende": "",
+					"DOC_RELACIONADOS":[
+						{
+							"No": "1",
+							"ID": "0001",
+							"NoDocumento": "1500039404",
+							"Referencia": "CM2",
+							"UUID": "F15234-Ytd6-1233",
+							"MetodoPago": "PPD",
+							"NoParcialidad": "1",
+							"Moneda": "MXN",
+							"TipoCambio": "1,00000",
+							"SaldoInicial": "$47,200.00",
+							"Pago": "$47,200.00",
+							"SaldoFinal": "$0.00",
+							"Sociedad": "1003",
+							"Ejercicio": "2018"
+						}
+					]
+				}
+			]
+		}
+	],
+	"ESTATUSRECEPCION":[
+		{
+			"Factura": "F-5023",
+			"FechaRecepcion": "2018-05-08",
+			"Estado": "Rechazado",
+			"Mensaje": "Factura F-5023 fue Rechazada"
+		},
+		{
+			"Factura": "F-5023",
+			"FechaRecepcion": "2018-05-08",
+			"Estado": "Aprobado",
+			"Mensaje": "Factura F-5023 fue Aprobada"
+		}
+	],
+	
+	"X_ORDENCOMPRA_CFACTURA":[
+		{
+			"Ordende": "4700013",
+			"Posicion": "00010",
+			"NoDoc": "4700013",
+			"Referencia": "",
+			"Fecha": "2018-03-06",
+			"Material": "0000000000000010",
+			"UN": "PZA",
+			"Descripcion": "etiqueta p/residuos Aceites ",
+			"CtdAut": "50.0",
+			"CtdRec": "50.0",
+			"PU": "8.0",
+			"ImporteSinIVA": "$400.00",
+			"Moneda": "MXN"
+		},
+		{
+			"Ordende": "4700013",
+			"Posicion": "00020",
+			"NoDoc": "4700013",
+			"Referencia": "",
+			"Fecha": "2018-03-06",
+			"Material": "0000000000000020",
+			"UN": "PZA",
+			"Descripcion": "etiqueta p/residuos Embalaje ",
+			"CtdAut": "100.0",
+			"CtdRec": "100.0",
+			"PU": "8.0",
+			"ImporteSinIVA": "$800.00",
+			"Moneda": "MXN"
+		},
+		{
+			"Ordende": "4700013",
+			"Posicion": "00030",
+			"NoDoc": "4700013",
+			"Referencia": "",
+			"Fecha": "2018-03-06",
+			"Material": "0000000000000030",
+			"UN": "PZA",
+			"Descripcion": "etiqueta p/residuos Baterias ",
+			"CtdAut": "50.0",
+			"CtdRec": "50.0",
+			"PU": "8.0",
+			"ImporteSinIVA": "$200.00",
+			"Moneda": "MXN"
+		}
+	],
+	"ERROR":[
+		{
+			"No": "1",
+			"ID": "00005",
+			"Mensaje": "RFC del Receptor invalido"
+		}
+	],
+	"DET_PAGOS":[
+		{
+			"ID": "0001",
+			"Sociedad": "1003",
+			"NoDocumento": "$10034456",
+			"Ejercicio": "2018",
+			"FormaPago": "03",
+			"Importe": "$67,200.00",
+			"Subtotal": "$67,200.00",
+			"ImpTrasla": "$0.00",
+			"ImpReteni": "$2,400.00",
+			"Moneda": "MXN",
+			"TipoCambio": "1,00000",
+			"ClaseDocDesc": "Pago acreedor",
+			"Tipo": "",
+			"Referencia": "",
+			"Ordende": ""
+		}
+	],
+	"PARTIDASABIERTAS":[
+		{
+			"id": 1,
+			"NoDocumento": "1500000017",
+			"AnioFiscal": "2018",
+			"ClaseDocumento": "KZ",
+			"FechaContabiliza": "2018-03-28",
+			"VenNeto": "2018-03-28",
+			"Referencia": "",
+			"Importe": "300.0",
+			"Moneda": "USD",
+			"DocCompensacion": "",
+			"FechaCompensacion": "0000-00-00"
+		},
+		{
+			"id": 2,
+			"NoDocumento": "1500000028",
+			"AnioFiscal": "2018",
+			"ClaseDocumento": "KZ",
+			"FechaContabiliza": "2018-04-03",
+			"VenNeto": "2018-04-03",
+			"Referencia": "",
+			"Importe": "500.0",
+			"Moneda": "EUR",
+			"DocCompensacion": "",
+			"FechaCompensacion": "0000-00-00"
+		},
+		{
+			"id": 3,
+			"NoDocumento": "1500000027",
+			"AnioFiscal": "2018",
+			"ClaseDocumento": "KZ",
+			"FechaContabiliza": "2018-04-04",
+			"VenNeto": "2018-04-04",
+			"Referencia": "PRUEBA ANTICIPO",
+			"Importe": "3000.0",
+			"Moneda": "EUR",
+			"DocCompensacion": "",
+			"FechaCompensacion": "0000-00-00"
+		}
+	],
+	"PARTIDASCOMPENSADAS":[
+		{
+			"id": 1,
+			"NoDocumento": "1900085595",
+			"AnioFiscal": "2017",
+			"ClaseDocumento": "KR",
+			"FechaContabiliza": "2017-05-05",
+			"VenNeto": "0000-00-00",
+			"Referencia": "WASD",
+			"Importe": "-130.0",
+			"Moneda": "MXN",
+			"DocCompensacion": "2000010508",
+			"FechaCompensacion": "2017-05-07"
+		},
+		{
+			"id": 2,
+			"NoDocumento": "1900085596",
+			"AnioFiscal": "2017",
+			"ClaseDocumento": "KR",
+			"FechaContabiliza": "2017-05-05",
+			"VenNeto": "0000-00-00",
+			"Referencia": "JJJJJ",
+			"Importe": "-130.0",
+			"Moneda": "MXN",
+			"DocCompensacion": "2000010508",
+			"FechaCompensacion": "2017-05-07"
+		},
+		{
+			"id": 3,
+			"NoDocumento": "1900085597",
+			"AnioFiscal": "2017",
+			"ClaseDocumento": "KR",
+			"FechaContabiliza": "2017-05-05",
+			"VenNeto": "0000-00-00",
+			"Referencia": "0000000073",
+			"Importe": "-130.0",
+			"Moneda": "MXN",
+			"DocCompensacion": "2000010508",
+			"FechaCompensacion": "2017-05-07"
+		}
+	],
+	"LTAANTICIPOS":[
+		{
+			"id": 1,
+			"NoSolicitud": "0000000508",
+			"NoAnticipo": "0001",
+			"FechadeSolicitud": "2018-04-16",
+			"FechaContabiliza": "2018-04-18",
+			"Importe": "1500.0",
+			"Moneda": "MXN",
+			"Estado": "04-Posted",
+			"Aprobadopor": "PORTAL_GV",
+			"SolPago": "17012413",
+			"Contabilizadopor": "ABAPWISE",
+			"DocPago": "2000205504"
+		},
+		{
+			"id": 2,
+			"NoSolicitud": "0000000509",
+			"NoAnticipo": "0000",
+			"FechadeSolicitud": "2018-04-16",
+			"FechaContabiliza": "--",
+			"Importe": "0.0",
+			"Moneda": "",
+			"Estado": "01-Pending",
+			"Aprobadopor": "",
+			"SolPago": "",
+			"Contabilizadopor": "",
+			"DocPago": ""
+		}
+	],
+	"APROBACIONES":[
+		{
+			"CodigoProveedor": "S9001",
+			"Proveedor": "Empleado",
+			"No.Solicitud": "000000508",
+			"No.Anticipo": "0001",
+			"FechadeSolicitud": "2018-04-18",
+			"FechaDoc": "2018-04-18",
+			"FechaContabiliza": "2018-04-18",
+			"Importe": "1500.0",
+			"Moneda": "MXN",
+			"TipoCambio": "0.0",
+			"ImporteML": "1500.0",
+			"Estado": "04-Posted",
+			"SolPago": "1700000276",
+			"Ejercicio": "2018",
+			"DocPago": "2000020554",
+			"Ejercicio_": "0000",
+			"No.Comprob": "00000000508",
+			"TipoDocumento": "GASTOS VIA",
+			"Anticipo": "1500.0",
+			"Saldo": "0.0"
+		},
+		{
+			"CodigoProveedor": "S9001",
+			"Proveedor": "Empleado",
+			"No.Solicitud": "000000509",
+			"No.Anticipo": "0001",
+			"FechadeSolicitud": "2018-04-18",
+			"FechaDoc": "2018-04-18",
+			"FechaContabiliza": "2018-04-18",
+			"Importe": "1500.0",
+			"Moneda": "MXN",
+			"TipoCambio": "0.0",
+			"ImporteML": "1500.0",
+			"Estado": "02-Approval",
+			"SolPago": "",
+			"Ejercicio": "2018",
+			"DocPago": "",
+			"Ejercicio_": "0000"
+		}
+	],
+	"LTACOMPROBACIONES":[
+		{
+			"No.Comprob": "00000000508",
+			"TipoCompra": "000000508",
+			"TipoDocumento": "Gastos IVA",
+			"FechadeSolicitud": "2018-04-18",
+			"Gastos": "1500.0",
+			"IVA": "0.0",
+			"Total": "1500.0",
+			"Anticipo": "1500.0",
+			"Saldo": "0.0",
+			"Moneda": "MXN",
+			"Estado": "05-Posted",
+			"Aprobadopor": "PORTAL_GV",
+			"FechaAprobacion": "2018-04-18",
+			"Contabilizado": "ABAPWISE",
+			"FechaContabiliza": "2018-04-18",
+			"FechaDoc": "2018-03-18"
+		},
+		{
+			"No.Comprob": "00000000509",
+			"TipoCompra": "000000509",
+			"TipoDocumento": "Gastos IVA",
+			"FechadeSolicitud": "2018-04-18",
+			"Gastos": "0.0",
+			"IVA": "0.0",
+			"Total": "0.0",
+			"Anticipo": "1500.0",
+			"Saldo": "1500.0",
+			"Moneda": "",
+			"Estado": "01-Pending",
+			"Aprobadopor": "",
+			"FechaAprobacion": "0000-00-00",
+			"Contabilizado": "",
+			"FechaContabiliza": "0000-00-00",
+			"FechaDoc": "2018-03-18"
+		}
+	],
+	
+	"COTIZACIONES":[
+		{
+			"Peticion_Oferta": "6000016355",
+			"Posicion": "00010",
+			"Fecha_Oferta": "2018-06-04",
+			"Fecha_Limite_Oferta": "2018-06-15",
+			"Material": "",
+			"Descripcion": "Desarrollo de Sistemas",
+			"Cantidad_Requerida": "1.0",
+			"Unidad_Medida": "",
+			"Estado": "P"
+			
+		},
+		{
+			"Peticion_Oferta": "6000016356",
+			"Posicion": "00011",
+			"Fecha_Oferta": "2018-06-04",
+			"Fecha_Limite_Oferta": "2018-06-15",
+			"Material": "",
+			"Descripcion": "Desarrollo de Sistemas",
+			"Cantidad_Requerida": "1.0",
+			"Unidad_Medida": "",
+			"Estado": "P"
+			
+		}
+	],
+	
+	"ESTATUSCOTIZACIONES":[
+		{
+			"Peticion_Oferta": "6000016355",
+			"Posicion": "00010",
+			"Fecha_Oferta": "2018-06-04",
+			"Fecha_Limite_Oferta": "2018-06-15",
+			"Material": "",
+			"Descripcion": "Desarrollo de Sistemas",
+			"Cantidad_Requerida": "1.0",
+			"Unidad_Medida": "LE",
+			"Monto":"16000.0",
+			"Estado": "P",
+			"Orden_Compra": ""
+			
+		},
+		{
+			"Peticion_Oferta": "6000016370",
+			"Posicion": "00010",
+			"Fecha_Oferta": "2018-07-09",
+			"Fecha_Limite_Oferta": "2018-09-15",
+			"Material": "",
+			"Descripcion": "Desarrollo de Sistemas",
+			"Cantidad_Requerida": "1.0",
+			"Unidad_Medida": "LE",
+			"Monto":"25000.0",
+			"Estado": "R",
+			"Orden_Compra": ""
+		},
+		{
+			"Peticion_Oferta": "6000016358",
+			"Posicion": "00010",
+			"Fecha_Oferta": "2018-06-04",
+			"Fecha_Limite_Oferta": "2018-06-15",
+			"Material": "",
+			"Descripcion": "Desarrollo de Sistemas",
+			"Cantidad_Requerida": "1.0",
+			"Unidad_Medida": "LE",
+			"Monto":"25000.0",
+			"Estado": "A",
+			"Orden_Compra": ""
+		}
+	],
+	
+	"Requisiciones":[
+		{
+			"Requisicion": "0012323232",
+			"Posicion": "00010",
+			"OrgCompras": "WISE TECHNOLOGY SERVICES",
+			"Material": "",
+			"MPN": "",
+			"Texto_Corto": "Desarrollo de Sistemas",
+			"Texto_Largo": "",
+			"Cantidad": "1.0",
+			"UM": "LE",
+			"CreadoPor":"Reliana Wise",
+			"Solicitante": "CEGuzman",
+			"Codigo": "C4",
+			"IDWordFlow": "091828123231"
+			
+		},
+		{
+			"Requisicion": "001231223333332",
+			"Posicion": "00010",
+			"OrgCompras": "WISE TECHNOLOGY SERVICES",
+			"Material": "",
+			"MPN": "",
+			"Texto_Corto": "Desarrollo de ojos",
+			"Texto_Largo": "",
+			"Cantidad": "1.0",
+			"UM": "LE",
+			"CreadoPor":"Reliana Wise",
+			"Solicitante": "CEGuzman",
+			"Codigo": "C4",
+			"IDWordFlow": "091828123231"
+			
+		}
+	],
+	
+	"OrdenesCompra":[
+		{
+			"OrdenCompra": "445003293",
+			"OrgCompras": "WISE TECHNOLOGY SERVICES",
+			"Comentarios": "",		
+			"CreadoPor":"Reliana Wise",
+			"Fecha":"2018-06-04'",	
+			"Monto": "57155.0",
+			"Moneda": "USD",
+			"Texto_Largo": "Complemento",
+			"Proveedor": "5676817231923",
+			"Nombre": "AXZ..",
+			"Terminos": "P060",
+			"Desc_Terminos": "60 Dias",
+			"Codigo_Libera": "E9",
+			
+			"Posicion": "4700013682",
+			"Material": "",
+			"Desc_Material": "Desarrollo de s...",
+			"Cantidad": "1.0",
+			"Unidad_Medida": "LE",
+			"Fecha_Entrega": "2018-07-16",
+			"Cuenta_Contabe": "57700325004",
+			"Centro_Costo": "000105700",
+			"Orden": "",
+			"Activo_Fijo": ""
+			
+		},
+		{
+			"OrdenCompra": "479712934",
+			"OrgCompras": "WISE TECHNOLOGY SERVICES",
+			"Comentarios": "",		
+			"CreadoPor":"Reliana Wise",
+			"Fecha":"2018-06-04'",	
+			"Monto": "1.0",
+			"Moneda": "MXN",
+			"Texto_Largo": "Complemento",
+			"Proveedor": "69213432432432",
+			"Nombre": "WS..",
+			"Terminos": "P001",
+			"Desc_Terminos": "",
+			"Codigo_Libera": "B7"
+			
+		}
+	],
+	
+	"FacturasWF":[
+		{
+			"FacturaWF": "0123456789",
+			"Tipo": "RE",
+			"Desc": "WF Facturas",
+			"OrgCompras": "WISE TECHNOLOGY SERVICES",
+			"Texto": "TEXTO PRUEBA",
+			"Monto": "100.0",
+			"Moneda": "MXN",
+			"SolicitadoPor": "Reliana Wise",
+			"IDWorkFlow": "091828123231"
+			
+		},
+		{
+			"FacturaWF": "0123456790",
+			"Tipo": "RE",
+			"Desc": "WF Facturas",
+			"OrgCompras": "WISE TECHNOLOGY SERVICES",
+			"Texto": "TEXTO PRUEBA",
+			"Monto": "200.0",
+			"Moneda": "MXN",
+			"SolicitadoPor": "Reliana Wise",
+			"IDWorkFlow": "091828123232"
+			
+		}
+	],
+	
+	"DIST_CECOS":[
+		{
+			"Item": "000001",
+			"Cuenta_GL": "0011223344",
+			"Descripcion_GL": "CUENTA GL PRUEBA",
+			"Centro_Costo": "0011223355",
+			"Descripcion_Ceco": "CENTRO COSTO PRUEBA",
+			"Distribucion": "50.00",		
+			"Importe":"75.00"
+			
+		}
+	],
+	
+	"DET_COMPRAS":[
+		{
+			"Posicion": "445003293",
+			"Material": "",
+			"Desc_Material": "Desarrollo de Sistemas",
+			"Cantidad": "1.0",		
+			"Unidad_Medida":"LE",			
+			"Monto": "1.0",
+			"Moneda": "USD",
+			"Fecha_Entrega":"2018-06-04'",	
+			"Cuenta_Contabe": "5495983953245",
+			"Centro_Costo": "00000010218",
+			"Orden": "",
+			"Activo_Fijo": ""
+			
+		}
+	],
+	"DET_PDF":[
+		{
+			"OrdenCompra": "445003293",
+			"Nombre_Archivo": "Orden de Compra 2813123.PDF"
+			
+			
+		}
+	],
+	"ORDNCOMPRAXFACTURAR":[
+		{
+			"OrdenCompra": "445003293",
+			"Posicion": "00100",
+			"Numero_Documento": "",		
+			"Referencia":"",
+			"Fecha":"2018-06-04'",	
+			"Material": "",
+			"UM": "LE",
+			"Descripcion": "Desarrollo de Sistemas",
+			"CTD_Autorizacion": "",
+			"Subtotal": "234.0",
+			"Moneda": "MEX"
+			
+		}
+	],
+	
+	"ORDENCOMPRA_CFACTURA_1":[
+		
+	],
+
+	"CONSIGNACION_CFACTURA":[
+		
+	],
+	
+	"CONSIGNACION_CFACTURA_1":[
+		
+	],
+
+	"DATOS_CONTABLES":[
+		{
+			"Libro_Mayor": "58788321310",
+			"Importe": "20191.38",
+			"Iva": "E1",
+			"Importe_Impuesto": "334.62",
+			"Texto": "Gastos de Viaje"
+		}
+	],
+	"LISTACECOS":[
+		{
+			"Id" : "1",
+			"CentroCosto" : "0000101000",
+			"Descripcion" : "A-DIRECCION GENERALD"
+		},
+		{
+			"Id" : "2",
+			"CentroCosto" : "0000102000",
+			"Descripcion" : "V-DIR DE POLIURETANO"
+		},
+		{
+			"Id" : "3",
+			"CentroCosto" : "0000102701",
+			"Descripcion" : "A-J DE FDOS DE INV."
+		},
+		{
+			"Id" : "4",
+			"CentroCosto" : "0000103000",
+			"Descripcion" : "V-DIR ESP. QUIM. POL."
+		},
+		{
+			"Id" : "5",
+			"CentroCosto" : "0000103100",
+			"Descripcion" : "C-GCIA DE POLIMEROS"
+		},
+		{
+			"Id" : "6",
+			"CentroCosto" : "0000104000",
+			"Descripcion" : "V-GCIA.D.TEC.POL.EXP"
+		},
+		{
+			"Id" : "7",
+			"CentroCosto" : "0000104100",
+			"Descripcion" : "V.GERENCIA DE MERCAD"
+		},
+		{
+			"Id" : "8",
+			"CentroCosto" : "00001014140",
+			"Descripcion" : "V-DIR. GENERAL"
+		},
+		{
+			"Id" : "9",
+			"CentroCosto" : "0000103001",
+			"Descripcion" : "V-GCIA SIST.PURS MAQ"
+		},
+		{
+			"Id" : "10",
+			"CentroCosto" : "0000104001",
+			"Descripcion" : "V-DELGADO BASF"
+		},
+		{
+			"Id" : "11",
+			"CentroCosto" : "00001030111",
+			"Descripcion" : "V-GCIA. QUIM. IND."
+		},
+		{
+			"Id" : "12",
+			"CentroCosto" : "00001041011",
+			"Descripcion" : "V-MARKWTING ESP. QUIM."
+		}
+	]
+}

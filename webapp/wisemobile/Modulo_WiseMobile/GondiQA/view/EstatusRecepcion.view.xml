@@ -1,0 +1,102 @@
+<mvc:View
+	controllerName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.GondiQA.controller.EstatusRecepcion"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m">
+	<Page id="idPage" showHeader="false" enableScrolling="true">
+		<subHeader>
+			<Toolbar design="Solid" class="toolbarColorCydsa">
+				<Label text="{i18n>EstatusRecepcion.title}" design="Bold" class="toolbarTextColor"/>
+			</Toolbar>
+		</subHeader>
+		<content>
+			<f:SimpleForm id="simpleFormEstatusRecepcion" editable="true" layout="ResponsiveGridLayout" title="{i18n>FilterPanel.Title}">
+    			<f:content>
+					<Label text="{i18n>Filters.razon_social}" width="100%"/>
+					<ComboBox id="comboRazonSocial"
+					items="{mCombos>/SOCIEDADES_ZW18}"
+					change="" width="50%">
+					<core:ListItem key="{mCombos>BUKRS}" text="{mCombos>BUTXT}" />
+					</ComboBox>
+
+					
+					<Label text="{i18n>Filters.f_Factura}" width="100%"/>
+					<HBox>
+					<DatePicker
+					id="datePickerFrom"
+					placeholder="{i18n>Filters.fecha_inicial}"
+					change="" valueFormat="yyyy-MM-dd"/>
+					<Text text="-" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
+					<DatePicker
+					id="datePickerTo"
+					placeholder="{i18n>Filters.fecha_final}"
+					change="" valueFormat="yyyy-MM-dd"/>
+					</HBox>
+
+    			</f:content>
+			</f:SimpleForm>
+			<Button text="{i18n>FilterPanel.Button.1}" press="onPressFiltrar" class="sapUiSmallMarginBegin sapUiSmallMarginTop" type="Accept" icon="sap-icon://filter"/>
+
+			<Table
+				id="idTableEstatusRecepcion"
+				inset="false"
+				items="{
+						path: 'mTablesEstatusRecepcion>/DOC_ESTATUSRECEPCION'
+				}"
+				growing="true"
+				growingThreshold="100"
+				growingScrollToLoad="false"
+				itemPress="">
+<!-- 				itemPress="onItemPressEstatusRecepcion"> -->
+				<headerToolbar>
+					<Toolbar id="idToolbarEstatusRecepcion">
+						<Title text="{i18n>Records-found}" titleStyle="H6"/>
+						<Title id="idCountTableEstatusRecepcion" text="(0)" titleStyle="H6"/>
+						<ToolbarSpacer/>
+						<Button press="onPressExportar" text="{i18n>Exportar}"/>
+						<Button icon="sap-icon://table-column" press="onPersoPress" />
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column id="idCol1"
+						visible="{mManageControls>EstatusRecepcion.Monitor.Table.Column.1}">
+						<Text text="{i18n>EstatusRecepcion.Monitor.Table.Column.1}"/>
+					</Column>
+					<Column id="idCol2"
+						visible="{mManageControls>EstatusRecepcion.Monitor.Table.Column.2}">
+						<Text text="{i18n>EstatusRecepcion.Monitor.Table.Column.2}"/>
+					</Column>
+					<Column id="idCol3"
+						visible="{mManageControls>EstatusRecepcion.Monitor.Table.Column.3}">
+						<Text text="{i18n>EstatusRecepcion.Monitor.Table.Column.3}"/>
+					</Column>
+					
+					<Column id="idCol4"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>EstatusRecepcion.Monitor.Table.Column.4}">
+						<Text text="{i18n>EstatusRecepcion.Monitor.Table.Column.4}"/>
+					</Column>
+					
+				</columns>
+			
+				<items>
+					<ColumnListItem
+						vAlign="Middle">
+						<cells>
+							<Text text="{mTablesEstatusRecepcion>XBLNR}"/>
+							<Text text="{mTablesEstatusRecepcion>ERDAT}"/>
+							<Text text="{mTablesEstatusRecepcion>ESTATUS}"/>
+							<Text text="{mTablesEstatusRecepcion>MESSAGE}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			
+			<FlexBox height="100px"  />
+			
+		</content>
+	</Page>
+</mvc:View>               

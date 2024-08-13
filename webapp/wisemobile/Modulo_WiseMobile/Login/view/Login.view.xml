@@ -1,0 +1,68 @@
+<mvc:View height="100%"
+	controllerName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.Login.controller.Login"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m">
+	<Page showHeader="false" enableScrolling="true">
+		<content>
+				
+				<VBox id="oFlexBLogin" alignItems="Center" justifyContent="Center" class="sapUiSmallMarginTop sapUiLargeMarginBottom">
+					<items>
+						<Image
+							class="sapUiMediumMarginBottom"
+							id="loginViewImage"
+							src="wisemobile/Public/Img/Logo_Wise.webp"
+							densityAware="false"
+							width="150px"
+							height="150px" >
+						</Image>
+						<f:SimpleForm id="solicitudForm1" maxContainerCols="2"
+							editable="true" layout="ResponsiveGridLayout" title="" labelSpanL="2"
+							labelSpanM="2" emptySpanL="2" emptySpanM="2" columnsL="2"
+							columnsM="2" class="editableForm">
+							<f:content>
+								
+								<!--<Label text="Mandante" design="Bold"/>
+								<Select id="idComboMandante" change="">
+									<items>
+										<core:Item text="DEV - Desarrollo" key="100"/>
+										<core:Item text="QAS - Calidad" key="600"/>
+										<core:Item text="PRD - Productivo" key="700"/>
+									</items>
+								</Select>-->
+								
+								<Label id="myUserLabel" text="Usuario" design="Bold"/>
+								<Input id="myUser" placeholder="{i18n>Login.User}" value="" /> <!-- JVARILLAS -->
+								
+								<Label id="myPasswordLabel" text="Contraseña" design="Bold"/>
+								<FlexBox justifyContent="SpaceBetween" alignItems="Center">
+								<Input type="Password" id="myPassword" value="" placeholder="{i18n>Login.Password}" change="onPasswordChange"  width="165%"/>
+								<Button type="Emphasized" text="" press="onShowPassword" icon="sap-icon://show"  width="auto"  />
+								</FlexBox>
+								
+									
+								<!--<Label text="Idioma" design="Bold"/>
+								<Select id="idComboLangu" change="onChangeIdioma">
+									<items>
+										<core:Item text="ES - Español" key="ES"/>
+										<core:Item text="EN - English" key="EN"/>
+									</items>
+								</Select>-->
+								
+								<Label text=""/>
+								<Button text="{i18n>Login.Iniciar}" press="onPress" class="ZsapMBtnInner" />
+<!-- 								<Link text="{i18n>Login.Olvidar}" textAlign="Center" press="toChangePassword" width="100%" /> -->
+								<!-- <Button text="{i18n>Login.Cambiar}" press="onPressCambiar" /> -->
+								<Button text="{i18n>Login.Olvidar}" press="onPressOlvidar" />
+							</f:content>
+						</f:SimpleForm>
+					</items>
+				</VBox>
+				
+				<Text text="Copyright © 2024 Wise Technology Services de Mexico." class="textLoginCopyright sapUiLargeMarginTop" wrapping="true"></Text>
+				<Image src="wisemobile/Public/Img/Logo_Wise.webp" width="15px" height="15px"/>
+		</content>
+	</Page>
+</mvc:View>

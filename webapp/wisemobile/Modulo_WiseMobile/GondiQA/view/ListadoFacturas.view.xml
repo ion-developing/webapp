@@ -1,0 +1,191 @@
+<mvc:View
+	controllerName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.GondiQA.controller.ListadoFacturas"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m">
+	<Page id="idPage" showHeader="false" floatingFooter="true">
+		<subHeader>
+			<Toolbar design="Solid" class="toolbarColorCydsa">
+				<Label text="{i18n>ListadoFacturas.title}" design="Bold" class="toolbarTextColor"/>
+			</Toolbar>
+		</subHeader>
+		<content>
+			<f:SimpleForm id="simpleFormListadoFacturas" editable="true" layout="ResponsiveGridLayout" title="{i18n>FilterPanel.Title}">
+    			<f:content>
+					<Label text="{i18n>Filters.razon_social}" width="100%"/>
+					<ComboBox id="comboRazonSocial"
+					items="{mCombos>/SOCIEDADES_ZW18}"
+					change="" width="50%">
+					<core:ListItem key="{mCombos>BUKRS}" text="{mCombos>BUTXT}" />
+					</ComboBox>
+					
+					<Label text="{i18n>Filters.f_Factura}" width="100%"/>
+					<HBox>
+					<DatePicker
+					id="datePickerFrom"
+					placeholder="{i18n>Filters.fecha_inicial}"
+					change="" valueFormat="yyyy-MM-dd"/>
+					<Text text="-" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
+					<DatePicker
+					id="datePickerTo"
+					placeholder="{i18n>Filters.fecha_final}"
+					change="" valueFormat="yyyy-MM-dd"/>
+					</HBox>
+
+					<Label text="{i18n>Filters.estado}" width="100%"/>
+					<ComboBox id="comboEstado"
+					items="{mCombos>/ESTADO_LISTADOFACTURA}"
+					change="" width="50%">
+					<core:ListItem key="{mCombos>TIPO}" text="{mCombos>TEXT}" />
+					</ComboBox>
+
+    			</f:content>
+			</f:SimpleForm>
+			<Button text="{i18n>FilterPanel.Button.1}" press="onPressFiltrar" class="sapUiSmallMarginBegin sapUiSmallMarginTop" type="Accept" icon="sap-icon://filter"/>
+			
+			<Table
+				id="idTableListadoFacturas"
+				mode="None"
+				inset="false"
+				items="{
+						path: 'mTablesListadoFacturas>/DOC_LISTADOFACTURAS'
+				}"
+				growing="true"
+				growingThreshold="100"
+				growingScrollToLoad="false"
+				itemPress="">
+<!-- 				itemPress="onItemPressListadoFacturas"> -->
+				<headerToolbar>
+					<Toolbar id="idToolbarListadoFacturas">
+						<Title text="{i18n>Records-found}" titleStyle="H6"/>
+						<Title id="idCountTableListadoFacturas" text="(0)" titleStyle="H6"/>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://download" press="f_PreparingTableHTMLToExport" />
+						<Button icon="sap-icon://table-column" press="onPersoPress" />
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column id="idCol1"
+						visible="{mManageControls>ListadoFacturas.Monitor.Table.Column.1}">
+						<Text text="{i18n>ListadoFacturas.Monitor.Table.Column.1}"/>
+					</Column>
+					<Column id="idCol2"
+						visible="{mManageControls>ListadoFacturas.Monitor.Table.Column.2}">
+						<Text text="{i18n>ListadoFacturas.Monitor.Table.Column.2}"/>
+					</Column>
+					<Column id="idCol3"
+						visible="{mManageControls>ListadoFacturas.Monitor.Table.Column.3}">
+						<Text text="{i18n>ListadoFacturas.Monitor.Table.Column.3}"/>
+					</Column>
+					
+					<Column id="idCol4"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>ListadoFacturas.Monitor.Table.Column.4}">
+						<Text text="{i18n>ListadoFacturas.Monitor.Table.Column.4}"/>
+					</Column>
+					
+					<!--<Column id="idCol5"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>ListadoFacturas.Monitor.Table.Column.5}">
+						<Text text="{i18n>ListadoFacturas.Monitor.Table.Column.5}"/>
+					</Column>-->
+					
+					<Column id="idCol6"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>ListadoFacturas.Monitor.Table.Column.6}">
+						<Text text="{i18n>ListadoFacturas.Monitor.Table.Column.6}"/>
+					</Column>
+					
+					<Column id="idCol7"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>ListadoFacturas.Monitor.Table.Column.7}">
+						<Text text="{i18n>ListadoFacturas.Monitor.Table.Column.7}"/>
+					</Column>
+					
+					<Column id="idCol8"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>ListadoFacturas.Monitor.Table.Column.8}">
+						<Text text="{i18n>ListadoFacturas.Monitor.Table.Column.8}"/>
+					</Column>
+
+					<Column id="idCol9"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>ListadoFacturas.Monitor.Table.Column.8}">
+						<Text text="UUID"/>
+					</Column>
+
+					<Column id="idCo20"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="false">
+						<Text text="XMLB64"/>
+					</Column>
+
+					<Column id="idCo21"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="false">
+						<Text text="PDFB64"/>
+					</Column>
+
+					<Column id="idCo22"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>ListadoFacturas.Monitor.Table.Column.8}">
+						<Text text="XML"/>
+					</Column>
+
+					<Column id="idCo23"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>ListadoFacturas.Monitor.Table.Column.8}">
+						<Text text="PDF"/>
+					</Column>
+
+					<Column id="idCo24"
+						minScreenWidth="Tablet"
+						demandPopin="true"
+						visible="{mManageControls>ListadoFacturas.Monitor.Table.Column.8}">
+						<Text text="Monto Actual"/>
+					</Column>
+					
+				</columns>
+			
+				<items>
+					<ColumnListItem
+						vAlign="Middle">
+						<cells>
+							<Text text="{mTablesListadoFacturas>XBLNR}"/>
+							<Text text="{mTablesListadoFacturas>BELNR}"/>
+							<Text text="{path:'mTablesListadoFacturas>NETO', formatter:'.formatter.formatCurrency'}"/>
+							<Text text="{mTablesListadoFacturas>WAERS}"/>
+							<!--<Text text="{mTablesListadoFacturas>FVENC}"/>-->
+							<Text text="{mTablesListadoFacturas>FPAGO}"/>
+							<Text text="{mTablesListadoFacturas>BLDAT}"/>
+							<Text text="{mTablesListadoFacturas>ESTATUS}"/>
+							<Text text="{mTablesListadoFacturas>UUID}"/>
+							<Text text="{mTablesListadoFacturas>XML}"/>
+							<Text text="{mTablesListadoFacturas>PDF}"/>
+							<core:Icon src="sap-icon://attachment-html" color="#007bff" press="onGetXml"/>
+							<core:Icon src="sap-icon://pdf-attachment" color="#ff0000" press="onGetPdf"/>
+							<!--<Button icon="sap-icon://attachment-html" press="onGetXml"/>
+							<Button icon="sap-icon://pdf-attachment" press="onGetPdf"/>-->
+							<Text text="{path:'mTablesListadoFacturas>AMOUNT_ACT', formatter:'.formatter.formatCurrency'}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			
+			<FlexBox height="100px"  />
+			
+		</content>
+	</Page>
+</mvc:View>

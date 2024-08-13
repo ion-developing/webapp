@@ -1,0 +1,64 @@
+<mvc:View height="100%"
+	controllerName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.GroupManager.controller.DetalleGrupo"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns="sap.m">
+	<Page showHeader="false" enableScrolling="true">
+		<content>
+			<Panel backgroundDesign="Solid">
+ 				<content>
+				<f:Form id="idfoGru"
+						editable="true"
+						class="isReadonly">
+						<f:title>
+							<core:Title text="{i18n>DetalleGrupo.Form.1.Title}" />
+						</f:title>
+						<f:layout>
+							<f:ResponsiveGridLayout labelSpanXL="3"
+								labelSpanL="3" labelSpanM="3" labelSpanS="12"
+								adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"
+								emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1"
+								columnsM="1" singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer id="idfoGru_input">
+								<f:formElements>
+									<f:FormElement label="{i18n>MonitorGrupos.Table.Column.1}">
+										<f:fields>
+											<Input value="{mGrupos>id_grupo}" id="inputIDGrupo"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="{i18n>MonitorGrupos.Table.Column.4}">
+										<f:fields>
+											<Input value="{mGrupos>orden_grupo}" id="inputOrden"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="{i18n>MonitorGrupos.Table.Column.2}">
+										<f:fields>
+											<Input value="{mGrupos>nombre_grupo}" id="inputNombre"/>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</content>
+			</Panel>
+		</content>
+		<footer>
+			<Bar>
+				<contentMiddle>
+					<Button text="{i18n>DetalleGrupo.Footer.Button.1}"  id="btnEdit" 	 visible="false" press="onPressEdit"	/>
+					<Button text="{i18n>DetalleGrupo.Footer.Button.2}"  id="btnDelete"  visible="false" press="onPressDelete"	/>
+					<Button text="{i18n>DetalleGrupo.Footer.Button.3}"  id="btnSave" 	 visible="false" press="onPressSave"	/>
+					<Button text="{i18n>DetalleGrupo.Footer.Button.4}"  id="btnCancel"  visible="false" press="onPressCancel"	/>
+				</contentMiddle>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>
+
+                

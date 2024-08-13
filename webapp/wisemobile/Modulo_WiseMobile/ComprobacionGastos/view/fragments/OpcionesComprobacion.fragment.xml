@@ -1,0 +1,11 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ActionSheet
+		title="Opciones"
+		showCancelButton="true"
+		placement="Auto">
+			<Button text="{i18n>LtaComprobaciones.ToolBar.Button.1}" press="onPressEdit" />
+			<Button text="{i18n>LtaComprobaciones.ToolBar.Button.2}" press="onPressEnviar" />
+	</ActionSheet>
+</core:FragmentDefinition>

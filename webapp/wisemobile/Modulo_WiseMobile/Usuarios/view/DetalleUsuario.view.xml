@@ -1,0 +1,192 @@
+<mvc:View height="100%"
+	controllerName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.Usuarios.controller.DetalleUsuario"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns:table="sap.ui.table"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns="sap.m">
+	<Page showHeader="false" enableScrolling="true">
+		<content>
+			<Panel backgroundDesign="Solid">
+ 				<content>
+				<f:Form id="idfoUsu"
+						editable="true"
+						class="isReadonly">
+						<f:title>
+							<core:Title text="{i18n>DetalleUsuario.Form.1.Title}" />
+						</f:title>
+						<f:layout>
+							<f:ResponsiveGridLayout labelSpanXL="4"
+								labelSpanL="4" labelSpanM="4" labelSpanS="12"
+								adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"
+								emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2"
+								columnsM="2" singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer id="idfoUsu1_input">
+								<f:formElements>
+									<f:FormElement label="{i18n>MonitorUsuarios.Table.Column.2}">
+										<f:fields>
+											<Input value="{mUsuarios>apellidos}" id="inputApellidos"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="{i18n>MonitorUsuarios.Table.Column.1}">
+										<f:fields>
+											<Input value="{mUsuarios>nombre}" id="inputNombres"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="{i18n>MonitorUsuarios.Table.Column.4}">
+										<f:fields>
+											<Input value="{mUsuarios>telefono}" id="inputTelefono"/>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+							<f:FormContainer id="idfoUsu2_input">
+								<f:formElements>
+									<f:FormElement label="{i18n>MonitorUsuarios.Table.Column.5}">
+										<f:fields>
+											<Input value="{mUsuarios>direccion}" id="inputCorreo" type="Email" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement label="{i18n>MonitorUsuarios.Table.Column.6}">
+										<f:fields>
+											<Input value="{mUsuarios>descripcion}" id="inputDescripcion"/>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement id="idformLabelSwitch" label="{i18n>MonitorUsuarios.Table.Column.7}">
+										<Switch id="switchActivo" state="{mUsuarios>activo}" 
+										    customTextOn="{i18n>DetalleUsuario.Form.Switch.On}"
+										    customTextOff="{i18n>DetalleUsuario.Form.Switch.Off}">
+										</Switch>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+					<f:Form id="idfoUsu2"
+						editable="true"
+						class="isReadonly">
+						<f:title>
+							<core:Title text="{i18n>DetalleUsuario.Form.2.Title}" />
+						</f:title>
+						<f:layout>
+							<f:ResponsiveGridLayout labelSpanXL="3"
+								labelSpanL="3" labelSpanM="3" labelSpanS="12"
+								adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"
+								emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1"
+								columnsM="1" singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer id="idfoUsu3_input">
+								<f:formElements>
+									<f:FormElement label="{i18n>MonitorUsuarios.Table.Column.8}">
+										<f:fields>
+											<Input value="" id="inputUsuario"/>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+								<f:formElements>
+									<f:FormElement label="{i18n>MonitorUsuarios.Table.Column.9}">
+										<f:fields>
+											<Table
+												id="idTMonitorPermiso"
+												mode="MultiSelect"
+												inset="false"
+												items="{
+														path: 'mMonitorRoles>/Roles'
+												}"
+												growing="true"
+												growingThreshold="100"
+												growingScrollToLoad="false">
+												<columns>
+													<Column id="idCol1">
+														<Text text="{i18n>DetalleUsuario.Table.Column.1}"/>
+													</Column>
+													<Column id="idCol2"
+														minScreenWidth="Tablet"
+														demandPopin="true">
+														<Text text="{i18n>DetalleUsuario.Table.Column.2}"/>
+													</Column>
+													<Column id="idCol3">
+														<Text text="{i18n>DetalleUsuario.Table.Column.3}"/>
+													</Column>
+													
+												</columns>
+											
+												<items>
+													<ColumnListItem
+														vAlign="Middle">
+														<cells>
+															<Text text="{mMonitorRoles>id_rol}"/>
+															<Text text="{mMonitorRoles>nombre_rol}"/>
+															<Text text="{mMonitorRoles>activo}"/>
+														</cells>
+													</ColumnListItem>
+												</items>
+											</Table>
+											<!-- 
+											<table:Table
+												id="idTMonitorPermiso"
+												selectionMode="MultiToggle"
+												rows="{mMonitorRoles>/Roles}"
+												visibleRowCount="7"
+												filter="onfilterTable"
+												enableColumnFreeze="true"
+												ariaLabelledBy="title"
+												cellClick ="listSelect">
+												<table:columns>
+													<table:Column 
+														sortProperty="ID_ROL"
+														filterProperty="">
+														<Label text="Id" />
+														<table:template>
+															<Text text="{mMonitorRoles>id_rol}"/>
+														</table:template>
+													</table:Column>
+													<table:Column
+														sortProperty="DESCRIPCION"
+														filterProperty="DESCRIPCION"
+														defaultFilterOperator="Contains">
+														<Label text="Descripcion" />
+														<table:template>
+														<Text text="{mMonitorRoles>nombre_rol}"/>
+														</table:template>
+													</table:Column>
+													<table:Column
+														sortProperty="ACTIVO"
+														filterProperty="ACTIVO"
+														defaultFilterOperator="Contains">
+														<Label text="Activo" />
+														<table:template>
+														<Text text="{mMonitorRoles>activo}"/>
+														</table:template>
+													</table:Column>
+												</table:columns>
+											</table:Table>
+											 -->
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</content>
+			</Panel>
+		</content>
+		<footer>
+			<Bar>
+				<contentMiddle>
+					<Button text="{i18n>DetalleUsuario.Footer.Button.1}"  id="btnEdit" 	 visible="false" press="onPressEdit"	/>
+					<Button text="{i18n>DetalleUsuario.Footer.Button.2}"  id="btnDelete"  visible="false" press="onPressDelete"	/>
+					<Button text="{i18n>DetalleUsuario.Footer.Button.3}"  id="btnSave" 	 visible="false" press="onPressSave"	/>
+					<Button text="{i18n>DetalleUsuario.Footer.Button.4}"  id="btnCancel"  visible="false" press="onPressCancel"	/>
+				</contentMiddle>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>
+
+                
