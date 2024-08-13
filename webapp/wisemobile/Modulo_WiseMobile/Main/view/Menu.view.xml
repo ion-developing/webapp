@@ -174,7 +174,7 @@
 						 -->
 					<SlideTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tile-hover-effect">
     					<tiles>
-        					<GenericTile class="sapUiGenericTile" backgroundImage="wisemobile/Public/Img/id4d_0.png" frameType="TwoByOne" press="onPress"
+        					<GenericTile class="sapUiGenericTile" backgroundImage="wisemobile/Public/Img/2.jpg" frameType="TwoByOne" press="onPress"
 							>
 							<TileContent>
                 			<Text text="{i18n>TileCollection.8.header}" class="sapMTileContentText"></Text>
@@ -190,7 +190,7 @@
 						<tiles>
 							<GenericTile
 								class="sapUiGenericTile" 
-								backgroundImage="wisemobile/Public/Img/BuildsCydsaTile.png"
+								backgroundImage="wisemobile/Public/Img/1.jpg"
 								frameType="TwoByOne" press="onPressExternalPortal"
 								>
 								<TileContent footer="">
@@ -201,7 +201,7 @@
 					</SlideTile>
 					<SlideTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tile-hover-effect">
 						<GenericTile
-							backgroundImage="wisemobile/Public/Img/TechnologyCydsaTile.jpeg"
+							backgroundImage="wisemobile/Public/Img/3.jpg"
 							frameType="TwoByOne" press="onPressPortalRepse">
 							<TileContent footer="">
 									<Text text="SERVICIOS ESPECIALIZADOS (REPSE)" class="sapMTileContentText"></Text>

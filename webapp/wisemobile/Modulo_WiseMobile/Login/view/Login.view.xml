@@ -13,7 +13,7 @@
 						<Image
 							class="sapUiMediumMarginBottom"
 							id="loginViewImage"
-							src="wisemobile/Public/Img/Logo_Wise.webp"
+							src="wisemobile/Public/Img/logo.webp"
 							densityAware="false"
 							width="150px"
 							height="150px" >
@@ -60,9 +60,6 @@
 						</f:SimpleForm>
 					</items>
 				</VBox>
-				
-				<Text text="Copyright © 2024 Wise Technology Services de Mexico." class="textLoginCopyright sapUiLargeMarginTop" wrapping="true"></Text>
-				<Image src="wisemobile/Public/Img/Logo_Wise.webp" width="15px" height="15px"/>
 		</content>
 	</Page>
 </mvc:View>
