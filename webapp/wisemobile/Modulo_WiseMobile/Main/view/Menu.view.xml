@@ -2,179 +2,16 @@
 	controllerName="com.axiomasoluciones.wisemobile.Modulo_WiseMobile.Main.controller.Menu"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"
-	xmlns:f="sap.ui.layout.form"
-	xmlns:l="sap.ui.layout"
-	xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns="sap.m">
-	<Page id="idPage" showHeader="false" enableScrolling="true" class="Degradado">
-		<content>
-			<!-- <ObjectHeader title="{i18n>Title.1}" class="ZsapMOHTitle" />
-			
-			<FlexBox
-				alignItems="Center"
-				justifyContent="Center">
-			
-				<FlexBox 
-					wrap="Wrap"
-					width="747px">
-								
-					<GenericTile id="FP" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
-						header="{i18n>TileCollection.0.header}" state="Loading"
-						subheader="{i18n>TileCollection.0.subheader}" press="onPress">
-						<tileContent>
-							<TileContent footer="{i18n>TileCollection.0.footer}">
-								<content>
-									<ImageContent src="sap-icon://camera"/>
-								</content>
-							</TileContent>
-						</tileContent>
-						<customData>
-							<core:CustomData key="fotoperfil">
-							</core:CustomData>
-						</customData>
-					</GenericTile>
-						
-					<GenericTile id="ST" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
-						header="{i18n>TileCollection.1.header}" state="Loading"
-						subheader="{i18n>TileCollection.1.subheader}" press="onPress">
-						<tileContent>
-							<TileContent footer="{i18n>TileCollection.1.footer}">
-								<content>
-									<ImageContent src="sap-icon://number-sign"/>
-								</content>
-							</TileContent>
-						</tileContent>
-						<customData>
-							<core:CustomData key="stack">
-							</core:CustomData>
-						</customData>
-					</GenericTile>
-						
-					<GenericTile id="US" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
-						header="{i18n>TileCollection.2.header}"
-						subheader="{i18n>TileCollection.2.subheader}" press="onPress">
-						<tileContent>
-							<TileContent footer="{i18n>TileCollection.2.footer}">
-								<content>
-									<ImageContent src="sap-icon://family-care" />
-								</content>
-							</TileContent>
-						</tileContent>
-						<customData>
-							<core:CustomData key="usuarios">
-							</core:CustomData>
-						</customData>
-					</GenericTile>
-					
-				</FlexBox>
-			</FlexBox>
-			
-			<ObjectHeader title="{i18n>Title.2}" class="ZsapMOHTitle" />
-			
-			<FlexBox
-				alignItems="Center"
-				justifyContent="Center">
-			
-				<FlexBox 
-					wrap="Wrap"
-					width="747px">
-								
-					<GenericTile id="AP" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
-						header="{i18n>TileCollection.3.header}"
-						subheader="{i18n>TileCollection.3.subheader}" press="onPress">
-						<tileContent>
-							<TileContent footer="{i18n>TileCollection.3.footer}">
-								<content>
-									<ImageContent src="sap-icon://camera"/>
-								</content>
-							</TileContent>
-						</tileContent>
-						<customData>
-							<core:CustomData key="app">
-							</core:CustomData>
-						</customData>
-					</GenericTile>
-					
-					<GenericTile id="CO" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
-						header="{i18n>TileCollection.4.header}"
-						subheader="{i18n>TileCollection.4.subheader}" press="onPress">
-						<tileContent>
-							<TileContent footer="{i18n>TileCollection.4.footer}">
-								<content>
-									<ImageContent src="sap-icon://palette"/>
-									
-								</content>
-							</TileContent>
-						</tileContent>
-						<customData>
-							<core:CustomData key="colores">
-							</core:CustomData>
-						</customData>
-					</GenericTile>
-					
-					<GenericTile id="GR" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
-						header="{i18n>TileCollection.5.header}"
-						subheader="{i18n>TileCollection.5.subheader}" press="onPress">
-						<tileContent>
-							<TileContent footer="{i18n>TileCollection.5.footer}">
-								<content>
-									<ImageContent src="sap-icon://group" />
-								</content>
-							</TileContent>
-						</tileContent>
-						<customData>
-							<core:CustomData key="grupos">
-							</core:CustomData>
-						</customData>
-					</GenericTile>
-					
-					<GenericTile id="RO" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
-						header="{i18n>TileCollection.6.header}"
-						subheader="{i18n>TileCollection.6.subheader}" press="onPress">
-						<tileContent>
-							<TileContent footer="{i18n>TileCollection.6.footer}">
-								<content>
-									<ImageContent src="sap-icon://private" />
-								</content>
-							</TileContent>
-						</tileContent>
-						<customData>
-							<core:CustomData key="roles">
-							</core:CustomData>
-						</customData>
-					</GenericTile>
-					
-				</FlexBox>
-			</FlexBox> -->
-			
+	<Page id="idPage" showHeader="false" class="Degradado">
+		<content>			
 			<ObjectHeader title="{i18n>Title.3}" class="ZsapMOHTitle" />
 			
 			<FlexBox
 				>
-			
-				<FlexBox 
-					wrap="Wrap"
-					width="747px">
-								
-					<!-- <GenericTile id="MD1" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
-						header="{i18n>TileCollection.7.header}"
-						subheader="{i18n>TileCollection.7.subheader}" press="onPress">
-						<tileContent>
-							<TileContent footer="{i18n>TileCollection.7.footer}">
-								<content>
-									<ImageContent src="sap-icon://money-bills"/>
-								</content>
-							</TileContent>
-						</tileContent>
-						<customData>
-							<core:CustomData key="mod1">
-							</core:CustomData>
-						</customData>
-					</GenericTile>
-						 -->
 					<SlideTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tile-hover-effect">
     					<tiles>
-        					<GenericTile class="sapUiGenericTile" backgroundImage="wisemobile/Public/Img/2.jpg" frameType="TwoByOne" press="onPress"
+        					<GenericTile class="sapUiGenericTile" backgroundImage="wisemobile/Public/Img/1.jpg" frameType="TwoByOne" press="onPress"
 							>
 							<TileContent>
                 			<Text text="{i18n>TileCollection.8.header}" class="sapMTileContentText"></Text>
@@ -186,31 +23,7 @@
         					</GenericTile>
     					</tiles>
 					</SlideTile>
-					<SlideTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tile-hover-effect">
-						<tiles>
-							<GenericTile
-								class="sapUiGenericTile" 
-								backgroundImage="wisemobile/Public/Img/1.jpg"
-								frameType="TwoByOne" press="onPressExternalPortal"
-								>
-								<TileContent footer="">
-									<Text text="{i18n>TileCollection.9.header}" class="sapMTileContentText"></Text>
-								</TileContent>
-							</GenericTile>
-						</tiles>
-					</SlideTile>
-					<SlideTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout tile-hover-effect">
-						<GenericTile
-							backgroundImage="wisemobile/Public/Img/3.jpg"
-							frameType="TwoByOne" press="onPressPortalRepse">
-							<TileContent footer="">
-									<Text text="SERVICIOS ESPECIALIZADOS (REPSE)" class="sapMTileContentText"></Text>
-							</TileContent>
-						</GenericTile>
-					</SlideTile>
-				</FlexBox>
 			</FlexBox>
-			
 		</content>
 	</Page>
 </mvc:View>

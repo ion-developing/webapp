@@ -25,9 +25,9 @@ sap.ui.define(
 					if (clienteId === 'cydsa') {
 						// Toolbar left image
 						var imageToolbarLeft = sap.ui.getCore().byId('__image0')
-						imageToolbarLeft.setSrc('wisemobile/Public/Img/logo.png')
+						imageToolbarLeft.setSrc('wisemobile/Public/Img/logo.webp')
 						imageToolbarLeft.setHeight('20px')
-						imageToolbarLeft.setWidth('40px')
+						imageToolbarLeft.setWidth('auto')
 
 						// Toolbar Image
 						/*
